@@ -1,0 +1,986 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.2.1" />
+<style type="text/css">
+/* Debug borders */
+p, li, dt, dd, div, pre, h1, h2, h3, h4, h5, h6 {
+/*
+  border: 1px solid red;
+*/
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+tt {
+  color: navy;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  font-family: sans-serif;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  border-bottom: 2px solid silver;
+  padding-top: 0.5em;
+}
+
+div.sectionbody {
+  font-family: serif;
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+span#author {
+  color: #527bbd;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+span#email {
+}
+span#revision {
+  font-family: sans-serif;
+}
+
+div#footer {
+  font-family: sans-serif;
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+div#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+div#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+div#preamble,
+div.tableblock, div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-right: 10%;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid silver;
+  padding: 0.5em;
+}
+
+div.listingblock {
+  margin-right: 0%;
+}
+div.listingblock > div.content {
+  border: 1px solid silver;
+  background: #f4f4f4;
+  padding: 0.5em;
+}
+
+div.quoteblock > div.content {
+  padding-left: 2.0em;
+}
+
+div.attribution {
+  text-align: right;
+}
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 2px solid silver;
+}
+
+div.exampleblock > div.content {
+  border-left: 2px solid silver;
+  padding: 0.5em;
+}
+
+div.verseblock div.content {
+  white-space: pre;
+}
+
+div.imageblock div.content { padding-left: 0; }
+div.imageblock img { border: 1px solid silver; }
+span.image img { border-style: none; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: italic;
+}
+dd > *:first-child {
+  margin-top: 0;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.olist2 {
+  list-style-type: lower-alpha;
+}
+
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+tfoot {
+  font-weight: bold;
+}
+
+div.hlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hlist td {
+  padding-bottom: 5px;
+}
+td.hlist1 {
+  vertical-align: top;
+  font-style: italic;
+  padding-right: 0.8em;
+}
+td.hlist2 {
+  vertical-align: top;
+}
+
+@media print {
+  div#footer-badges { display: none; }
+}
+
+div#toctitle {
+  color: #527bbd;
+  font-family: sans-serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+/* Workarounds for IE6's broken and incomplete CSS2. */
+
+div.sidebar-content {
+  background: #ffffee;
+  border: 1px solid silver;
+  padding: 0.5em;
+}
+div.sidebar-title, div.image-title {
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 0.0em;
+  margin-bottom: 0.5em;
+}
+
+div.listingblock div.content {
+  border: 1px solid silver;
+  background: #f4f4f4;
+  padding: 0.5em;
+}
+
+div.quoteblock-content {
+  padding-left: 2.0em;
+}
+
+div.exampleblock-content {
+  border-left: 2px solid silver;
+  padding-left: 0.5em;
+}
+
+/* IE6 sets dynamically generated links as visited. */
+div#toc a:visited { color: blue; }
+</style>
+<title>FoX notes</title>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26635164-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+<div id="header">
+<h1>FoX notes</h1>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<p>FoX (Fortran XML) library.</p>
+<p>Written in pure Fortran 95 (no compiler extensions, no cross-language issues).
+Tested against all major Fortran compilers.</p>
+<p>Understands and provides interfaces to all of XML 1.0 and 1.1, and XML
+Namespaces 1.0 and 1.1.</p>
+<p>BSD licensed (<em>i.e.</em> free for any commercial or non-commercial usage)</p>
+<p><a href="http://www1.gly.bris.ac.uk/~walker/FoX/DoX">Full documentation</a> is available. This document
+is a short tutorial on how to adapt an atomistic simulation code to use FoX
+for CML output.</p>
+<hr />
+</div>
+</div>
+<h2>Background</h2>
+<div class="sectionbody">
+<p>FoX includes the following modules:</p>
+<ul>
+<li>
+<p>
+WXML
+</p>
+<p>XML writing. Emits guaranteed well-formed XML.
+(Also performs limited validity checking if a DTD is part of the output.)
+Minimal state is kept in memory, allowing documents of arbitrary size to
+be produced from long-running jobs.</p>
+</li>
+<li>
+<p>
+SAX
+</p>
+<p>Interface modelled strongly after Java SAX2 interface. Supports all 35
+callbacks. Understands internal &amp; external entities (general and parameter)
+Tested on official W3C testsuite; currently passes all
+well-formedness and validity tests.
+(with the exception of any test involving non-ASCII characters; Fortran
+does not support I/O of any characters outside the ASCII set.)</p>
+</li>
+<li>
+<p>
+DOM
+</p>
+<p>Mapping of the W3C DOM interface to Fortran. Supports all of Core Levels
+1 &amp; 2 and most of Level 3 (including partial LS support). Passes 100% of
+the relevant portions of the W3C DOM testsuite.</p>
+</li>
+</ul>
+<p>Both WXML and DOM include extension functions tailored specifically for
+the Fortran programmer, with transparent support for all 7 native Fortran
+datatypes (character, logical, integer, real, double precision, complex,
+complex double), each in scalar, array and matrix form.</p>
+<hr />
+<p>On top of the basic library, there are available (XML) language-specific
+front-ends. One of these is WCML, which writes out <a href="http://cmlcomp.org">CMLComp</a>.</p>
+<p>These language-specific frontends aim to hide all of the complexity of XML
+from the end-user, and permit the production of guaranteed well-formed and
+valid XML fragments, without requiring any knowledge from the Fortran
+programmer.</p>
+<p>A full (though still under development) specification of the CMLComp document
+format can be found at the CMLComp website. In this document, though, I'll
+show how to build a CMLComp document using the WCML calls, which requires
+little to no knowledge of the underlying format - just the ability to write
+Fortran.</p>
+<hr />
+<p>Compilation of FoX is in most cases very easy; simply do:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #990000">&gt;</span> <span style="color: #990000">.</span>/configure
+<span style="color: #990000">&gt;</span> make
+</tt></pre></div></div>
+<p>To compile a code using FoX, then simply add the following to your FFLAGS
+(or equivalent)</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #009900">FFLAGS</span><span style="color: #990000">=</span><span style="color: #FF0000">"$FFLAGS `FoX/FoX-config --fcflags`"</span>
+</tt></pre></div></div>
+<p>and the following to your LDFLAGS (or equivalent)</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #009900">LDFLAGS</span><span style="color: #990000">=</span><span style="color: #FF0000">"$LDFLAGS `FoX/FoX-config --libs`"</span>
+</tt></pre></div></div>
+<p>Full instructions on how the configure/compile process works is available
+in the <a href="http://www1.gly.bris.ac.uk/~walker/FoX/DoX/Compilation.html">FoX manual</a>.</p>
+</div>
+<h2>Using WCML</h2>
+<div class="sectionbody">
+<p>A minimal CML output program would look something like this:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>
+<span style="font-weight: bold"><span style="color: #0000FF">program</span></span> CMLoutput
+
+  use FoX_wcml        <span style="color: #990000">!</span> <span style="font-weight: bold"><span style="color: #0000FF">to</span></span> use any of the WCML apparatus
+
+  <span style="font-weight: bold"><span style="color: #0000FF">type</span></span><span style="color: #990000">(</span>xmlf_t<span style="color: #990000">)</span> <span style="color: #990000">::</span> xf  <span style="color: #990000">!</span> an opaque filetype
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlBeginFile</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> filename<span style="color: #990000">=</span><span style="color: #FF0000">"output.cml"</span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">unit</span></span><span style="color: #990000">=</span><span style="color: #993399">22</span><span style="color: #990000">)</span>
+  <span style="color: #990000">!</span> <span style="font-weight: bold"><span style="color: #0000FF">open</span></span> a CML <span style="font-weight: bold"><span style="color: #0000FF">file</span></span> called <span style="color: #FF0000">"output.cml"</span> on <span style="font-weight: bold"><span style="color: #0000FF">unit</span></span> <span style="color: #993399">22</span><span style="color: #990000">.</span>
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlStartCml</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+  <span style="color: #990000">!</span> output CML preamble
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlEndCml</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+  <span style="color: #990000">!</span> output CML post<span style="color: #990000">-</span>amble
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlFinishFile</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+  <span style="color: #990000">!</span> <span style="font-weight: bold"><span style="color: #0000FF">Close</span></span> the <span style="font-weight: bold"><span style="color: #0000FF">file</span></span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">end</span></span> <span style="font-weight: bold"><span style="color: #0000FF">program</span></span> CMLoutput
+</tt></pre></div></div>
+<p>This program will open a file, write the minimal CML preamble,
+and then close the file, ensuring all tags are well-balanced.</p>
+<hr />
+<h3>dictRefs</h3>
+<p>dictRefs are the mechanism by which Golem works. You don't need to know
+much about how, but you do need to do the following at the start of your
+CML file:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>
+<span style="font-weight: bold"><span style="color: #0000FF">subroutine</span></span> <span style="font-weight: bold"><span style="color: #000000">writeCmlPreamble</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> filename<span style="color: #990000">)</span>
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlBeginFile</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> filename<span style="color: #990000">=</span><span style="color: #FF0000">"output.cml"</span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">unit</span></span><span style="color: #990000">=</span><span style="color: #993399">22</span><span style="color: #990000">)</span>
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddNamespace</span></span><span style="color: #990000">(</span>mainXML<span style="color: #990000">,</span> prefix<span style="color: #990000">=</span><span style="color: #FF0000">'siesta'</span><span style="color: #990000">,</span> <span style="color: #990000">&amp;</span>
+                                nsURI<span style="color: #990000">=</span><span style="color: #FF0000">'http://www.uam.es/siesta/namespace'</span><span style="color: #990000">)</span>
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddNamespace</span></span><span style="color: #990000">(</span>mainXML<span style="color: #990000">,</span> prefix<span style="color: #990000">=</span><span style="color: #FF0000">'siestaUnits'</span><span style="color: #990000">,</span> <span style="color: #990000">&amp;</span>
+                                nsURI<span style="color: #990000">=</span><span style="color: #FF0000">'http://www.uam.es/siesta/namespace/units'</span><span style="color: #990000">)</span>
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlStartCml</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">end</span></span> <span style="font-weight: bold"><span style="color: #0000FF">subroutine</span></span> writeCmlPreamble
+</tt></pre></div></div>
+<p>That is: immediately before you issue the <tt>StartCml</tt> call, you need to add
+two namespaces: one for your code, one for your units.</p>
+<p>The prefix you use is up to you, but will conventionally be the name
+of your code. The nsURI should be a URL - that need not exist - but which
+is at an address you control.</p>
+<p>Having done that, then you can use dictRefs as mentioned in multiple places
+below; you need to consistently use the prefixes registered in these calls,
+but you never need to use the <tt>nsURI</tt> anywhere else.</p>
+<hr />
+<h3>Metadata</h3>
+<p>In reality you will also want to output: firstly some metadata
+about the program:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>
+<span style="font-weight: bold"><span style="color: #0000FF">subroutine</span></span> <span style="font-weight: bold"><span style="color: #000000">outputMetadata</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlStartMetadataList</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddMetadata</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> name<span style="color: #990000">=</span><span style="color: #FF0000">'Program'</span><span style="color: #990000">,</span> content<span style="color: #990000">=</span><span style="color: #FF0000">'Siesta'</span><span style="color: #990000">)</span>
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddMetadata</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> name<span style="color: #990000">=</span><span style="color: #FF0000">'Version'</span><span style="color: #990000">,</span> content<span style="color: #990000">=</span>version_str<span style="color: #990000">)</span>
+
+  <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>nodes<span style="color: #990000">&gt;</span><span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">then</span></span>
+    <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddMetadata</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> name<span style="color: #990000">=</span><span style="color: #FF0000">'Mode'</span><span style="color: #990000">,</span> content<span style="color: #990000">=</span><span style="color: #FF0000">'Parallel'</span><span style="color: #990000">)</span>
+  <span style="font-weight: bold"><span style="color: #0000FF">else</span></span>
+    <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddMetadata</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> name<span style="color: #990000">=</span><span style="color: #FF0000">'Mode'</span><span style="color: #990000">,</span> content<span style="color: #990000">=</span><span style="color: #FF0000">'Serial'</span><span style="color: #990000">)</span>
+  endif
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddMetadata</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> name<span style="color: #990000">=</span><span style="color: #FF0000">'StartTime'</span><span style="color: #990000">,</span>content<span style="color: #990000">=</span><span style="font-weight: bold"><span style="color: #000000">datestring</span></span><span style="color: #990000">())</span>
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlEndMetadataList</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">end</span></span> <span style="font-weight: bold"><span style="color: #0000FF">subroutine</span></span> outputMetadata
+
+</tt></pre></div></div>
+<p>That should be fairly self-explanatory. The output will look like:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>
+  <span style="font-weight: bold"><span style="color: #0000FF">&lt;metadataList&gt;</span></span>
+    <span style="font-weight: bold"><span style="color: #0000FF">&lt;metadata</span></span> <span style="color: #009900">name</span><span style="color: #990000">=</span><span style="color: #FF0000">"Program"</span> <span style="color: #009900">content</span><span style="color: #990000">=</span><span style="color: #FF0000">"Siesta"</span><span style="font-weight: bold"><span style="color: #0000FF">/&gt;</span></span>
+    <span style="font-weight: bold"><span style="color: #0000FF">&lt;metadata</span></span> <span style="color: #009900">name</span><span style="color: #990000">=</span><span style="color: #FF0000">"Version"</span>
+    <span style="color: #009900">content</span><span style="color: #990000">=</span><span style="color: #FF0000">"siesta@uam.es--2006/siesta-devel--reference--2.4--patch-3"</span><span style="font-weight: bold"><span style="color: #0000FF">/&gt;</span></span>
+    <span style="font-weight: bold"><span style="color: #0000FF">&lt;metadata</span></span> <span style="color: #009900">name</span><span style="color: #990000">=</span><span style="color: #FF0000">"StartTime"</span> <span style="color: #009900">content</span><span style="color: #990000">=</span><span style="color: #FF0000">"2007-11-16T14-21-34"</span><span style="font-weight: bold"><span style="color: #0000FF">/&gt;</span></span>
+    <span style="font-weight: bold"><span style="color: #0000FF">&lt;metadata</span></span> <span style="color: #009900">name</span><span style="color: #990000">=</span><span style="color: #FF0000">"Mode"</span> <span style="color: #009900">content</span><span style="color: #990000">=</span><span style="color: #FF0000">"Serial"</span><span style="font-weight: bold"><span style="color: #0000FF">/&gt;</span></span>
+  <span style="font-weight: bold"><span style="color: #0000FF">&lt;/metadataList&gt;</span></span>
+
+</tt></pre></div></div>
+<hr />
+<h3>Parameters</h3>
+<p>Secondly, you will want to mark up a list of input parameters:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>
+<span style="font-weight: bold"><span style="color: #0000FF">subroutine</span></span> <span style="font-weight: bold"><span style="color: #000000">outputParameters</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> inputParameters <span style="color: #990000">...)</span>
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlStartParameterList</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> <span style="color: #FF0000">"General parameters"</span><span style="color: #990000">)</span>
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddParameter</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> name<span style="color: #990000">=</span><span style="color: #FF0000">'System Name'</span><span style="color: #990000">,</span>                  <span style="color: #990000">&amp;</span>
+                           value<span style="color: #990000">=</span>systemName<span style="color: #990000">,</span>                    <span style="color: #990000">&amp;</span>
+                           dictRef<span style="color: #990000">=</span><span style="color: #FF0000">'siesta:systemname'</span><span style="color: #990000">)</span>
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddParameter</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> name<span style="color: #990000">=</span><span style="color: #FF0000">'Mesh Cut-off'</span><span style="color: #990000">,</span>                 <span style="color: #990000">&amp;</span>
+                           value<span style="color: #990000">=</span>cutoff<span style="color: #990000">,</span> units<span style="color: #990000">=</span><span style="color: #FF0000">'siestaUnits:Ry'</span><span style="color: #990000">,&amp;</span>
+                           dictRef<span style="color: #990000">=</span><span style="color: #FF0000">'siesta:cutoff'</span><span style="color: #990000">)</span>
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddParameter</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> name<span style="color: #990000">=</span><span style="color: #FF0000">'Energy Tolerance'</span><span style="color: #990000">,</span>             <span style="color: #990000">&amp;</span>
+                           value<span style="color: #990000">=</span>etol<span style="color: #990000">,</span> units<span style="color: #990000">=</span><span style="color: #FF0000">'siestaUnits:eV'</span><span style="color: #990000">,</span>  <span style="color: #990000">&amp;</span>
+                           dictRef<span style="color: #990000">=</span><span style="color: #FF0000">'siesta:etol'</span><span style="color: #990000">)</span>
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddParameter</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> name<span style="color: #990000">=</span><span style="color: #FF0000">'Use Pulay Mixing'</span><span style="color: #990000">,</span>             <span style="color: #990000">&amp;</span>
+                           value<span style="color: #990000">=</span>l_pulay<span style="color: #990000">,</span>                       <span style="color: #990000">&amp;</span>
+                           dictRef<span style="color: #990000">=</span><span style="color: #FF0000">'siesta:l_pulay'</span><span style="color: #990000">)</span>
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlEndParameterList</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">end</span></span> <span style="font-weight: bold"><span style="color: #0000FF">subroutine</span></span> outputParameters
+
+</tt></pre></div></div>
+<p>Things to note:</p>
+<ul>
+<li>
+<p>
+you can (optionally) name the parameter list (and have more
+  than one if you like, in order to categorize your parameters)
+</p>
+</li>
+<li>
+<p>
+the "value" of each parameter can be any Fortran datatype, and can equally
+  well be a scalar, array, or matrix.
+</p>
+</li>
+<li>
+<p>
+where the value is a numerical quantity, units are required. The string
+  used for units should be <tt>unitsPrefixGivenEarlier:nameOfUnit</tt>
+  The program will refuse to compile if no units are given.
+</p>
+</li>
+<li>
+<p>
+Each parameter should have a "dictRef". This will be of the form:
+  `prefixGivenEarlier:nameOfVariable". Golem needs this.
+</p>
+</li>
+</ul>
+<p>The CML that is output by the above is fairly verbose. For the sake of
+completeness, it is:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">&lt;parameterList</span></span> <span style="color: #009900">xmlns:myDict</span><span style="color: #990000">=</span><span style="color: #FF0000">"http://www.example.com/dict"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+  <span style="font-weight: bold"><span style="color: #0000FF">&lt;parameter</span></span> <span style="color: #009900">dictRef</span><span style="color: #990000">=</span><span style="color: #FF0000">"siesta:systemname"</span> <span style="color: #009900">name</span><span style="color: #990000">=</span><span style="color: #FF0000">"System Name"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+    <span style="font-weight: bold"><span style="color: #0000FF">&lt;scalar</span></span> <span style="color: #009900">dataType</span><span style="color: #990000">=</span><span style="color: #FF0000">"xsd:string"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>1,3,5-trichloro-dibenzofuran<span style="font-weight: bold"><span style="color: #0000FF">&lt;/scalar&gt;</span></span>
+  <span style="font-weight: bold"><span style="color: #0000FF">&lt;/parameter&gt;</span></span>
+  <span style="font-weight: bold"><span style="color: #0000FF">&lt;parameter</span></span> <span style="color: #009900">dictRef</span><span style="color: #990000">=</span><span style="color: #FF0000">"siesta:cutoff"</span> <span style="color: #009900">name</span><span style="color: #990000">=</span><span style="color: #FF0000">"Mesh Cut-off"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+    <span style="font-weight: bold"><span style="color: #0000FF">&lt;scalar</span></span> <span style="color: #009900">dataType</span><span style="color: #990000">=</span><span style="color: #FF0000">"xsd:integer"</span> <span style="color: #009900">units</span><span style="color: #990000">=</span><span style="color: #FF0000">"siestaUnits:Ry"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>150<span style="font-weight: bold"><span style="color: #0000FF">&lt;/scalar&gt;</span></span>
+  <span style="font-weight: bold"><span style="color: #0000FF">&lt;/parameter&gt;</span></span>
+  <span style="font-weight: bold"><span style="color: #0000FF">&lt;parameter</span></span> <span style="color: #009900">dictRef</span><span style="color: #990000">=</span><span style="color: #FF0000">"siesta:etol"</span> <span style="color: #009900">name</span><span style="color: #990000">=</span><span style="color: #FF0000">"Energy Tolerance"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+    <span style="font-weight: bold"><span style="color: #0000FF">&lt;scalar</span></span> <span style="color: #009900">dataType</span><span style="color: #990000">=</span><span style="color: #FF0000">"fpx:real"</span> <span style="color: #009900">units</span><span style="color: #990000">=</span><span style="color: #FF0000">"siestaUnits:eV"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>3.50000e0<span style="font-weight: bold"><span style="color: #0000FF">&lt;/scalar&gt;</span></span>
+  <span style="font-weight: bold"><span style="color: #0000FF">&lt;/parameter&gt;</span></span>
+  <span style="font-weight: bold"><span style="color: #0000FF">&lt;parameter</span></span> <span style="color: #009900">dictRef</span><span style="color: #990000">=</span><span style="color: #FF0000">"siesta:l_pulay"</span> <span style="color: #009900">name</span><span style="color: #990000">=</span><span style="color: #FF0000">"Use Pulay Mixing"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+    <span style="font-weight: bold"><span style="color: #0000FF">&lt;scalar</span></span> <span style="color: #009900">dataType</span><span style="color: #990000">=</span><span style="color: #FF0000">"xsd:boolean"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>true<span style="font-weight: bold"><span style="color: #0000FF">&lt;/scalar&gt;</span></span>
+  <span style="font-weight: bold"><span style="color: #0000FF">&lt;/parameter&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;/parameterList&gt;</span></span>
+
+</tt></pre></div></div>
+<hr />
+<h3>Properties</h3>
+<p>You will also want to output the values of calculated properties. This is done
+in a manner very similar to input parameters:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>
+<span style="font-weight: bold"><span style="color: #0000FF">subroutine</span></span> <span style="font-weight: bold"><span style="color: #000000">outputProperties</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> <span style="color: #990000">...)</span>
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlStartPropertyList</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> title<span style="color: #990000">=</span><span style="color: #FF0000">"Forces"</span><span style="color: #990000">)</span>
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddProperty</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> value<span style="color: #990000">=</span>fa<span style="color: #990000">,</span>                   <span style="color: #990000">&amp;</span>
+    dictref<span style="color: #990000">=</span><span style="color: #FF0000">'siesta:forces'</span><span style="color: #990000">,</span> units<span style="color: #990000">=</span><span style="color: #FF0000">'siestaUnits:evpa'</span><span style="color: #990000">)</span>
+<span style="color: #990000">!</span> fa is a 3xn matrix of all forces
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddProperty</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> value<span style="color: #990000">=</span>ftot<span style="color: #990000">,</span>                 <span style="color: #990000">&amp;</span>
+    dictref<span style="color: #990000">=</span><span style="color: #FF0000">'siesta:ftot'</span><span style="color: #990000">,</span> units<span style="color: #990000">=</span><span style="color: #FF0000">'siestaUnits:evpa'</span><span style="color: #990000">)</span>
+<span style="color: #990000">!</span> ftot is a length<span style="color: #990000">-</span>n array of the total force on each atom
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddProperty</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> value<span style="color: #990000">=</span>fmax<span style="color: #990000">,</span>                 <span style="color: #990000">&amp;</span>
+    dictref<span style="color: #990000">=</span><span style="color: #FF0000">'siesta:fmax'</span><span style="color: #990000">,</span> units<span style="color: #990000">=</span><span style="color: #FF0000">'siestaUnits:evpa'</span><span style="color: #990000">)</span>
+<span style="color: #990000">!</span> fmax is a scalar<span style="color: #990000">,</span> the maximum force on any one atom<span style="color: #990000">.</span>
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddProperty</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> value<span style="color: #990000">=</span>fres<span style="color: #990000">,</span>                 <span style="color: #990000">&amp;</span>
+    dictref<span style="color: #990000">=</span><span style="color: #FF0000">'siesta:fres'</span><span style="color: #990000">,</span> units<span style="color: #990000">=</span><span style="color: #FF0000">'siestaUnits:evpa'</span><span style="color: #990000">)</span>
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddProperty</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> value<span style="color: #990000">=</span>cfmax<span style="color: #990000">,</span>                <span style="color: #990000">&amp;</span>
+    dictref<span style="color: #990000">=</span><span style="color: #FF0000">'siesta:cfmax'</span><span style="color: #990000">,</span> units<span style="color: #990000">=</span><span style="color: #FF0000">'siestaUnits:evpa'</span><span style="color: #990000">)</span>
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlEndPropertyList</span></span><span style="color: #990000">(</span>mainXML<span style="color: #990000">)</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">end</span></span> <span style="font-weight: bold"><span style="color: #0000FF">subroutine</span></span> outputProperties
+
+</tt></pre></div></div>
+<p>These work exactly the same, and the XML output will be similar, only it
+will have &lt;property&gt; tags not &lt;parameter&gt;</p>
+<p>Again:</p>
+<ul>
+<li>
+<p>
+propertyLists can be named.
+</p>
+</li>
+<li>
+<p>
+the "value" argument can be any Fortran datatype.
+</p>
+</li>
+<li>
+<p>
+numerical datatypes require units.
+</p>
+</li>
+<li>
+<p>
+dictRefs on every property.
+</p>
+</li>
+</ul>
+<hr />
+<h3>Atomic structures.</h3>
+<p>You will also want to output atomic structures occasionally. This is
+done with the cmlAddMolecule call.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">In CMLComp, a "molecule" represents nothing more than a collection
+of atoms and their 3D coords. There is no connotation that it must represent
+a chemically-meaningful structure, it may be a configuration of atoms
+halfway through a simulation.)</td>
+</tr></table>
+</div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddMolecule</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> <span style="color: #990000">&lt;</span>coordinates<span style="color: #990000">&gt;,</span> elements<span style="color: #990000">=</span>elem<span style="color: #990000">)</span>
+</tt></pre></div></div>
+<p>&lt;coordinates&gt; can be specified in two ways:</p>
+<ol>
+<li>
+<p>
+A single matrix
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddMolecule</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> coords<span style="color: #990000">=</span>xyz<span style="color: #990000">,</span> elements<span style="color: #990000">=</span>elem<span style="color: #990000">)</span>
+</tt></pre></div></div>
+<p>where the <tt>coords=</tt> argument is a <tt>3xn</tt> matrix of reals or double precisions.</p>
+</li>
+<li>
+<p>
+Three arrays
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddMolecule</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> x<span style="color: #990000">=</span>xarray<span style="color: #990000">,</span> y<span style="color: #990000">=</span>yarray<span style="color: #990000">,</span> z<span style="color: #990000">=</span>zarray<span style="color: #990000">,</span> elements<span style="color: #990000">=</span>elem<span style="color: #990000">)</span>
+</tt></pre></div></div>
+<p>where each of <tt>x</tt>, <tt>y</tt>, and <tt>z</tt> are length-<tt>n</tt> arrays of reals or double precisions.</p>
+</li>
+</ol>
+<p>In each case, <tt>elements=</tt> must be a length-<tt>n</tt> array of strings, representing
+the element names.</p>
+<p>Note that by default, the coordinates are assumed to be Cartesian, and given
+in Angstrom.</p>
+<p>If they are in different units, this can be specified with an optional <tt>units=</tt>
+argument. If they are fractional rather than Cartesian, this can be specified
+with <tt>style=xfrac</tt>.</p>
+<hr />
+<h3>Lattices or crystals</h3>
+<p>You <strong>may</strong> want to sometimes output a lattice/crystal information. For simulation
+programs this is most often done to represent the size and shape of the box
+representing the periodic boundary conditions. If your simulation works without
+explicit boundary conditions, you may not be interested in representing this.</p>
+<p>If you need it, you can specify the box either with traditional crystal parameters,
+(a, b, c, alpha, beta, gamma), or as a set of lattice vectors.</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddCrystal</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> a<span style="color: #990000">,</span> b<span style="color: #990000">,</span> c<span style="color: #990000">,</span> alpha<span style="color: #990000">,</span> beta<span style="color: #990000">,</span> gamma<span style="color: #990000">)</span>
+</tt></pre></div></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddLattice</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> cell<span style="color: #990000">)</span>
+</tt></pre></div></div>
+<p>For AddLattice, the <tt>cell</tt> is the <tt>3x3</tt> matrix representing the lattice vectors.</p>
+<p>The default units in both cases are Angstrom for length, and degrees for angles.
+A <tt>units=</tt> argument can be specified if this needs to be changed.</p>
+<hr />
+<h3>Eigenstuff</h3>
+<p>The markup for eigen-information described is initially aimed only at solid-state simulation; and thus focusses on electronic or phononic structure, calculate by k(q)-point.</p>
+<p>Eigen information is expected to be found within a kpointList, containing multiple kpoints.</p>
+<p>Each kpoint carries attributes describing the reciprocal-space coordinates of that kpoint, and its weight. Any information on eigenvalues will be found within the relevant kpoint section.</p>
+<p>The simplest case is where you are really only interested in recording
+the existence of the kpoint, and you are not interested in any
+properties it has. In this case, the Fortran below is all that is
+required.</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlStartKpointList</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+<span style="color: #990000">!</span> start the kpoint<span style="color: #990000">/</span>eigen information
+
+<span style="font-weight: bold"><span style="color: #0000FF">do</span></span> i <span style="color: #990000">=</span> <span style="color: #993399">1</span><span style="color: #990000">,</span> n_kpoints
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddKpoint</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> coords<span style="color: #990000">=</span><span style="font-weight: bold"><span style="color: #000000">kpt</span></span><span style="color: #990000">(:,</span>i<span style="color: #990000">))</span>
+enddo
+
+<span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlEndKpointList</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+</tt></pre></div></div>
+<p>The second common case is where you want to output, for each kpoint, a list of anonymous eigenvalues (<em>i.e.</em> there are no labels for the bands).</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlStartKpointList</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+<span style="color: #990000">!</span> start the kpoint<span style="color: #990000">/</span>eigen information
+
+<span style="font-weight: bold"><span style="color: #0000FF">do</span></span> i <span style="color: #990000">=</span> <span style="color: #993399">1</span><span style="color: #990000">,</span> n_kpoints
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlStartKpoint</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> coords<span style="color: #990000">=</span><span style="font-weight: bold"><span style="color: #000000">kpt</span></span><span style="color: #990000">(:,</span>i<span style="color: #990000">))</span>
+  <span style="color: #990000">!</span> start the information relating <span style="font-weight: bold"><span style="color: #0000FF">to</span></span> this kpoint
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddBandList</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> values<span style="color: #990000">=</span><span style="font-weight: bold"><span style="color: #000000">eigenvalues</span></span><span style="color: #990000">(:,</span>i<span style="color: #990000">),</span> spin<span style="color: #990000">=</span><span style="color: #FF0000">"up"</span><span style="color: #990000">)</span>
+  <span style="color: #990000">!</span> output a list of the eigenvalues for all bands
+  <span style="color: #990000">!</span> which optionally may have a spin
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlEndKpoint</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+enddo
+
+<span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlEndKpointList</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+</tt></pre></div></div>
+<p>Thirdly, when you don't want to output all of the eigenvectors, but you
+do want to output the eigenvalues for each band in each kpoint, possibly labelled by band, and with optional accompanying information.</p>
+<p>In this case, something like the following sequence of calls is necessary:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlStartKpointList</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+<span style="color: #990000">!</span> start the kpoint<span style="color: #990000">/</span>eigen information
+
+<span style="font-weight: bold"><span style="color: #0000FF">do</span></span> i <span style="color: #990000">=</span> <span style="color: #993399">1</span><span style="color: #990000">,</span> n_kpoints
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlStartKpoint</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> coords<span style="color: #990000">=</span><span style="font-weight: bold"><span style="color: #000000">kpt</span></span><span style="color: #990000">(:,</span>i<span style="color: #990000">))</span>
+  <span style="color: #990000">!</span> start the information relating <span style="font-weight: bold"><span style="color: #0000FF">to</span></span> this kpoint
+  <span style="font-weight: bold"><span style="color: #0000FF">do</span></span> j <span style="color: #990000">=</span> <span style="color: #993399">1</span><span style="color: #990000">,</span> n_nbands
+    <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlStartBand</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #000000">label</span></span><span style="color: #990000">(</span>j<span style="color: #990000">),</span> spin<span style="color: #990000">)</span>
+    <span style="color: #990000">!</span> start the information relating <span style="font-weight: bold"><span style="color: #0000FF">to</span></span> the this band<span style="color: #990000">,</span>
+    <span style="color: #990000">!</span> which optionally may have a spin
+    <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddEigenValue</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #000000">eigval</span></span><span style="color: #990000">(</span>j<span style="color: #990000">),</span> units<span style="color: #990000">)</span>
+    <span style="color: #990000">!</span> Output the eigenvalue for this band
+    <span style="color: #990000">!</span> Perhaps add more information
+    <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlEndBand</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+  enddo
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlEndKpoint</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+enddo
+
+<span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlEndKpointList</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+</tt></pre></div></div>
+<p>Finally, in the case where maximal information is to be output (usually for phonon calculations, then both the eigenvalue, and the full eigenvector need to be stored for each band, at each kpoint. the following series of calls should be made:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlStartKpointList</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+<span style="color: #990000">!</span> start the kpoint<span style="color: #990000">/</span>eigen information
+
+<span style="font-weight: bold"><span style="color: #0000FF">do</span></span> i <span style="color: #990000">=</span> <span style="color: #993399">1</span><span style="color: #990000">,</span> n_kpoints
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlStartKpoint</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> coords<span style="color: #990000">=</span><span style="font-weight: bold"><span style="color: #000000">kpt</span></span><span style="color: #990000">(:,</span>i<span style="color: #990000">))</span>
+  <span style="color: #990000">!</span> start the information relating <span style="font-weight: bold"><span style="color: #0000FF">to</span></span> this kpoint
+  <span style="color: #990000">!</span> <span style="color: #990000">(</span>kpt is a <span style="color: #993399">3</span><span style="font-style: italic"><span style="color: #9A1900">*n_kpoints real matrix)</span></span>
+
+  <span style="font-weight: bold"><span style="color: #0000FF">do</span></span> j <span style="color: #990000">=</span> <span style="color: #993399">1</span><span style="color: #990000">,</span> n_bands
+    <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlStartBand</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #000000">label</span></span><span style="color: #990000">(</span>j<span style="color: #990000">),</span> spin<span style="color: #990000">)</span>
+    <span style="color: #990000">!</span> start the information relating <span style="font-weight: bold"><span style="color: #0000FF">to</span></span> the first band<span style="color: #990000">,</span>
+    <span style="color: #990000">!</span> which optionally may have a spin
+    <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddEigenValueVector</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #000000">eigval</span></span><span style="color: #990000">(</span>j<span style="color: #990000">),</span> <span style="font-weight: bold"><span style="color: #000000">eigvec</span></span><span style="color: #990000">(:,:,</span>j<span style="color: #990000">),</span> units<span style="color: #990000">)</span>
+    <span style="color: #990000">!</span> Output all the <span style="font-weight: bold"><span style="color: #0000FF">data</span></span> on this eigenenergy <span style="color: #990000">-</span> its <span style="font-weight: bold"><span style="color: #000000">value </span></span><span style="color: #990000">(</span>and units<span style="color: #990000">),</span> and its associated <span style="font-weight: bold"><span style="color: #000000">eigenvector </span></span><span style="color: #990000">(</span>a <span style="color: #993399">3</span><span style="font-style: italic"><span style="color: #9A1900">*N size real or complex matrix)</span></span>
+    <span style="color: #990000">!</span> Optionally<span style="color: #990000">,</span> output any further information relevant <span style="font-weight: bold"><span style="color: #0000FF">to</span></span> this band at this kpoint
+    <span style="color: #990000">!</span> eg IR frequencies at the gamma point<span style="color: #990000">.</span>
+    <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlEndBand</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+    <span style="color: #990000">!</span> Optionally<span style="color: #990000">,</span> output the other spin of this band
+  enddo
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlEndKpoint</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+enddo
+
+<span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlEndKpointList</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+</tt></pre></div></div>
+<hr />
+<h3>Symmetry</h3>
+<p>To encode information about the symmetry of your system, there is a <tt>cmlAddSymmetry</tt> call. This can be used at two levels of detail.</p>
+<p>Firstly, encoding just the point group or spacegroup of your system:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddSymmetry</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> spaceGroup<span style="color: #990000">=</span><span style="color: #FF0000">"P -4 21 m"</span><span style="color: #990000">)</span>
+<span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddSymmetry</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> pointGroup<span style="color: #990000">=</span><span style="color: #FF0000">"C2v"</span><span style="color: #990000">)</span>
+</tt></pre></div></div>
+<p>By convention, all space groups are assumed to be in Hermann-Mauguin notation,
+and all point groups in Schoenflies notation. (using the standard translation
+to ASCII in both cases).</p>
+<p>Sometimes you may also want to encode all the symmetry operators explicitly. In this case, the <tt>cmlAddSymmetry</tt> calls require the matrices for the symmetry operations (and symmetry displacements for space groups). Symmetry operations must be supplied as a rank-3 array, of <strong>n</strong> (3x3) matrices (ie a 3x3xn array), and symmetry displacements must be supplied as a rank-2 array of <strong>n</strong> length-3 vectors (ie a 3xn array).</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddSymmetry</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> sym_ops<span style="color: #990000">=</span>symopMatrices<span style="color: #990000">,</span> sym_disps<span style="color: #990000">=</span>symDispArrays<span style="color: #990000">)</span>
+</tt></pre></div></div>
+<p>Of course, these can be combined, and you can write out both symmetry group symbol, and full symmetry operations.</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlAddSymmetry</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> pointGroup<span style="color: #990000">=</span><span style="color: #FF0000">"C2v"</span><span style="color: #990000">,</span> sym_ops<span style="color: #990000">=</span>symopMatrices<span style="color: #990000">)</span>
+</tt></pre></div></div>
+<hr />
+<h3>Structuring your output file.</h3>
+<p>In the very simplest case, a simulation output file can simply
+involve:</p>
+<ul>
+<li>
+<p>
+metadata
+</p>
+</li>
+<li>
+<p>
+input parameters
+</p>
+</li>
+<li>
+<p>
+output properties
+</p>
+</li>
+</ul>
+<p>However, it is often more useful to include information about the progress of
+the simulation (so you can, for example, follow the progress of the total energy
+towards convergence in a CG calculation; or watch the variation in temperature
+in an MD calculation.</p>
+<p>If you are outputting atomic structures, it's also useful to distinguish initial
+structures from final structures. (and mere order in the output file is not a useful
+way to do this in XML.)</p>
+<p>To accomplish this, we have <tt>modules</tt> and <tt>steps</tt>. Steps divide up the output sequentially.</p>
+<p>So, at the beginning of every step, you do</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlStartStep</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> index<span style="color: #990000">=</span>i<span style="color: #990000">)</span>
+</tt></pre></div></div>
+<p>where <tt>i</tt> is the index of the step.</p>
+<p>And at the end of that step, you do:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlEndStep</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+</tt></pre></div></div>
+<p>Any properties or structures you output in the middle of a step will then automatically be
+marked up as being part of that step.</p>
+<p>Furthermore, you can specifically mark up initial and final sets of structures, or properties, etc.,
+by using a <tt>module</tt>. So, at the end of your simulation, you should do:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>
+<span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlStartModule</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">,</span> title<span style="color: #990000">=</span><span style="color: #FF0000">"Finalization"</span><span style="color: #990000">)</span>
+
+<span style="color: #990000">!</span> output lots of properties<span style="color: #990000">,</span> a final structure<span style="color: #990000">,</span> anything <span style="font-weight: bold"><span style="color: #0000FF">else</span></span><span style="color: #990000">,</span> etc<span style="color: #990000">.</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">cmlEndModule</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+</tt></pre></div></div>
+<p>You can also mark up your initial structure by wrapping it in a module with a title of <tt>Initial System</tt>.</p>
+<hr />
+</div>
+<h2>Overall document structure</h2>
+<div class="sectionbody">
+<p>You can then end up with a full document structure that looks something like:</p>
+<ul>
+<li>
+<p>
+metadata
+</p>
+</li>
+<li>
+<p>
+parameters
+</p>
+</li>
+<li>
+<p>
+initial system (containing a structure)
+</p>
+</li>
+<li>
+<p>
+step by step property output
+</p>
+</li>
+<li>
+<p>
+final system (containing a structure and any final properties.
+</p>
+</li>
+</ul>
+<hr />
+<p>But even if you don't get this far, and you only mark up metadata/parameters/properties,
+then Golem can still make use of your output.</p>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 05-Mar-2008 14:44:14 BST
+</div>
+</div>
+</body>
+</html>

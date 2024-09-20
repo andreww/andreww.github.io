@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Fortran XML - School of Earth and Environment, University of Leeds</title>
+    <link rel="stylesheet" type="text/css" href="../style/style.css"/>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26635164-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="column">
+      <div id="intro">
+        <div id="pageHeader">
+          <h1>FoX</h1>
+        </div>
+      </div>
+      <div class="supportingText">
+        <div class="explanation">
+	<h2>A Fortran library for XML</h2>
+	
+        <p>FoX is an <a href='http://www.w3.org/XML/'>XML</a> 
+library <a href='./why.html'>written in Fortran 95</a>. It allows software 
+developers to read, write and modify XML documents from Fortran applications
+without the complications of dealing with multi-language development. FoX 
+can be <a href='DoX/Licensing.html'>freely redistributed</a> as part of 
+open source and commercial software packages.</p>
+
+	<p>The developer is offered three principle APIs which are accessed 
+as Fortran modules. <a href='DoX/FoX_wxml.html'>FoX_wxml</a> is an XML writer
+used to sequentially create arbitrary XML documents quickly with minimal
+memory requirements. Character escaping is handled within the library and the
+well-formedness constraints are enforced. <a href='DoX/FoX_sax.html'>FoX_sax</a>
+is a streaming, validating parser based on java&apos;s <a href='http://www.saxproject.org/'>
+Simple API for XML</a>. Arbitrary XML documents 
+can be read by registering callbacks on events such as the start of a new tag 
+or of character data. This approach is fast and needs little memory (even for 
+large documents) but can be difficult to use for complex documents. The third module, 
+<a href='DoX/FoX_dom.html'>FoX_dom</a>, offers a full implementation of the 
+<a href='http://www.w3.org/DOM/'>W3C document object model</a>. An in-memory tree 
+structure representing the XML document is created by parsing an existing document 
+or creating and appending nodes to a new tree. This data structure can be modified 
+and (re)serialized to disk. Two additional modules are available that ease the creation
+ of XML documents in specific domains. <a href='DoX/FoX_wcml.html'>FoX_wcml</a> allows the 
+creation of documents in a subset of the <a href='http://cml.sourceforge.net/'>Chemical 
+Markup Language</a> suitable for computational chemistry and condensed matter physics. 
+<a href='DoX/FoX_wkml.html'>FoX_wkml</a> allows the creation of 
+<a href='http://code.google.com/apis/kml/documentation/'>KML</a> documents used by
+applications such as Google Earth. Further information needed to use and obtain FoX 
+is available here and elsewhere: </p>
+
+	<ul>
+	<li><a href='DoX/'>Full API documentation</a></li>
+	<li><a href='source/'>Source files</a></li>
+        <li><a href="http://www.surveymonkey.com/s/GFZQ6P6">FoX user survey</a></li>
+	<li><a href='http://github.com/andreww/fox'>Source control system</a> and 
+<a href='http://github.com/andreww/fox/issues'>bug tracker</a></li>
+	<li>Documents from two workshops held in <a href='http://buffalo.niees.group.cam.ac.uk/archive2.php?event_details=ifax'>Cambridge</a> and <a href=' http://www.nesc.ac.uk/action/esi/contribution.cfm?Title=841'>Edinburgh</a></li>
+        <li>Local <a href='iFaX'>copies</a> of the <a href='iFaX/iFaX.4/iFaX.4.html'>sax</a> and <a href='iFaX/iFaX.5/iFaX.5.html'>dom</a> exercises developed for the two workshops</li>
+	<li><a href='http://groups.google.com/group/fox-discuss?hl=en'>FoX-discuss</a> list on Google Groups </li>
+        <li>A <a href='./WCML_tutorial.html'>tutorial</a> on using FoX to produce CML from atomistic simulation codes</li>
+	</ul>
+
+ 
+	<p>FoX is largely the result of work by <a href='http://eaddrinu.se/'>Toby White</a>
+during the <a href='http://www.eminerals.org/'>eMinerals project</a>. Toby is now platform 
+lead at <a href='http://timetric.com/'>Timetric</a> and FoX is currently maintained by 
+<a href='http://www1.gly.bris.ac.uk/~walker/'>Andrew Walker</a> (Bristol Earth Sciences).
+The code was developed from earlier work by <a href='http://www.icmab.es/dmmis/leem/alberto/'>
+Alberto Garcia</a> and <a href='http://www.phy.bris.ac.uk/people/wakelin_j/'>Jon Wakelin</a>.
+Much of the FoX_wkml module was written by 
+<a href='http://www.esc.cam.ac.uk/people/research-students/gen-tao-chiang'>Gen-Tao 
+Chiang</a> (Cambridge Earth Sciences).</p>	
+
+<!--
+  <p>
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="http://www.w3.org/Icons/valid-xhtml10"
+        alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+  </p>
+  <p>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+            alt="Valid CSS!" />
+    </a>
+   </p>
+-->
+
+
+    </div>
+    </div>
+    </div>
+    </div>
+
+  </body>
+</html>
+

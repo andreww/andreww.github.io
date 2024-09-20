@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Software - Andrew Walker - School of Earth and Environment, University of Leeds</title>
+    <link rel="stylesheet" type="text/css" href="../style/style.css"/>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26635164-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="column">
+      <div id="navbar">
+      <a href="../index.html">Home</a> | <a href="../projects.html">Projects</a> | <a href="../pubs/">Publications</a> | Software | <a href="../talks/">Presentations</a> | <a href="../atsc.html">ATSC</a> |  <a href="http://www.see.leeds.ac.uk/people/a.walker">University website</a>
+      </div>
+      <div id="intro">
+        <div id="pageHeader">
+          <h1>Software</h1>
+        </div>
+      </div>
+      <div class="supportingText">
+        <div class="explanation">
+        <p><a href="..">I</a> have been involved in the development and modification 
+        of several significant pieces of software. These include: </p>
+
+        <h2>MSAT - The MATLAB Seismic Anisotropy Toolkit</h2>
+        <p><a href='http://www1.gly.bris.ac.uk/MSAT'>MSAT</a> provides a set of Matlab 
+        functions for handling, analysing and visualising elastic tensors. This software
+        currently has alpha release status and is freely redistributable for both 
+        commercial and non-commercial use. Source, documentation and further 
+        information is available from
+        <a href='http://www1.gly.bris.ac.uk/MSAT'>www1.gly.bris.ac.uk/MSAT</a>.</p>
+        <div class="figure">
+           <img class="figure" src="MSAT.png" width="550" height="222" alt="MSAT example"/>
+           <div class="caption">
+             <p>Example of <a href="http://www1.gly.bris.ac.uk/MSAT/">MSAT</a> output. Predicted 
+             shear wave splitting through post-perovskite to perovskite phase transition 
+             (see <a href='http://dx.doi.org/10.1038/NGEO1844'>Dobson et al. 2013, Nature 
+             Geoscience</a> [<a href='http://eprints.whiterose.ac.uk/77809/'>ePrint</a>] for 
+             details). Red regions show directions 
+             in which splitting is smallest, and blue largest.  The black ticks show the 
+             orientation of the fast shear wave, S<sub>1</sub>.</p>
+           </div>
+        </div>
+
+        <h2>A Fortran library for XML</h2>
+        <p><a href='../FoX/'>FoX</a> is an XML library written in Fortran 95. It allows 
+        software developers to read, write and modify XML documents 
+        from Fortran applications without the complications of dealing 
+        with multi-language development. FoX can be freely redistributed 
+        as part of open source and commercial software packages.</p>
+
+        <h2>SpecFEM 3D globe dCSE project</h2>
+        <p>I am involved in a project (with Andy Nowaki and James Wookey) to
+        improve our ability to simulate seismic wave propagation through
+        generally anisotropic and heterogeneous models of the Earth taking
+        advantage of the tremendous capability of the <a href="http://www.hector.ac.uk/">HECToR</a> supercomputer
+        facility. This work is being undertaken as part of the 
+        <a href="http://www.hector.ac.uk/cse/distributedcse/">dCSE support program</a>.
+        We intend that out improvements will be merged back into
+        the main SpecFEM code base so that others can take advantage of them.
+        Further information, updates, and contact information can be found 
+        <a href='http://www1.gly.bris.ac.uk/CoMITAC/software.htm#SPECFEM'>here</a>.</p>
+
+        <div class="figure" style="width: 560px; height: 355px; margin: 0 auto;">
+            <iframe width="560" height="315" src="http://www.youtube.com/embed/IoUBvvBbdXw" 
+            frameborder="0"></iframe>
+            <div class="caption"><p>Waves travelling away from an event, as calculated 
+                using SPECFEM3D_GLOBE.</p></div>
+        </div>
+
+        <h2>Calculating elastic constants from the atomic scale</h2>
+        <p>Building on the work of Dan Wilson and the <a href='http://www.materialsgrid.org/'>Materials Grid</a> project, I
+        have created a pair of Python applications that can be used to
+        calculate elastic constants using the <a href='http://www.castep.org'>CASTEP</a> code. Results for
+        monoclinic jadeite and diopside have been published 
+        (<a href='http://dx.doi.org/10.1016/j.pepi.2011.10.002'>doi:10.1016/j.pepi.2011.10.002</a>) 
+        and the code can be obtained online from my <a href='https://github.com/andreww/elastic-constants'>gitHub
+        repository</a>.</p>
+
+        <p> Note that, at present, the code is not well tested for all
+        symmetries nor is it well documented. It should be relatively easy to
+        extend the approach to work with any atomic scale simulation code that
+        will allow the calculation of the stress tensor of a strained unit
+        cell and my plan is to do this with GULP to enable comprehensive rapid
+        testing. Since version 8.0 a version of this code has been distributed
+        with CASTEP. An excercise using this software can be found 
+        <a href='http://www.castep.org/Tutorials/ElasticConstants'
+        >on the CASTEP website</a>. Please email me if you would like further 
+        infomation in the interim.</p>
+
+        <h2>Atomic scale simulation codes</h2>
+        <p>Much of my research involves the use of large applications 
+        that allow the simulation of minerals at the atomic scale. 
+        Sometimes I&apos;ve had to modify these applications, for example
+        by porting DL_Poly_3 to the Cray X2 machine, updating the way that 
+        GULP creates CML output and fixing MPI bugs in Siesta. All these 
+        changes have now been transmitted back to the application 
+        developers. Links to future patches will be posted here.</p>
+ 
+        <h2>Atomic scale simulations of dislocations</h2>
+        <p>One of the major aspects of my research has been the development
+        of methods to model the core of dislocations in mantle minerals at
+        the atomic scale. To allow this I have developed various pieces of
+        software which can be used to set up models to be used as GULP 
+        input and perform analysis of the results. These have now been 
+        made generally avalabe (licenced under the GPL). This software
+        can be downloded from my 
+        <a href='https://github.com/andreww/dislocator'>GitHub</a> 
+        repository. Currently, this is written in perl. Work to 
+        rewrite these tools in a language more sutible for computational 
+        science is planned.</p>
+        <div class="figure">
+           <img class="figure" src="MgO_screw.png" width="550" height="256" alt="Screw dislocation"></img>
+           <div class="caption">
+             <p>Model of a [100] screw dislocation in MgO. Atoms represented by large 
+             spheres are relaxed to an energy minimum using interatomic potentials,
+             while those represented by small spheres are embedded in an elastic
+             representation of the extended crystal. 
+             See Walker et al. <a href='http://dx.doi.org/10.1039/B505612H'>2005a</a>
+             and <a href='http://dx.doi.org/10.1039/B505716G'>2005b</a> for details.</p>
+           </div>
+        </div>
+ 
+        <h2>Other code</h2>
+        <p>Collaborators at Bristol can view other code fragments 
+        online using the group's 
+        <a href='http://www1.gly.bris.ac.uk/~walker/cgi-bin/univ/gitweb.cgi'>Git Web instance.</a></p>
+    </div>
+    </div>
+    </div>
+<!--  <p>
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="http://www.w3.org/Icons/valid-xhtml10"
+        alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+</p> -->
+    </div>
+
+  </body>
+
+</html>
+

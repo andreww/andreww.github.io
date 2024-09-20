@@ -1,0 +1,861 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.2.1" />
+<style type="text/css">
+/* Debug borders */
+p, li, dt, dd, div, pre, h1, h2, h3, h4, h5, h6 {
+/*
+  border: 1px solid red;
+*/
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+tt {
+  color: navy;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  font-family: sans-serif;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  border-bottom: 2px solid silver;
+  padding-top: 0.5em;
+}
+
+div.sectionbody {
+  font-family: serif;
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+span#author {
+  color: #527bbd;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+span#email {
+}
+span#revision {
+  font-family: sans-serif;
+}
+
+div#footer {
+  font-family: sans-serif;
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+div#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+div#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+div#preamble,
+div.tableblock, div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-right: 10%;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid silver;
+  padding: 0.5em;
+}
+
+div.listingblock {
+  margin-right: 0%;
+}
+div.listingblock > div.content {
+  border: 1px solid silver;
+  background: #f4f4f4;
+  padding: 0.5em;
+}
+
+div.quoteblock > div.content {
+  padding-left: 2.0em;
+}
+
+div.attribution {
+  text-align: right;
+}
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 2px solid silver;
+}
+
+div.exampleblock > div.content {
+  border-left: 2px solid silver;
+  padding: 0.5em;
+}
+
+div.verseblock div.content {
+  white-space: pre;
+}
+
+div.imageblock div.content { padding-left: 0; }
+div.imageblock img { border: 1px solid silver; }
+span.image img { border-style: none; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: italic;
+}
+dd > *:first-child {
+  margin-top: 0;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.olist2 {
+  list-style-type: lower-alpha;
+}
+
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+tfoot {
+  font-weight: bold;
+}
+
+div.hlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hlist td {
+  padding-bottom: 5px;
+}
+td.hlist1 {
+  vertical-align: top;
+  font-style: italic;
+  padding-right: 0.8em;
+}
+td.hlist2 {
+  vertical-align: top;
+}
+
+@media print {
+  div#footer-badges { display: none; }
+}
+
+div#toctitle {
+  color: #527bbd;
+  font-family: sans-serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+/* Workarounds for IE6's broken and incomplete CSS2. */
+
+div.sidebar-content {
+  background: #ffffee;
+  border: 1px solid silver;
+  padding: 0.5em;
+}
+div.sidebar-title, div.image-title {
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 0.0em;
+  margin-bottom: 0.5em;
+}
+
+div.listingblock div.content {
+  border: 1px solid silver;
+  background: #f4f4f4;
+  padding: 0.5em;
+}
+
+div.quoteblock-content {
+  padding-left: 2.0em;
+}
+
+div.exampleblock-content {
+  border-left: 2px solid silver;
+  padding-left: 0.5em;
+}
+
+/* IE6 sets dynamically generated links as visited. */
+div#toc a:visited { color: blue; }
+</style>
+<title>Practical 5: Reading XML data into a scientific application</title>
+</head>
+<body>
+<div id="header">
+<h1>Practical 5: Reading XML data into a scientific application</h1>
+<span id="author">Toby White</span><br />
+<span id="email"><tt>&lt;<a href="mailto:tow@uszla.me.uk">tow@uszla.me.uk</a>&gt;</tt></span><br />
+<span id="revision">version 2.0,</span>
+Jan 2008
+</div>
+<h2>Introduction</h2>
+<div class="sectionbody">
+<p>The last practical session showed you how to read XML data into Fortran using the SAX interface. As discussed, SAX is well suited to large but simply-structured documents - it is fast, and has minimal memory usage, but extracting information from moderately complex documents can quickly become tedious.</p>
+<p>Note how, for example, when provided with a piece of character data, you are not told where in the document it occurs, you must keep track of that yourself. There are also a number of gotchas that you have to be aware of; for example, the fact that one segment of character data may not all come in one chunk.</p>
+<p>For this reason, it is often worth using an alternative interface, called the DOM - the Document Object Model. This is slower, and much more memory-intensive - the whole document must be read into memory and held there for the duration of any interaction with it. This makes it very ill-suited to large documents. However, as long as the document fits in memory, then this is more than outweighed by the ease of data extraction.</p>
+<p>Recall the mapping of an XML document onto a tree-shaped structure that you were shown in other lecture. It is this tree that is presented to you by the DOM interface, along with a series of subroutines and functions for navigating and manipulating it.</p>
+<p>The DOM interface is a W3C standard (that is, it is designed and codified by the same people who standardized XML itself.) As such, it is independent of any programming language, and for most languages available to day there exists at least one, if not more, implementations of the DOM interface. For Fortran, however, FoX is the only available implementation.</p>
+<p>Because the DOM is a standard interface, there are a multitude of tutorials and examples of its use available on the web. Most of these are written in Javascript or Java - nevertheless, there is a direct mapping of the relevant DOM calls onto the FoX DOM, and you will see how to do this.</p>
+<p>This means that if you already have access to an algorithm for extracting information from an XML tree, expressed as DOM calls, you can immediately translate it to Fortran.</p>
+<p>The FoX DOM documentation is currently quite sparse, though it does provide a list of all the DOM functions and subroutines implemented. For fuller documentation, then <a href="http://www.w3schools.com/dom">w3schools</a> is a very good overview of the API.</p>
+<p>So - if you find this tutorial insufficient, or you wish to learn more, there is no shortage of further resources - please see the appendix for further information.</p>
+</div>
+<h2>Practical exercises</h2>
+<div class="sectionbody">
+<p>For these exercise, please see the directory <tt>Practical_5/</tt>, within which there are a number of directories, one for each exercise below. Each directory contains an example Fortran program for the exercise, and is set up with a Makefile so you can make the executable by simply typing <tt>make</tt> in each directory.</p>
+</div>
+<h2>Exercise 5-1: Parse a file.</h2>
+<div class="sectionbody">
+<p>Look at <tt>exercise_5_1.f90</tt>. This is the very simplest DOM program, which simply opens and then closes an XML file.</p>
+<p>This shows you:</p>
+<ul>
+<li>
+<p>
+the module you need to USE at the top.
+</p>
+</li>
+<li>
+<p>
+the declaration of the document object you need to make.
+</p>
+</li>
+<li>
+<p>
+how to retrieve the document object from a file
+</p>
+</li>
+<li>
+<p>
+how to clean up memory afterwards.
+</p>
+</li>
+</ul>
+<p>As you can see, you need to use a <tt>Node</tt> object, which is used to hold the document parse tree. You will use this <tt>Node</tt> object a lot in the DOM; nearly everything is represented as a <tt>Node</tt>.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">Node pointers</div>
+<p>You never use a <tt>Node</tt> object directly; only ever as a <tt>pointer</tt>. If you've never used pointers in Fortran or other languages, you don't need to worry too much about this. Just remember that you must <em>always</em> declare DOM objects as pointers - your programs will fail to work otherwise.</p>
+<p>In most cases, your programs will simply fail to compile if you haven't declared your objects as pointer. Remember to check declarations if you have troubles compiling.</p>
+<p>Try this - declare the <tt>doc</tt> variable as a normal variable, without it being a pointer. Notice the error message.</p>
+</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">Cleaning up memory</div>
+<p>As a result of the use of pointers, it is also necessary to explicitly tell FoX to clear up its memory once you're finished. If you don't, your program will still run correctly, but it will leak memory - that is, in a long-running program which opens lots of files, you will use more and more memory unnecessarily.</p>
+<p>Try commenting out the <tt>destroy()</tt> call. If you are using g95, you will see that lots of memory isn’t getting deallocated.</p>
+</td>
+</tr></table>
+</div>
+<p>The <tt>parseFile</tt> call opens the file and extracts all the XML information into memory, all before doing anything else in the program. This means that if the file doesn't exist, or is not correct XML, then your program will fail with an error immediately - try this and see.</p>
+<p>However, you can check whether the call succeeds, and carry on rather than failing. You do this in the same way as with a normal Fortran <tt>open()</tt> statement. There is an optional integer argument, <tt>iostat</tt>. If this is passed in, then <tt>iostat</tt> is set to a non-zero number if the file failed to open for any reason. Try editing the program so it does this</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>doc <span style="color: #990000">=&gt;</span> <span style="font-weight: bold"><span style="color: #000000">parseFile</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"output.xml"</span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">iostat</span></span><span style="color: #990000">=</span>i<span style="color: #990000">)</span>
+<span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">/=</span><span style="color: #993399">0</span><span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">then</span></span>
+  <span style="font-weight: bold"><span style="color: #0000FF">print</span></span><span style="color: #990000">*,</span> <span style="color: #FF0000">"Could not open XML file"</span>
+  <span style="font-style: italic"><span style="color: #9A1900">! call goAndDoSomethingElseInstead()</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">endif</span></span>
+</tt></pre></div></div>
+</div>
+<h2>Exercise 5-2: Explore the document object, and look at a node.</h2>
+<div class="sectionbody">
+<p>Look at <tt>exercise5-2.f90</tt>.</p>
+<p>In this program, we parse the file as before, and the parse tree is placed into the <tt>document</tt> variable, which is a <tt>Node</tt> pointer. In order to start getting information from this tree, we first get the root node. This is called the "document element" in DOM terminology (because it is the root element of the document), and, logically enough, we get it by calling the <tt>getDocumentElement</tt> function on the document node. The result (the <strong>document element</strong> itself) is stored in another <tt>Node</tt> pointer, called <tt>element</tt>.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">Pointer assignment</div>
+<p>When we use the <tt>getDocumentElement</tt> function, we use the following notation:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>elem <span style="color: #990000">=&gt;</span> <span style="font-weight: bold"><span style="color: #000000">getDocumentElement</span></span><span style="color: #990000">(</span>doc<span style="color: #990000">)</span>
+</tt></pre></div></div>
+<p>that is, with "<tt>=&gt;</tt>" instead of "<tt>=</tt>". This is called "pointer assignment". Whenever the <strong>Left Hand Side</strong> of an expression is a FoX pointer, you need to use pointer assignment instead of a normal equals sign.</p>
+<p>If you fail to do this, your program will crash.</p>
+</td>
+</tr></table>
+</div>
+<p>We then inspect this node by getting its name, and printing it out - and then doing the same for its namespaceURI and localname. Again, to do this you use the logically-named <tt>getNodeName</tt>, <tt>getNamespaceURI</tt>, and <tt>getLocalName</tt> functions.</p>
+<p>This is a theme throughout the FoX DOM API. In order to extract information about a DOM object, you use a function called <tt>getXXX</tt>, where <tt>XXX</tt> is the property you are interested in. For a full list of properties accessible in this way, see the FoX documentation.</p>
+</div>
+<h2>Exercise 5-3: Look at the attributes of a node.</h2>
+<div class="sectionbody">
+<p>Look at <tt>exercise 5-3.f90</tt>.</p>
+<p>Here we extract the root element again, and then look at its attributes. We do this in three different ways:</p>
+<ol>
+<li>
+<p>
+by simply asking directly (with <tt>getAttribute</tt>) for the value of a particular attribute. Note that when we ask for the value of a value of a non-existent attribute, we just get the empty string (so how would you distinguish between a non-existent attribute, and an attribute whose value is “” ?)
+</p>
+</li>
+<li>
+<p>
+by asking for an attribute (with <tt>getAttributeNode</tt>) of a given name, and querying the node we are given. Note that if we ask for a non-existent attribute, then we get a non-<tt>associated</tt> pointer back. This is how you can check if a given attribute is present or not.
+What happens if you try and get the value of the non-<tt>associated</tt> pointer? Try it and see, you will get a segfault.
+</p>
+</li>
+</ol>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">An attribute is a <tt>Node</tt>, just like an element or a document.</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="title">Advanced usage &#8230;</div>
+<p>The third way of accessing attribute values is by walking over the full list
+of attributes and inspecting them.
+We retrieve the attribute list (with the <tt>getAttributes</tt> function), find out how long it is (with the <tt>getLength</tt> function), and then loop over the list, extracting and inspecting each attribute in turn (with the <tt>item</tt> function). Each attribute node is then inspected by querying its <tt>Name</tt> and <tt>Value</tt> properties.</p>
+<p>When you retrieve the list of <tt>Node</tt>s, it is put into a type called the <tt>NamedNodeMap</tt>.</p>
+<p>Be aware, because the DOM interface was designed by Java/JS programmers, the loop has to go from a <tt>0</tt> index rather than the <tt>1</tt> index a Fortran programmer might expect.</p>
+</td>
+</tr></table>
+</div>
+<p>These three methods may be useful in different circumstances. Most often, the first will be what you want. If you need to distinguish between empty attributes and non-existent attributes, then the second method is best, while the last method is available in extremis if you are not sure what’s there, and you’re simply exploring.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">Despite the fact that we are now dealing with multiple node and nodelist pointers, we still only do one <tt>destroy()</tt> call to clear up memory. You should never try to <tt>destroy()</tt> any node other than the document node. To see, try <tt>destroy()</tt>ing the element node as well as the document node - you will see a segfault or a memory leak.</td>
+</tr></table>
+</div>
+</div>
+<h2>Exercise 5-4 Retrieving particular elements.</h2>
+<div class="sectionbody">
+<p>Look at <tt>exercise5-4.f90</tt>.</p>
+<p>This exercise shows you how to get at particular elements within a tree.</p>
+<p>We introduce a <tt>NodeList</tt> here. This is the third derived type you need to know about - while a <tt>NamedNodeMap</tt> holds a list of attributes attached to a particular node, a <tt>NodeList</tt> is just a catch-all list for a list of nodes.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">We are now using the <tt>hypoDD.kml</tt> file (created at the end of Practical 3) as the input file. As this is quite a large XML file, it might take a couple of seconds to parse - don't worry about this!</td>
+</tr></table>
+</div>
+<p>You will see in the program how you collect a list of relevant nodes from a document - you use the <tt>getElementsByTagName</tt> call, which returns to you the list of all elements with that name.</p>
+<p>You can retrieve the number of nodes in that list with <tt>getLength</tt>, and inspect each node in it with <tt>item</tt>.</p>
+<p>The first loop simply walks through the list of <tt>Placemark</tt> nodes, and prints out the name of each node. (Obviously, the name is simply <tt>"Placemark"</tt> each time.)</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">Again, as with the <tt>NamedNodeMap</tt> in the previous exercise, you must count from <tt>0</tt> to <tt>getLength()-1</tt> when extracting an <tt>item</tt> from the list.</td>
+</tr></table>
+</div>
+<p>Now, extend the program to find all the <tt>location</tt> elements in the document, and print out the values of their <tt>unique_id</tt> attributes.</p>
+<p>If you need to deal with namespaced XML data, there is a parallel call, <tt>getElementsByTagNameNS</tt>. Since this is a namespaced document, try searching for the same set of nodes, but specifying their namespaces. Make sure you get the same result.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">the syntax is <tt>getElementsByTagNameNS(document, namespaceURI, localName)</tt></td>
+</tr></table>
+</div>
+</div>
+<h2>Exercise 5-5 Finding nodes within nodes</h2>
+<div class="sectionbody">
+<p>Sometimes the information you require isn't an attribute of the node you've found, it's held as part of a child element.</p>
+<p>In <tt>exercise_5_5.f90</tt>, you can see how to retrieve such an element; in this case, the name of a placemark.</p>
+<p>Similarly to the previous exercise, we execute a <tt>getElementsByTagName</tt> query, this time extracting all the <tt>Placemark</tt> tags.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title"><tt>Placemark</tt>s in KML</div>
+<p>Recall that a <tt>Placemark</tt> in KML is described like so:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">&lt;Placemark&gt;</span></span>
+  <span style="font-weight: bold"><span style="color: #0000FF">&lt;description&gt;</span></span>Empire State Building<span style="font-weight: bold"><span style="color: #0000FF">&lt;/description&gt;</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;/Placemark&gt;</span></span>
+</tt></pre></div></div>
+</td>
+</tr></table>
+</div>
+<p>The program then walks across this list, looking at each placemark in turn (using the <tt>item</tt>) function. To extract the <tt>name</tt> child of this <tt>Placemark</tt>, we then execute another <tt>getElementsByTagName</tt> - but now we execute it relative to the current placemark, rather than the whole document. To do this, we pass in the node of interest as the first argument.</p>
+<p>This returns another <tt>NodeList</tt> - but in this case the nodelist only has one child, the single <tt>name</tt> child element of the current <tt>Placemark</tt>. We can select that element from the <tt>NodeList</tt> with the <tt>item</tt> call - and print out its name. (Again, of course, we know its name anyway.)</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">Chaining DOM calls together</div>
+<p>We can save a little bit of effort in this program by chaining DOM calls together. Since in this case we know there is only one node in the list, and we only care about that node rather than the list, we could replace:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>descriptionList <span style="color: #990000">=&gt;</span> <span style="font-weight: bold"><span style="color: #000000">getElementsByTagname</span></span><span style="color: #990000">(</span>placemark<span style="color: #990000">,</span> <span style="color: #FF0000">"description"</span><span style="color: #990000">)</span>
+description <span style="color: #990000">=&gt;</span> <span style="font-weight: bold"><span style="color: #000000">item</span></span><span style="color: #990000">(</span>descriptionList<span style="color: #990000">,</span> <span style="color: #993399">0</span><span style="color: #990000">)</span>
+</tt></pre></div></div>
+<p>with this:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>description <span style="color: #990000">=&gt;</span> <span style="font-weight: bold"><span style="color: #000000">item</span></span><span style="color: #990000">(</span> <span style="font-weight: bold"><span style="color: #000000">getElementsByTagname</span></span><span style="color: #990000">(</span>placemark<span style="color: #990000">,</span> <span style="color: #FF0000">"description"</span><span style="color: #990000">),</span> <span style="color: #993399">0</span><span style="color: #990000">)</span>
+</tt></pre></div></div>
+<p>and avoid the need for a <tt>NodeList</tt> variable.</p>
+</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">Error checking</div>
+<p>We didn't check that the <tt>NodeList</tt> actually contained a node before extracting it. How would we have checked it? What happens if you try and extract a node which isn't there (try searching for "prescription" instead of "description").</p>
+</td>
+</tr></table>
+</div>
+</div>
+<h2>Exercise 5-6  Retrieving text value of elements,</h2>
+<div class="sectionbody">
+<p>Look at <tt>exercise_5_6.f90</tt>.</p>
+<p>The previous exercises showed you how to to find particular elements within a document and look at their attributes. The final part of an XML document you might want to inspect is the text content.</p>
+<p>In this program, you can see how to extract the text content of an element. Unsurprisingly, you use the <tt>getTextContent</tt> call.</p>
+<p>It finds all the <tt>description</tt> elements within <tt>Placemark</tt>s, and prints out the contents.</p>
+<p>A useful thing about the <tt>getTextContent</tt> call is how it behaves when an element has tags as well as text inside it. Try changing the name of one of the <tt>description</tt> tags to include some HTML markup. (for example, you could do:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">&lt;description&gt;</span></span> This is <span style="font-weight: bold"><span style="color: #0000FF">&lt;i&gt;</span></span>my<span style="font-weight: bold"><span style="color: #0000FF">&lt;/i&gt;</span></span> house. <span style="font-weight: bold"><span style="color: #0000FF">&lt;/description&gt;</span></span>
+</tt></pre></div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">This is only for the purpose of this exercise; this would not be valid KML - KML requires you to include HTML in a different way.</td>
+</tr></table>
+</div>
+<p>What happens when you get the text content of such a <tt>description</tt>?</p>
+<p>You should find that the text content is simply <strong>all</strong> of the text within it, including inside any child elements.</p>
+<p><tt>getTextContent</tt> faithfully retrieves all of the text for you without removing any spaces. Occasionally this can be annoying. Try editing one of the <tt>description</tt> tags to include a newline:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">&lt;description&gt;</span></span> This is
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;i&gt;</span></span>my<span style="font-weight: bold"><span style="color: #0000FF">&lt;/i&gt;</span></span> house.
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;/description&gt;</span></span>
+</tt></pre></div></div>
+<p>You should get a rather confusing result on printing that out. This is because the newline character is being preserved, and printing out a newline character from Fortran can have odd, platform-dependent, consequences.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">If you manipulate the string in memory, it will be correct, but printing out will look strange. And a newline is very rarely what you are interested in; see the note at the end of exercise 5-7.</td>
+</tr></table>
+</div>
+</div>
+<h2>Exercise 5-7. Retrieving data from XML.</h2>
+<div class="sectionbody">
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">FoX extensions to the DOM</div>
+<p>Up until now, all of the functions you have used have been standard W3C DOM functions; that is, you have been programming to a standard, language-agnostic API.</p>
+<p>The disadvantage of such a standard API is that it avoids interacting with any potentially language-specific features - like data types, or arrays. So you can't extract numerical data using DOM calls (or rather, you can, but only in a very cumbersome fashion by reading strings as numbers and converting them yourselves.)</p>
+<p>However, FoX offers several functions which let you automatically extract data into a numerical variable.</p>
+</td>
+</tr></table>
+</div>
+<p>Look at <tt>exercise_5_7.f90</tt>.</p>
+<p>We are now dealing with data extraction, so we turn our attention to the quakeML parts of the file.</p>
+<p>We use two new functions here, <tt>extractDataContent</tt> and <tt>extractDataAttribute</tt>.</p>
+<ul>
+<li>
+<p>
+<tt>extractDataContent</tt> extracts data from the text content of an element (that is, it converts the result of <tt>getTextContent</tt> to an appropriate data type). It needs two arguments - the first is the node to extract data from, and the second is the variable into which to put your data.
+</p>
+</li>
+</ul>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">extractDataContent</span></span><span style="color: #990000">(</span>element<span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">data</span></span><span style="color: #990000">)</span>
+</tt></pre></div></div>
+<ul>
+<li>
+<p>
+<tt>extractDataAttribute</tt> extracts data from a named attribute of an element (that is, it converts the result of <tt>getAttribute</tt> to an appropriate data type). It takes three arguments; the first is the relevant element, the second is the name of the relevant attribute, and the third is the variable into which to put your data.
+</p>
+</li>
+</ul>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">extractDataAttribute</span></span><span style="color: #990000">(</span>element<span style="color: #990000">,</span> att_name<span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">data</span></span><span style="color: #990000">)</span>
+</tt></pre></div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">There is a third parallel function, <tt>extractDataAttributeNS</tt>, which works in the same way for namespaced attributes. These are much less frequently used.</td>
+</tr></table>
+</div>
+<p>In this case, we extract two items of integer data - the location ID, and the year. We indicate that we expect integer data by the fact that we pass integer variables as the data-containing arguments.</p>
+<p>If we wanted to extract double precision data, we'd need to simply pass in double precision arguments. Try doing this, and extracting the <tt>latitude</tt>, <tt>longitude</tt>, <tt>depth</tt>, and <tt>magnitude</tt> of each earthquake.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">Extracting data of other types, and making life easier for strings.</div>
+<p>The <tt>extractData</tt> functions will work for any of the standard Fortran data tyeps; <em>i.e.</em> <tt>character</tt>, <tt>logical</tt>, <tt>integer</tt>, <tt>real</tt>, <tt>double precision</tt>, <tt>complex</tt> or <tt>double complex</tt>.</p>
+<p>As a handy shortcut, when you <tt>extractData</tt> to a string, then the string will be processed to remove all new lines, remove initial space, and condense multiple spaces. So, for example:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">&lt;string&gt;</span></span>
+This is
+a        string
+containing newlines
+and whitespace.
+<span style="font-weight: bold"><span style="color: #0000FF">&lt;/string&gt;</span></span>
+</tt></pre></div></div>
+<p>will result in the string:</p>
+<p><tt>"This is a string containing newlines and whitespace"</tt></p>
+<p>This solves the problem shown at the end of exercise 5-6. (Of course, if you
+want the unmodified string, you are free to retrieve it with <tt>getTextContent</tt>).</p>
+</td>
+</tr></table>
+</div>
+</div>
+<h2>Exercise 5-8: Extracting array information.</h2>
+<div class="sectionbody">
+<p>If you're dealing with Fortran programs, then you probably care just as much about arrays and matrices of numbers as you do about individual numbers. Fortunately, <tt>extractData</tt> knows about these as well.</p>
+<p>In <tt>exercise_5_8.f90</tt>, we extract the length-<tt>2</tt> arrays containing the coordinates of each <tt>Placemark</tt>, and print them out.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">Array syntax in XML</div>
+<p>There is no one syntax for representing arrays or matrices in XML; each XML language may have its own. However, FoX will understand any arrays where the elements are separated by whitespace or commas.</p>
+</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">Arrays and matrices in XML; error checking.</div>
+<p>When extracting data to arrays and matrices, FoX simply reads through the XML data, filling the array or matrix as it goes. This means that from FoX's point of view, if you pass it a length-<tt>4</tt> array, or a <tt>2x2</tt> matrix, the result is the same either way - the first 4 numbers it finds are placed in the data variable.</p>
+<p>If more numbers are present, they are ignored; if FoX can't find enough numbers, it will fill the rest of the array with zeroes, and stop with an error message.</p>
+<p>If necessary, you can catch this error with <tt>iostat</tt>, and carry on regardless (in the same way as when you try and read too many numbers from a normal file with <tt>read</tt>)</p>
+</td>
+</tr></table>
+</div>
+<p>You are now able to replicate the program which you wrote at the end of Practical 3. There it was done in Python, using XPath expressions; here you can do it in Fortran, extracting information by DOM calls. This will be more verbose, but will be more familiar to a Fortran programmer.</p>
+<p>You can do this by creating two <tt>NodeList</tt>s; one containing the <tt>Point</tt>s from the first <tt>Folder</tt> (with the <tt>name</tt> <tt>"Initial Positions"</tt>); and one containing all the <tt>Point</tt>s from the second <tt>Folder</tt>.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">This illustrates the importance of organizing your XML files hierarchically. If you simply had a series of data organized in order, it would be just as easy to look down them with a human eye, but much more difficult to extract them from a DOM tree.</td>
+</tr></table>
+</div>
+<p>If you simply walk through both <tt>NodeList</tt>s at the same time, you can extract the coordinates for the initial and final positions and compare them. A function to calculate great-circle distances is provided in <tt>example_5_8.f90</tt>.</p>
+<p>Do so, and print out the distance that each calculated earthquake location has moved during the <tt>hypoDD</tt> run.</p>
+<p>For comparison, a working solution is included in <tt>solution_5_8.f90</tt>.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<p>Our solution here is different from the XPath solution in two ways:</p>
+<ol>
+<li>
+<p>
+When we solved this problem with XPath, we tested on equality of <tt>unique_id</tt> to match up the different <tt>Point</tt>s. This isn't directly possible in DOM, but it is achievable. How would you do this, and why is it a bad idea?
+</p>
+</li>
+<li>
+<p>
+When we solved this problem with XPath, we extracted the data from the <tt>qml:latitude</tt> and <tt>qml:longitude</tt> elements - here we are extracting them from the <tt>kml:Point</tt> element. Why are we doing it differently - does it make any difference?
+</p>
+</li>
+</ol>
+</td>
+</tr></table>
+</div>
+</div>
+<h2>Conclusion</h2>
+<div class="sectionbody">
+<p>This practical introduced you to the use of the FoX DOM. You have learnt</p>
+<ul>
+<li>
+<p>
+What you need to add to your Fortran program to use the DOM, and open and close a file.
+</p>
+</li>
+<li>
+<p>
+How to pick out particular elements from a DOM tree.
+</p>
+</li>
+<li>
+<p>
+How to get at the value of attributes, and the text content of elements
+</p>
+</li>
+<li>
+<p>
+How to extract these values and contents to native Fortran datatypes.
+</p>
+</li>
+</ul>
+<p>The FoX DOM includes a full implementation of all of the W3C DOM levels 1, 2, and (most of) 3. This includes well over a hundred different functions and subroutines, which are available for use; and if you need to use parts of a program from a DOM in another language, the translation will be straightforward.</p>
+<p>Nevertheless, most of what you need to accomplish can be done using only the following functions:</p>
+<ul>
+<li>
+<p>
+<tt>parseFile</tt>
+</p>
+</li>
+<li>
+<p>
+<tt>getElementsByTagName</tt>(<tt>NS</tt>)
+</p>
+</li>
+<li>
+<p>
+<tt>getLength</tt>
+</p>
+</li>
+<li>
+<p>
+<tt>item</tt>
+</p>
+</li>
+<li>
+<p>
+<tt>extractDataContent</tt>
+</p>
+</li>
+<li>
+<p>
+<tt>extractDataAttribute</tt>
+</p>
+</li>
+<li>
+<p>
+<tt>destroy</tt>
+</p>
+</li>
+</ul>
+<p>and the DOM part of a typical program will have a skeleton looking very much like the example programs shown in this exercise.</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>
+doc <span style="color: #990000">=&gt;</span> <span style="font-weight: bold"><span style="color: #000000">parseFile</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"input.xml"</span><span style="color: #990000">)</span>
+
+nlist <span style="color: #990000">=&gt;</span> <span style="font-weight: bold"><span style="color: #000000">getElementsByTagname</span></span><span style="color: #990000">(</span>doc<span style="color: #990000">,</span> <span style="color: #FF0000">"interestingElement"</span><span style="color: #990000">)</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">do</span></span> i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #000000">getLength</span></span><span style="color: #990000">(</span>nlist<span style="color: #990000">)-</span><span style="color: #993399">1</span>
+  np <span style="color: #990000">=&gt;</span> <span style="font-weight: bold"><span style="color: #000000">item</span></span><span style="color: #990000">(</span>nlist<span style="color: #990000">,</span> i<span style="color: #990000">)</span>
+
+  <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">extractDataAttribute</span></span><span style="color: #990000">(</span>np<span style="color: #990000">,</span> <span style="color: #FF0000">"att"</span><span style="color: #990000">,</span> value<span style="color: #990000">)</span>
+
+  <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>value<span style="color: #990000">==</span>somethingInteresting<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">then</span></span>
+    <span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">extractDataContent</span></span><span style="color: #990000">(</span>np<span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">data</span></span><span style="color: #990000">)</span>
+  <span style="font-weight: bold"><span style="color: #0000FF">endif</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">enddo</span></span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">destroy</span></span><span style="color: #990000">(</span>doc<span style="color: #990000">)</span>
+
+</tt></pre></div></div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Version 2.0<br />
+Last updated 01-Feb-2008 16:11:19 BST
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<film name='Monty Python and the Holy Grail'>
+<data date='1975'/>
+<comic name='Graham Chapman'>
+<quote character='King Arthur'>No! Not the Knights Who Say Ni!</quote>
+</comic>
+<comic name='John Cleese'>
+<quote character='Sir Lancelot'>Ask me the questions, Bridgekeeper. I am not afraid.</quote>
+</comic>
+<comic name='Terry Gilliam'>
+<quote character='Sir Boris'>AAAAAAUUGH!! (Boris falls as his head rolls off his body from the rabbits attack.)</quote>
+</comic>
+<comic name='Terry Jones'>
+<quote character='Sir Bedevere'>How do you know she is a witch?</quote>
+</comic>
+<comic name='Eric Idle'>
+<quote character='Sir Robin'>Thats, er, thats enough music for now lads. Looks like theres dirty work afoot.</quote>
+</comic>
+<comic name='Michael Palin'>
+<quote character='Leader of The Knights who say Ni!'>Ni! Ni! Ni! Ni!</quote>
+</comic>
+</film>

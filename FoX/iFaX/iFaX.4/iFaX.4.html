@@ -1,0 +1,824 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.2.1" />
+<style type="text/css">
+/* Debug borders */
+p, li, dt, dd, div, pre, h1, h2, h3, h4, h5, h6 {
+/*
+  border: 1px solid red;
+*/
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+tt {
+  color: navy;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  font-family: sans-serif;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  border-bottom: 2px solid silver;
+  padding-top: 0.5em;
+}
+
+div.sectionbody {
+  font-family: serif;
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+span#author {
+  color: #527bbd;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+span#email {
+}
+span#revision {
+  font-family: sans-serif;
+}
+
+div#footer {
+  font-family: sans-serif;
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+div#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+div#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+div#preamble,
+div.tableblock, div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-right: 10%;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid silver;
+  padding: 0.5em;
+}
+
+div.listingblock {
+  margin-right: 0%;
+}
+div.listingblock > div.content {
+  border: 1px solid silver;
+  background: #f4f4f4;
+  padding: 0.5em;
+}
+
+div.quoteblock > div.content {
+  padding-left: 2.0em;
+}
+
+div.attribution {
+  text-align: right;
+}
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 2px solid silver;
+}
+
+div.exampleblock > div.content {
+  border-left: 2px solid silver;
+  padding: 0.5em;
+}
+
+div.verseblock div.content {
+  white-space: pre;
+}
+
+div.imageblock div.content { padding-left: 0; }
+div.imageblock img { border: 1px solid silver; }
+span.image img { border-style: none; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: italic;
+}
+dd > *:first-child {
+  margin-top: 0;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.olist2 {
+  list-style-type: lower-alpha;
+}
+
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+tfoot {
+  font-weight: bold;
+}
+
+div.hlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hlist td {
+  padding-bottom: 5px;
+}
+td.hlist1 {
+  vertical-align: top;
+  font-style: italic;
+  padding-right: 0.8em;
+}
+td.hlist2 {
+  vertical-align: top;
+}
+
+@media print {
+  div#footer-badges { display: none; }
+}
+
+div#toctitle {
+  color: #527bbd;
+  font-family: sans-serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+/* Workarounds for IE6's broken and incomplete CSS2. */
+
+div.sidebar-content {
+  background: #ffffee;
+  border: 1px solid silver;
+  padding: 0.5em;
+}
+div.sidebar-title, div.image-title {
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 0.0em;
+  margin-bottom: 0.5em;
+}
+
+div.listingblock div.content {
+  border: 1px solid silver;
+  background: #f4f4f4;
+  padding: 0.5em;
+}
+
+div.quoteblock-content {
+  padding-left: 2.0em;
+}
+
+div.exampleblock-content {
+  border-left: 2px solid silver;
+  padding-left: 0.5em;
+}
+
+/* IE6 sets dynamically generated links as visited. */
+div#toc a:visited { color: blue; }
+</style>
+<title>Practical 4: XML input to Fortran</title>
+</head>
+<body>
+<div id="header">
+<h1>Practical 4: XML input to Fortran</h1>
+<span id="author">Toby White</span><br />
+<span id="email"><tt>&lt;<a href="mailto:tow@uszla.me.uk">tow@uszla.me.uk</a>&gt;</tt></span><br />
+<span id="revision">version 2.0,</span>
+Jan 2008
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<p>The first two practical sessions dealt with how to produce XML from Fortran code. The third
+session showed you how to use XPath to write scripts to analyse that data. However, there
+is as yet no XPath interface to Fortran, and sometimes you may need to read XML docu-
+ments into Fortran. In this practical session, you will learn one method for doing this.</p>
+<p>In the earlier talk on the XML landscape, a number of interfaces were mentioned. The historically earliest was SAX. It is conceptually the simplest interface; and is also the easiest
+to implement, and there is a Fortran SAX interface in FoX.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">FoX also includes a DOM interface (an introduction to this is in Practical 5). For many purposes, the DOM interface will be considerably easier to use.</td>
+</tr></table>
+</div>
+<p>This practical is designed to give you an understanding of how to use the FoX SAX interface to import data from an XML file into a Fortran program.</p>
+<p>The FoX documentation gives an introduction to the concepts behind SAX, and some initial examples of its use. SAX relies on an event-based callback programming model - the
+XML parser sends messages to the main program, which are received by handlers provided by the programmer. It can be tricky to get your head around programming in this
+style, so in this practical session, you will work through some example exercises to learn
+how to do this.</p>
+<p>We will be using as input the earthquake data XML files that we taught <tt>hypoDD</tt> to produce
+in the second practical session, and the example programs you will write are designed to
+work towards the sort of data handling you might want to do in a real Fortran program using scientific data.</p>
+<p>The directory <tt>Practical_4</tt> contains the necessary files. Inside you will find several directories - one for each practical. Each practical involves taking the skeleton of an existing program already set up
+for FoX SAX (in every case, this program is called <tt>exercise_4_X.f90</tt>), and adapting it to
+perform some task. If you get stuck on any of the exercises, complete solutions are available in the same directory, as a file called <tt>solution_4_X.f90</tt>.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="title">Compiling the exercises</div>
+<p>The exercises all come with Makefiles (pointing at the copy of FoX
+in your home directory), such that they can all be compiled by just
+typing <tt>make</tt>.</p>
+<p>If you want to compile the solutions (or indeed any other file), then
+for any file called <tt>filename.f90</tt>, you can just type <tt>make filename.exe</tt>.</p>
+</td>
+</tr></table>
+</div>
+</div>
+</div>
+<h2>Exercise 4-1: Watching SAX events</h2>
+<div class="sectionbody">
+<p>A sample SAX test program is provided. It consists of two things; a module containing a list
+of “handlers”, and a driver program. The handlers do nothing except print out when they
+are called; and the driver program does nothing but pass the handlers into FoX.
+Compile the program, and execute it. It will read in the file <tt>input.xml</tt>, and output a list
+of events. Compare the list of events to the file <tt>input.xml</tt>, and you should see the correspondence.</p>
+<p>You may see rather more <tt>Character</tt> events than you were expecting. This is because
+SAX will report all characters it finds between tags - even if they are just whitespace. Most
+of those character events are reporting empty space.</p>
+<p>Edit the handlers, so that the <tt>startElement</tt> and <tt>endElement</tt> handlers print out the name of the
+element, and the <tt>characters</tt> handler prints out the characters it receives.</p>
+</div>
+<h2>Exercise 4-2: Attribute dictionaries</h2>
+<div class="sectionbody">
+<p>Attributes are handled in a slightly more complicated way within SAX.
+If you look at the <tt>startElement</tt> handler, you’ll see that it takes an argument <tt>atts</tt>.
+This contains a dictionary of attributes - that is to say a list of name/value pairs. There is a
+long list of functions and subroutines to manipulate this dictionary, which are explained in
+full in the FoX documentation.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">Attribute dictionaries</div>
+<p>Attribute dictionaries consist of a series of entries, which hold information about each
+entry. If you need to worry about namespaced attributes, these can be quite complex,
+but that is fairly rare. For the purposes of these exercises, you need only think about
+attributes as name-value pairs.</p>
+<p><tt>startElement</tt> will pass a dictionary containing all the attributes for a given element. You
+can get at this list of attributes using the following Fortran calls:</p>
+<ul>
+<li>
+<p>
+<tt>len(atts)</tt> gives the number of attributes
+</p>
+</li>
+<li>
+<p>
+<tt>getQName(atts, i)</tt> gives the name of the <tt>i</tt>th attribute
+</p>
+</li>
+<li>
+<p>
+<tt>getValue(atts, i)</tt> gives the value of the <tt>i</tt>th attribute
+</p>
+</li>
+<li>
+<p>
+<tt>hasKey(atts, name)</tt> gives true or false according to whether the attribute <tt>name</tt> exists
+</p>
+</li>
+<li>
+<p>
+<tt>getValue(atts, name)</tt> gets the value of the attribute called <tt>name</tt> if it exists.
+</p>
+</li>
+</ul>
+</td>
+</tr></table>
+</div>
+<p>Alter the <tt>startElement_handler</tt> subroutine so that it prints out all of the attribute
+name/value pairs.</p>
+<p>Now, write a <tt>startElement_handler</tt> which looks for the units of latitude, and stores it
+in a module variable. At the end of the program, once the document has been parsed and
+the file closed,  print out that module variable.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">Fortran module variables</div>
+<p>If you are not very familiar with Fortran 90/95, module variables may be new to you.
+Within a Fortran module, you can keep subroutines (as we have been doing for the
+event handlers) and also variables. Any variables declared in the first section of a module are accessible to all subroutines within that module (and to any other parts of the
+program which use that module.) You must remember to <tt>save</tt> the module variable, or its value may not be preserved.</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>module tiny
+  <span style="color: #009900">integer</span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">save</span></span> <span style="color: #990000">::</span> i <span style="color: #990000">=</span> <span style="color: #993399">0</span>
+<span style="font-style: italic"><span style="color: #9A1900">contains</span></span>
+  <span style="font-weight: bold"><span style="color: #0000FF">subroutine</span></span> in
+    i <span style="color: #990000">=</span> <span style="color: #993399">1</span>
+  <span style="font-weight: bold"><span style="color: #0000FF">end</span></span> <span style="font-weight: bold"><span style="color: #0000FF">subroutine</span></span> in
+  <span style="font-weight: bold"><span style="color: #0000FF">subroutine</span></span> out
+    <span style="font-weight: bold"><span style="color: #0000FF">print</span></span><span style="font-style: italic"><span style="color: #9A1900">*, i</span></span>
+  <span style="font-weight: bold"><span style="color: #0000FF">end</span></span> <span style="font-weight: bold"><span style="color: #0000FF">subroutine</span></span> out
+<span style="font-weight: bold"><span style="color: #0000FF">end</span></span> module tiny
+</tt></pre></div></div>
+<p>In this module, both subroutines can read and write the variable i.</p>
+</td>
+</tr></table>
+</div>
+</div>
+<h2>Exercise 4-3: Parsing a simple XML document</h2>
+<div class="sectionbody">
+<p>So far, all the XML data manipulation you have done has disposed of the data immediately. For a real program, usually you want to read in the data, and keep it around to do
+something with it later. In order to do this, you need to make use of persistent variables
+somewhere else to record the data, and also to record where you are in the process of
+reading the document.</p>
+<p>For example, if you want to read the characters within a certain tag, you can’t rely on the
+characters callback telling you where it is; it doesn’t give you that information. So you need
+to keep track of which <tt>startElement</tt>/<tt>endElement</tt> events you have been received, and
+only read the character data when appropriate.</p>
+<p>The easiest way to do this is using module variables. If you place a single logical variable
+within your module, you can switch it on and off as you enter and leave an element which you're interested in. Then, whenever you receive a character event, you can decide what to do with the characters based on the setting of that logical variable.</p>
+<p>Similarly, if you retrieve some data from an event, and want to keep it around, you can put
+it into a module string variable, and then use it again later.</p>
+<p>Using your input file and framework, write a program that reads the text of the latitude and
+longitude variables, as well as their units, and then prints it out like so:</p>
+<p><tt>The earthquake location was latitude</tt> <em>XXX UNITS</em> <tt>and longitude</tt> <em>YYY UNITS</em></p>
+<p>You’ll need to keep track of your location in the file, in order to read the correct characters, and then preserve the character and attribute values.</p>
+</div>
+<h2>Exercise 4-4: Namespaces and SAX</h2>
+<div class="sectionbody">
+<p>You have learnt that namespaces can be used to disambiguate various elements, and to
+distinguish different XML vocabularies.</p>
+<p>SAX will provide data to do this namespace disambiguation for you. For every element it
+encounters, it will report both the Name of the element, and also its Namespace URI. When
+dealing with namespaced documents, you often don’t care about the elements <tt>name</tt> any
+more - you care about the combination of its <tt>localname</tt> and its <tt>namespaceURI</tt>.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">Namespaces in SAX</div>
+<p>When you recieve a <tt>startElement</tt> or <tt>endElement event</tt>, it comes with three
+strings. So far, you’ve only paid attention to the name. However, in the presence of
+namespaces, names don’t matter - what matters is the other two strings,
+namespaceURI and localname. Here are some examples of what SAX will report to
+you on finding various tags:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">&lt;description</span></span> <span style="color: #009900">xmlns</span><span style="color: #990000">=</span><span style="color: #FF0000">"http://purl.org/dc/elements/1.1/"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+</tt></pre></div></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>name         <span style="color: #990000">=</span> <span style="color: #FF0000">"dc:description"</span>
+localname    <span style="color: #990000">=</span> <span style="color: #FF0000">"description"</span>
+namespaceURI <span style="color: #990000">=</span> <span style="color: #FF0000">"http://purl.org/dc/elements/1.1/"</span>
+</tt></pre></div></div>
+<hr />
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">&lt;dc:description</span></span> <span style="color: #009900">xmlns:dc</span><span style="color: #990000">=</span><span style="color: #FF0000">"http://purl.org/dc/elements/1.1/"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+</tt></pre></div></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>name  <span style="color: #990000">=</span>        <span style="color: #FF0000">"description:</span>
+<span style="color: #FF0000">localname =    "</span>description<span style="color: #FF0000">"</span>
+<span style="color: #FF0000">namespaceURI = "</span>http<span style="color: #990000">:</span>//purl<span style="color: #990000">.</span>org/dc/elements/1<span style="color: #990000">.</span><span style="color: #993399">1</span><span style="color: #990000">/</span><span style="color: #FF0000">"</span>
+</tt></pre></div></div>
+<hr />
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt> <span style="font-weight: bold"><span style="color: #0000FF">&lt;description</span></span> <span style="color: #009900">xmlns</span><span style="color: #990000">=</span><span style="color: #FF0000">"http://earth.google.com/kml/2.0"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+</tt></pre></div></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>name         <span style="color: #990000">=</span> <span style="color: #FF0000">"description"</span>
+localname    <span style="color: #990000">=</span> <span style="color: #FF0000">"description"</span>
+namespaceURI <span style="color: #990000">=</span> <span style="color: #FF0000">"http://earth.google.com/kml/2.0"</span>
+</tt></pre></div></div>
+<hr />
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">&lt;kml:description</span></span> <span style="color: #009900">kml:xmlns</span><span style="color: #990000">=</span><span style="color: #FF0000">"http://earth.google.com/kml/2.0"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
+</tt></pre></div></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>name         <span style="color: #990000">=</span> <span style="color: #FF0000">"kml:description"</span>
+localname    <span style="color: #990000">=</span> <span style="color: #FF0000">"description"</span>
+namespaceURI <span style="color: #990000">=</span> <span style="color: #FF0000">"http://earth.google.com/kml/2.0"</span>
+</tt></pre></div></div>
+<p>The first and second tag are equivalent; as are the third and fourth.</p>
+<p>Note in particular how the first and third tag have the same QName, and are only distinguishable by their namespaceURI.</p>
+<p>You can see from this how testing a combination of localname and namespaceURI will
+let you use SAX to check for the right tag.</p>
+<p>The dictionary functions hasKey and getValue can both be used with namespaces:</p>
+<ul>
+<li>
+<p>
+<tt>hasKey(atts, uri, localname)</tt> returns true or false according to whether the attribute with the specified <tt>uri</tt> and <tt>localname</tt> exist.
+</p>
+</li>
+<li>
+<p>
+<tt>getValue(atts, uri, localname)</tt> gets the value of the attribute with the
+specified <tt>uri</tt> and <tt>localname</tt>.
+</p>
+</li>
+</ul>
+</td>
+</tr></table>
+</div>
+<p>To illustrate this, the input.xml for this exercise has description elements from both KML
+and Dublin Core. Starting with the same skeleton program as before, write a program to
+separately extract and print out the description metadata from KML and from DC.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">The KML namespace is <tt>"http://earth.google.com/kml/2.0"</tt>, and the
+DC namespace is <tt>"http://purl.org/dc/elements/1.1/"</tt>.</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">Handling multiple character events</div>
+<p>SAX interfaces have a small, unavoidable, but very irritating, peculiarity with respect to character handlers. Namely, a given stretch of character data may be reported as multiple chunks. That is, in reading the following document,</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">&lt;tag&gt;</span></span> 123456789 <span style="font-weight: bold"><span style="color: #0000FF">&lt;/tag&gt;</span></span>
+</tt></pre></div></div>
+<p>a SAX interface may report 4 events:</p>
+<ul>
+<li>
+<p>
+<tt>startElement(tag)</tt>
+</p>
+</li>
+<li>
+<p>
+<tt>characters(" 12345")</tt>
+</p>
+</li>
+<li>
+<p>
+<tt>characters("6789 ")</tt>
+</p>
+</li>
+<li>
+<p>
+<tt>endElement(tag)</tt>
+</p>
+</li>
+</ul>
+<p>or indeed any number of <tt>character</tt> events that will sequentially produce the same string.</p>
+<p>You will have noticed this in this exercise - reading in the Dublin Core description, FoX returned three character events for one string.</p>
+<p>Thus, to correctly handle a SAX interface, any program you write must do the following on encountering a <tt>character</tt> event.</p>
+<ul>
+<li>
+<p>
+Remember the last event - was it a <tt>character</tt> event? If so, append current character data to a string buffer.
+</p>
+</li>
+</ul>
+<p>and it must not process the string buffer until it is sure that there are no more <tt>character</tt> events coming - which will happen at the next <tt>startElement</tt> or <tt>endElement</tt> event.</p>
+<p>There is an example in <tt>exercise_4_4b.f90</tt> which illustrates the control flow necessary to handle this correctly, and a generic example as the skeleton for <tt>exercise_4_5</tt>.</p>
+</td>
+</tr></table>
+</div>
+</div>
+<h2>Exercise 4-5: Extracting and presenting data from QuakeML</h2>
+<div class="sectionbody">
+<p>For this exercise, the input file is the final output from <tt>hypoDD</tt> as generated yesterday. It is
+often useful to take data from an XML format, and reformat it for human consumption in a
+more familiar way.</p>
+<p>In exercise 4-4 you learnt how to use module variables to keep track of where you were in
+the document. You probably used a simple logical switch to see if you were in the correct
+element. However, that approach gets quite unwieldy when large numbers of tags are in
+evidence. In such cases, it is useful to use a "state" variable, which is a module variable
+which takes on different values according to the state of the parser - <em>i.e.</em> where it is in the
+document. For example, you could assign the values:</p>
+<ul>
+<li>
+<p>
+<tt>0</tt>: not in an interesting tag.
+</p>
+</li>
+<li>
+<p>
+<tt>1</tt>: in a latitude tag
+</p>
+</li>
+<li>
+<p>
+<tt>2</tt>: in a longitude tag
+</p>
+</li>
+</ul>
+<p><em>etc.</em></p>
+<p>Then, when receiving a <tt>characters</tt> event, you can simply check the value of the state variable to choose what to do with the data.</p>
+<p>Starting from the same skeleton SAX program, write a program to read data about the first
+ten earthquakes, and produce a table for presentation something like this:</p>
+<div class="listingblock">
+<div class="content">
+<pre><tt> ID      | LATITUDE           | LONGITUDE          | DEPTH     | MAGNITUDE
+ 16484   |3.728530120850e1    |-1.216628036499e2   |3.60000e0  |6.30000e0
+ 16527   |3.728570175171e1    |-1.216644973755e2   |3.50000e0  |6.01000e0
+ 17496   |3.729219818115e1    |-1.216661987305e2   |1.20000e0  |6.61000e0
+ 16521   |3.728530120850e1    |-1.216681976318e2   |3.00000e0  |3.82000e0
+ 17842   |3.728829956055e1    |-1.216688003540e2   |1.89999e0  |3.73000e0
+ 16635   |3.729570007324e1    |-1.216701965332e2   |1.40000e0  |5.90000e0
+ 16576   |3.728699874878e1    |-1.216628036499e2   |1.60000e0  |5.79000e0
+ 17929   |3.728919982910e1    |-1.216658020020e2   |1.80000e0  |5.24000e0
+ 16659   |3.728929901123e1    |-1.216651992798e2   |1.50000e0  |6.30000e0
+ 16701   |3.729169845581e1    |-1.216662979126e2   |1.60000e0  |6.06000e0</tt></pre>
+</div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">In addition to the state variable, you’ll need to keep account of how many values you’ve
+read - use another module variable for that.</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">Converting strings to numbers</div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">read</span></span><span style="color: #990000">(</span>string<span style="color: #990000">,</span><span style="font-style: italic"><span style="color: #9A1900">*) number</span></span>
+</tt></pre></div></div>
+<p>Alternatively, FoX provides an XML-aware shorthand which works for arrays
+and matrices as well:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">rts</span></span><span style="color: #990000">(</span>string_in<span style="color: #990000">,</span> number_out<span style="color: #990000">)</span>
+</tt></pre></div></div>
+</td>
+</tr></table>
+</div>
+<p>Query: how might you go about doing this if you didn’t know ahead of time the number of data items you wanted to read?</p>
+</div>
+<h2>Exercise 4-6: Perform a calculation</h2>
+<div class="sectionbody">
+<p>Above and beyond simple presentation, a real program will probably want to manipulate
+the data it’s read in. This presents a new problem though - so far, we’ve been treating the
+data only as strings, but if you want to manipulate it, you’ll need to treat it as numerical
+data.</p>
+<p>Using your answer from exercise 4-5, at the end of the run, once you’ve collected all the
+data for presentation, calculate the centroid of the earthquake locations.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">The centroid of a set of points in 2D space is defined as that point whose <em>x</em>-coordinate is the average of the <em>x</em>-coordinates of all the points, and whose <em>y</em>-coordinate is the average of the <em>y</em>-coordinates of all the points.</td>
+</tr></table>
+</div>
+<p>You could extend your program so that, instead of getting the centroid for just the first ten points, it calculates the centroid of all the points in the first KML <tt>Folder</tt>. To do this, you need to keep track of the <tt>startElement</tt> events for the <tt>Folder</tt>s as well.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">You won't know how many points are in the Folder until you've finished reading it. So instead of storing all the points until the end, you can calculate a progressive average as you read through the document.</td>
+</tr></table>
+</div>
+</div>
+<h2>Exercise 4-8</h2>
+<div class="sectionbody">
+<p>In the previous exercise, all the data you needed was found in the first half of the document. Once you'd retrieved the data you needed, you simply set the state variables so that when you received any further events, no action was taken.</p>
+<p>This means that even though you'd finished, the parser carried on going, and read through the document to the end. If this was a particularly large document, then that might involve wasting a lot of time reading data you don't care about.</p>
+<p>So, the SAX parser will let you terminate processing of the document at any point, though in a slightly awkward way. This can be done from any of the callback functions - you simply need to do:</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 2.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">call</span></span> <span style="font-weight: bold"><span style="color: #000000">stop_parser</span></span><span style="color: #990000">(</span>xf<span style="color: #990000">)</span>
+</tt></pre></div></div>
+<p>where <tt>xf</tt> is the same <tt>xf</tt> that you have called the parser on. This has the
+effect that the rest of the current callback subroutine will be executed, but as soon as it finishes, the parser will finish, and control will be returned to the main program. That is simple enough - however, you need to rearrange your program.</p>
+<p>If you try and put this in one of your callback subroutines, you'll
+realise that the arguments to the subroutine don't include any way to get at the parser. So what you need to do is have the parser object accessible some other way.</p>
+<p>The best way to do this is have your parser object be part of the <tt>m_handlers</tt> module, as a module variable. This gives the module subroutines access to the variable. Your main program can then import that variable by a <tt>use</tt> statement, in order to be able to call <tt>parse</tt> on it.</p>
+<p>If you look at <tt>exercise_4_7.f90</tt>, you'll find your skeleton program rearranged into this form. Now you can call <tt>stop_parser(xf)</tt> at any time from within the callback subroutines.</p>
+<p>Implement your solutions to exercise 4-6 in this new skeleton; and call <tt>stop_parser</tt> as soon as you've collected all your data; in the first case because you've collected 10 earthquakes; in the second case because you've collected <em>all</em> of the initial earthquakes.</p>
+</div>
+<h2>Exercise 4-8: Teaching <tt>hypoDD</tt> to read QuakeML</h2>
+<div class="sectionbody">
+<p>You are probably not going to get this far through the practical session with much time to
+spare; but having got here, you understand how to read data from an XML file into Fortran
+data structures.</p>
+<p><tt>hypoDD</tt> could be adapted, instead of reading its input data from text files as it does now,
+to read its data from XML files of the sort we have been dealing with.
+Think about how this might be done, and look at the <tt>hypoDD</tt> source code again. Note that
+earthquake event data is read in at about line 150 of <tt>getdata.f</tt>.</p>
+</div>
+<h2>Conclusions</h2>
+<div class="sectionbody">
+<p>This practical was designed to do three things</p>
+<ul>
+<li>
+<p>
+Understand how to program against a callback API.
+</p>
+</li>
+<li>
+<p>
+Understand how to program with the FoX SAX API.
+</p>
+</li>
+<li>
+<p>
+Understand how to use a SAX API to build up data structures from an XML document.
+</p>
+</li>
+</ul>
+<p>It is important to realise, though, that although SAX is a conceptually simple API to work
+with, it becomes rapidly very complicated to use on complicated XML documents with lots
+of variation in structure, many different child elements and attributes etc. It was usable in
+this case only because our XML format is simple and predictable.</p>
+<p>It is also important to understand that we could only do this because we knew the format of
+the XML we were expecting, so we didn’t do any checking that the XML was of the right
+structure, we just assumed it. In XML-reading applications which will accept input from a
+wider variety of sources, much more robust error checking is necessary.</p>
+<p>In either case, it might well be more sensible to do the XML input in a higher-level-language, using higher-level APIs, like XPath, as you were shown in Practical 3, or DOM as you will be shown in Practical 5.</p>
+</div>
+<div id="footer">
+<div id="footer-text">
+Version 2.0<br />
+Last updated 18-Mar-2008 14:09:37 BST
+</div>
+</div>
+</body>
+</html>

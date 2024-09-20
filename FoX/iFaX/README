@@ -1,0 +1,14 @@
+This directory contains tutorial materials for FoX.
+
+iFaX.1 covers basic XML generation with WXML, iFaX.3 
+includes XPath using python, iFaX.4 concerns the SAX interface, 
+and iFaX.5 concerns the DOM interface.
+(Other tutorials will appear when they are complete).
+
+In both cases, the .tgz file contains the contents of the relevant directory.
+
+Each tutorial consists of a single document (in three formats, text, html, and pdf)
+and a series of accompanying exercises (in the Practical subdirectory).
+
+All materials in iFaX.4 and iFaX.5 are copyright Toby White <tow@uszla.me.uk> 2008. iFaX.1 and iFaX.3 are copyright Toby White
+and Andrew Walker 2008.

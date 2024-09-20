@@ -1,0 +1,14 @@
+MD5(../FoX-4.1.1-full.tar.gz)= 69e2449ca65660ee92c44199cb4fe083
+SHA1(../FoX-4.1.1-full.tar.gz)= 90badb8405545dfe21b4879279de48923d914bf5
+MD5(../../FoX-4.1.1.tar.gz)= 2da219d3a547b34b753a18d2cdfc144e
+SHA1(../../FoX-4.1.1.tar.gz)= d2f9571ac3237dd0f515e3d46bdf21b9ccd8f022
+MD5(FoX-4.1.1-wxml.tar.gz)= 14dadd527edcb4d39ac9180e8c650631
+SHA1(FoX-4.1.1-wxml.tar.gz)= d3f0eef430b4ff14dbc6a6a94309a8a160fec25f
+MD5(FoX-4.1.1-wcml.tar.gz)= d6680be863d912b8635110bb23362f25
+SHA1(FoX-4.1.1-wcml.tar.gz)= e5109718de660e8e0f0736b815a80b588502af5d
+MD5(FoX-4.1.1-wkml.tar.gz)= 827de4851d849883fff863783dd6f3fd
+SHA1(FoX-4.1.1-wkml.tar.gz)= 6d1b6df34c6c2c4103cae4460bcdf3bcdfc46f78
+MD5(FoX-4.1.1-sax.tar.gz)= 1a8a6f49b316d03a078e3634e9867323
+SHA1(FoX-4.1.1-sax.tar.gz)= d3dfbfdb1268eb3748cfbd20655e668b28334e3f
+MD5(FoX-4.1.1-dom.tar.gz)= 81fa4f485a1ebc30e43723bb8ba5b020
+SHA1(FoX-4.1.1-dom.tar.gz)= 0479529525b1d8e83611c26b40e0a13d1ac67e86

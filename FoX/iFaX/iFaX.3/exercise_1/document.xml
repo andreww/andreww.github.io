@@ -1,0 +1,11 @@
+<parent born='1457' name='Henry VII'>
+<child born='1486' name='Arthur, Prince of Wales'/>
+<child born='1489' name='Margaret Tudor'>
+<grandchild born='1512' name='James V'/>
+</child>
+<child born='1491' name='Henry VIII'>
+<grandchild born='1516' name='Mary I'/>
+<grandchild born='1533' name='Elizabeth I'/>
+<grandchild born='1537' name='Edward VI'/>
+</child>
+</parent

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<location unique_id="16484"
+  xmlns="http://quakeml.ethz.ch/ns/eventlist/location">
+  <origin-time>
+    <year>1984</year>
+    <month>4</month>
+    <day>24</day>
+    <hour>21</hour>
+    <minute>20</minute>
+    <second>23</second>
+  </origin-time>
+  <latitude unit="degrees">3.728530120850e1</latitude>
+  <longitude unit="degrees">-1.216628036499e2</longitude>
+  <depth unit="km">3.60000e0</depth>
+  <magnitude unit="Mb">6.30000e0</magnitude>
+</location>

@@ -1,0 +1,4364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.6" />
+<title>Combined Document Title</title>
+<style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #777777;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+tt {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+.monospaced {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+
+
+/*
+ * Theme specific overrides of the preceding (asciidoc.css) CSS.
+ *
+ */
+body {
+  font-family: Garamond, Georgia, serif;
+  font-size: 17px;
+  color: #3E4349;
+  line-height: 1.3em;
+}
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Garmond, Georgia, serif;
+  font-weight: normal;
+  border-bottom-width: 0;
+  color: #3E4349;
+}
+div.title, caption.title { color: #596673; font-weight: bold; }
+h1 { font-size: 240%; }
+h2 { font-size: 180%; }
+h3 { font-size: 150%; }
+h4 { font-size: 130%; }
+h5 { font-size: 115%; }
+h6 { font-size: 100%; }
+#header h1 { margin-top: 0; }
+#toc {
+  color: #444444;
+  line-height: 1.5;
+  padding-top: 1.5em;
+}
+#toctitle {
+  font-size: 20px;
+}
+#toc a {
+    border-bottom: 1px dotted #999999;
+    color: #444444 !important;
+    text-decoration: none !important;
+}
+#toc a:hover {
+    border-bottom: 1px solid #6D4100;
+    color: #6D4100 !important;
+    text-decoration: none !important;
+}
+div.toclevel1 { margin-top: 0.2em; font-size: 16px; }
+div.toclevel2 { margin-top: 0.15em; font-size: 14px; }
+em, dt, td.hdlist1 { color: black; }
+strong { color: #3E4349; }
+a { color: #004B6B; text-decoration: none; border-bottom: 1px dotted #004B6B; }
+a:visited { color: #615FA0; border-bottom: 1px dotted #615FA0; }
+a:hover { color: #6D4100; border-bottom: 1px solid #6D4100; }
+div.tableblock > table, table.tableblock { border: 3px solid #E8E8E8; }
+th.tableblock, td.tableblock { border: 1px solid #E8E8E8; }
+ul > li > * { color: #3E4349; }
+pre, tt, .monospaced { font-family: Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; }
+tt, .monospaced { font-size: 0.9em; color: black;
+}
+div.exampleblock > div.content, div.sidebarblock > div.content, div.listingblock > div.content { border-width: 0 0 0 3px; border-color: #E8E8E8; }
+div.verseblock { border-left-width: 0; margin-left: 3em; }
+div.quoteblock { border-left-width: 3px; margin-left: 0; margin-right: 0;}
+div.admonitionblock td.content { border-left: 3px solid #E8E8E8; }
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([2-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  if (!toc) {
+    return;
+  }
+
+  // Delete existing TOC entries in case we're reloading the TOC.
+  var tocEntriesToRemove = [];
+  var i;
+  for (i = 0; i < toc.childNodes.length; i++) {
+    var entry = toc.childNodes[i];
+    if (entry.nodeName == 'div'
+     && entry.getAttribute("class")
+     && entry.getAttribute("class").match(/^toclevel/))
+      tocEntriesToRemove.push(entry);
+  }
+  for (i = 0; i < tocEntriesToRemove.length; i++) {
+    toc.removeChild(tocEntriesToRemove[i]);
+  }
+
+  // Rebuild TOC entries.
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  // Delete existing footnote entries in case we're reloading the footnodes.
+  var i;
+  var noteholder = document.getElementById("footnotes");
+  if (!noteholder) {
+    return;
+  }
+  var entriesToRemove = [];
+  for (i = 0; i < noteholder.childNodes.length; i++) {
+    var entry = noteholder.childNodes[i];
+    if (entry.nodeName == 'div' && entry.getAttribute("class") == "footnote")
+      entriesToRemove.push(entry);
+  }
+  for (i = 0; i < entriesToRemove.length; i++) {
+    noteholder.removeChild(entriesToRemove[i]);
+  }
+
+  // Rebuild footnote entries.
+  var cont = document.getElementById("content");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      var note = spans[i].getAttribute("data-note");
+      if (!note) {
+        // Use [\s\S] in place of . so multi-line matches work.
+        // Because JavaScript has no s (dotall) regex flag.
+        note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+        spans[i].innerHTML =
+          "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+        spans[i].setAttribute("data-note", note);
+      }
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+},
+
+install: function(toclevels) {
+  var timerId;
+
+  function reinstall() {
+    asciidoc.footnotes();
+    if (toclevels) {
+      asciidoc.toc(toclevels);
+    }
+  }
+
+  function reinstallAndRemoveTimer() {
+    clearInterval(timerId);
+    reinstall();
+  }
+
+  timerId = setInterval(reinstall, 500);
+  if (document.addEventListener)
+    document.addEventListener("DOMContentLoaded", reinstallAndRemoveTimer, false);
+  else
+    window.onload = reinstallAndRemoveTimer;
+}
+
+}
+asciidoc.install();
+/*]]>*/
+</script>
+<script type="text/javascript">
+/*<![CDATA[*/
+/*
+LaTeXMathML.js
+==============
+
+This file, in this form, is due to Douglas Woodall, June 2006.
+It contains JavaScript functions to convert (most simple) LaTeX
+math notation to Presentation MathML.  It was obtained by
+downloading the file ASCIIMathML.js from
+	http://www1.chapman.edu/~jipsen/mathml/asciimathdownload/
+and modifying it so that it carries out ONLY those conversions
+that would be carried out in LaTeX.  A description of the original
+file, with examples, can be found at
+	www1.chapman.edu/~jipsen/mathml/asciimath.html
+	ASCIIMathML: Math on the web for everyone
+
+Here is the header notice from the original file:
+
+ASCIIMathML.js
+==============
+This file contains JavaScript functions to convert ASCII math notation
+to Presentation MathML. The conversion is done while the (X)HTML page
+loads, and should work with Firefox/Mozilla/Netscape 7+ and Internet
+Explorer 6+MathPlayer (http://www.dessci.com/en/products/mathplayer/).
+Just add the next line to your (X)HTML page with this file in the same folder:
+This is a convenient and inexpensive solution for authoring MathML.
+
+Version 1.4.7 Dec 15, 2005, (c) Peter Jipsen http://www.chapman.edu/~jipsen
+Latest version at http://www.chapman.edu/~jipsen/mathml/ASCIIMathML.js
+For changes see http://www.chapman.edu/~jipsen/mathml/asciimathchanges.txt
+If you use it on a webpage, please send the URL to jipsen@chapman.edu
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or (at
+your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License (at http://www.gnu.org/copyleft/gpl.html)
+for more details.
+
+LaTeXMathML.js (ctd)
+==============
+
+The instructions for use are the same as for the original
+ASCIIMathML.js, except that of course the line you add to your
+file should be
+Or use absolute path names if the file is not in the same folder
+as your (X)HTML page.
+*/
+
+var checkForMathML = true;   // check if browser can display MathML
+var notifyIfNoMathML = true; // display note if no MathML capability
+var alertIfNoMathML = false;  // show alert box if no MathML capability
+// was "red":
+var mathcolor = "";	     // change it to "" (to inherit) or any other color
+// was "serif":
+var mathfontfamily = "";      // change to "" to inherit (works in IE)
+                              // or another family (e.g. "arial")
+var showasciiformulaonhover = true; // helps students learn ASCIIMath
+/*
+// Commented out by DRW -- not now used -- see DELIMITERS (twice) near the end
+var displaystyle = false;     // puts limits above and below large operators
+var decimalsign = ".";        // change to "," if you like, beware of `(1,2)`!
+var AMdelimiter1 = "`", AMescape1 = "\\\\`"; // can use other characters
+var AMdelimiter2 = "$", AMescape2 = "\\\\\\$", AMdelimiter2regexp = "\\$";
+var doubleblankmathdelimiter = false; // if true,  x+1  is equal to `x+1`
+                                      // for IE this works only in <!--   -->
+//var separatetokens;// has been removed (email me if this is a problem)
+*/
+var isIE = document.createElementNS==null;
+
+if (document.getElementById==null)
+  alert("This webpage requires a recent browser such as\
+\nMozilla/Netscape 7+ or Internet Explorer 6+MathPlayer")
+
+// all further global variables start with "AM"
+
+function AMcreateElementXHTML(t) {
+  if (isIE) return document.createElement(t);
+  else return document.createElementNS("http://www.w3.org/1999/xhtml",t);
+}
+
+function AMnoMathMLNote() {
+  var nd = AMcreateElementXHTML("h3");
+  nd.setAttribute("align","center")
+  nd.appendChild(AMcreateElementXHTML("p"));
+  nd.appendChild(document.createTextNode("To view the "));
+  var an = AMcreateElementXHTML("a");
+  an.appendChild(document.createTextNode("LaTeXMathML"));
+  an.setAttribute("href","http://www.maths.nott.ac.uk/personal/drw/lm.html");
+  nd.appendChild(an);
+  nd.appendChild(document.createTextNode(" notation use Internet Explorer 6+"));
+  an = AMcreateElementXHTML("a");
+  an.appendChild(document.createTextNode("MathPlayer"));
+  an.setAttribute("href","http://www.dessci.com/en/products/mathplayer/download.htm");
+  nd.appendChild(an);
+  nd.appendChild(document.createTextNode(" or Netscape/Mozilla/Firefox"));
+  nd.appendChild(AMcreateElementXHTML("p"));
+  return nd;
+}
+
+function AMisMathMLavailable() {
+  if (navigator.appName.slice(0,8)=="Netscape")
+    if (navigator.appVersion.slice(0,1)>="5") return null;
+    else return AMnoMathMLNote();
+  else if (navigator.appName.slice(0,9)=="Microsoft")
+    try {
+        var ActiveX = new ActiveXObject("MathPlayer.Factory.1");
+        return null;
+    } catch (e) {
+        return AMnoMathMLNote();
+    }
+  else return AMnoMathMLNote();
+}
+
+// character lists for Mozilla/Netscape fonts
+var AMcal = [0xEF35,0x212C,0xEF36,0xEF37,0x2130,0x2131,0xEF38,0x210B,0x2110,0xEF39,0xEF3A,0x2112,0x2133,0xEF3B,0xEF3C,0xEF3D,0xEF3E,0x211B,0xEF3F,0xEF40,0xEF41,0xEF42,0xEF43,0xEF44,0xEF45,0xEF46];
+var AMfrk = [0xEF5D,0xEF5E,0x212D,0xEF5F,0xEF60,0xEF61,0xEF62,0x210C,0x2111,0xEF63,0xEF64,0xEF65,0xEF66,0xEF67,0xEF68,0xEF69,0xEF6A,0x211C,0xEF6B,0xEF6C,0xEF6D,0xEF6E,0xEF6F,0xEF70,0xEF71,0x2128];
+var AMbbb = [0xEF8C,0xEF8D,0x2102,0xEF8E,0xEF8F,0xEF90,0xEF91,0x210D,0xEF92,0xEF93,0xEF94,0xEF95,0xEF96,0x2115,0xEF97,0x2119,0x211A,0x211D,0xEF98,0xEF99,0xEF9A,0xEF9B,0xEF9C,0xEF9D,0xEF9E,0x2124];
+
+var CONST = 0, UNARY = 1, BINARY = 2, INFIX = 3, LEFTBRACKET = 4,
+    RIGHTBRACKET = 5, SPACE = 6, UNDEROVER = 7, DEFINITION = 8,
+    TEXT = 9, BIG = 10, LONG = 11, STRETCHY = 12, MATRIX = 13; // token types
+
+var AMsqrt = {input:"\\sqrt",	tag:"msqrt", output:"sqrt",	ttype:UNARY},
+  AMroot = {input:"\\root",	tag:"mroot", output:"root",	ttype:BINARY},
+  AMfrac = {input:"\\frac",	tag:"mfrac", output:"/",	ttype:BINARY},
+  AMover = {input:"\\stackrel", tag:"mover", output:"stackrel", ttype:BINARY},
+  AMatop = {input:"\\atop",	tag:"mfrac", output:"",		ttype:INFIX},
+  AMchoose = {input:"\\choose", tag:"mfrac", output:"",		ttype:INFIX},
+  AMsub  = {input:"_",		tag:"msub",  output:"_",	ttype:INFIX},
+  AMsup  = {input:"^",		tag:"msup",  output:"^",	ttype:INFIX},
+  AMtext = {input:"\\mathrm",	tag:"mtext", output:"text",	ttype:TEXT},
+  AMmbox = {input:"\\mbox",	tag:"mtext", output:"mbox",	ttype:TEXT};
+
+// Commented out by DRW to prevent 1/2 turning into a 2-line fraction
+// AMdiv   = {input:"/",	 tag:"mfrac", output:"/",    ttype:INFIX},
+// Commented out by DRW so that " prints literally in equations
+// AMquote = {input:"\"",	 tag:"mtext", output:"mbox", ttype:TEXT};
+
+var AMsymbols = [
+//Greek letters
+{input:"\\alpha",	tag:"mi", output:"\u03B1", ttype:CONST},
+{input:"\\beta",	tag:"mi", output:"\u03B2", ttype:CONST},
+{input:"\\gamma",	tag:"mi", output:"\u03B3", ttype:CONST},
+{input:"\\delta",	tag:"mi", output:"\u03B4", ttype:CONST},
+{input:"\\epsilon",	tag:"mi", output:"\u03B5", ttype:CONST},
+{input:"\\varepsilon",  tag:"mi", output:"\u025B", ttype:CONST},
+{input:"\\zeta",	tag:"mi", output:"\u03B6", ttype:CONST},
+{input:"\\eta",		tag:"mi", output:"\u03B7", ttype:CONST},
+{input:"\\theta",	tag:"mi", output:"\u03B8", ttype:CONST},
+{input:"\\vartheta",	tag:"mi", output:"\u03D1", ttype:CONST},
+{input:"\\iota",	tag:"mi", output:"\u03B9", ttype:CONST},
+{input:"\\kappa",	tag:"mi", output:"\u03BA", ttype:CONST},
+{input:"\\lambda",	tag:"mi", output:"\u03BB", ttype:CONST},
+{input:"\\mu",		tag:"mi", output:"\u03BC", ttype:CONST},
+{input:"\\nu",		tag:"mi", output:"\u03BD", ttype:CONST},
+{input:"\\xi",		tag:"mi", output:"\u03BE", ttype:CONST},
+{input:"\\pi",		tag:"mi", output:"\u03C0", ttype:CONST},
+{input:"\\varpi",	tag:"mi", output:"\u03D6", ttype:CONST},
+{input:"\\rho",		tag:"mi", output:"\u03C1", ttype:CONST},
+{input:"\\varrho",	tag:"mi", output:"\u03F1", ttype:CONST},
+{input:"\\varsigma",	tag:"mi", output:"\u03C2", ttype:CONST},
+{input:"\\sigma",	tag:"mi", output:"\u03C3", ttype:CONST},
+{input:"\\tau",		tag:"mi", output:"\u03C4", ttype:CONST},
+{input:"\\upsilon",	tag:"mi", output:"\u03C5", ttype:CONST},
+{input:"\\phi",		tag:"mi", output:"\u03C6", ttype:CONST},
+{input:"\\varphi",	tag:"mi", output:"\u03D5", ttype:CONST},
+{input:"\\chi",		tag:"mi", output:"\u03C7", ttype:CONST},
+{input:"\\psi",		tag:"mi", output:"\u03C8", ttype:CONST},
+{input:"\\omega",	tag:"mi", output:"\u03C9", ttype:CONST},
+{input:"\\Gamma",	tag:"mo", output:"\u0393", ttype:CONST},
+{input:"\\Delta",	tag:"mo", output:"\u0394", ttype:CONST},
+{input:"\\Theta",	tag:"mo", output:"\u0398", ttype:CONST},
+{input:"\\Lambda",	tag:"mo", output:"\u039B", ttype:CONST},
+{input:"\\Xi",		tag:"mo", output:"\u039E", ttype:CONST},
+{input:"\\Pi",		tag:"mo", output:"\u03A0", ttype:CONST},
+{input:"\\Sigma",	tag:"mo", output:"\u03A3", ttype:CONST},
+{input:"\\Upsilon",	tag:"mo", output:"\u03A5", ttype:CONST},
+{input:"\\Phi",		tag:"mo", output:"\u03A6", ttype:CONST},
+{input:"\\Psi",		tag:"mo", output:"\u03A8", ttype:CONST},
+{input:"\\Omega",	tag:"mo", output:"\u03A9", ttype:CONST},
+
+//fractions
+{input:"\\frac12",	tag:"mo", output:"\u00BD", ttype:CONST},
+{input:"\\frac14",	tag:"mo", output:"\u00BC", ttype:CONST},
+{input:"\\frac34",	tag:"mo", output:"\u00BE", ttype:CONST},
+{input:"\\frac13",	tag:"mo", output:"\u2153", ttype:CONST},
+{input:"\\frac23",	tag:"mo", output:"\u2154", ttype:CONST},
+{input:"\\frac15",	tag:"mo", output:"\u2155", ttype:CONST},
+{input:"\\frac25",	tag:"mo", output:"\u2156", ttype:CONST},
+{input:"\\frac35",	tag:"mo", output:"\u2157", ttype:CONST},
+{input:"\\frac45",	tag:"mo", output:"\u2158", ttype:CONST},
+{input:"\\frac16",	tag:"mo", output:"\u2159", ttype:CONST},
+{input:"\\frac56",	tag:"mo", output:"\u215A", ttype:CONST},
+{input:"\\frac18",	tag:"mo", output:"\u215B", ttype:CONST},
+{input:"\\frac38",	tag:"mo", output:"\u215C", ttype:CONST},
+{input:"\\frac58",	tag:"mo", output:"\u215D", ttype:CONST},
+{input:"\\frac78",	tag:"mo", output:"\u215E", ttype:CONST},
+
+//binary operation symbols
+{input:"\\pm",		tag:"mo", output:"\u00B1", ttype:CONST},
+{input:"\\mp",		tag:"mo", output:"\u2213", ttype:CONST},
+{input:"\\triangleleft",tag:"mo", output:"\u22B2", ttype:CONST},
+{input:"\\triangleright",tag:"mo",output:"\u22B3", ttype:CONST},
+{input:"\\cdot",	tag:"mo", output:"\u22C5", ttype:CONST},
+{input:"\\star",	tag:"mo", output:"\u22C6", ttype:CONST},
+{input:"\\ast",		tag:"mo", output:"\u002A", ttype:CONST},
+{input:"\\times",	tag:"mo", output:"\u00D7", ttype:CONST},
+{input:"\\div",		tag:"mo", output:"\u00F7", ttype:CONST},
+{input:"\\circ",	tag:"mo", output:"\u2218", ttype:CONST},
+//{input:"\\bullet",	  tag:"mo", output:"\u2219", ttype:CONST},
+{input:"\\bullet",	tag:"mo", output:"\u2022", ttype:CONST},
+{input:"\\oplus",	tag:"mo", output:"\u2295", ttype:CONST},
+{input:"\\ominus",	tag:"mo", output:"\u2296", ttype:CONST},
+{input:"\\otimes",	tag:"mo", output:"\u2297", ttype:CONST},
+{input:"\\bigcirc",	tag:"mo", output:"\u25CB", ttype:CONST},
+{input:"\\oslash",	tag:"mo", output:"\u2298", ttype:CONST},
+{input:"\\odot",	tag:"mo", output:"\u2299", ttype:CONST},
+{input:"\\land",	tag:"mo", output:"\u2227", ttype:CONST},
+{input:"\\wedge",	tag:"mo", output:"\u2227", ttype:CONST},
+{input:"\\lor",		tag:"mo", output:"\u2228", ttype:CONST},
+{input:"\\vee",		tag:"mo", output:"\u2228", ttype:CONST},
+{input:"\\cap",		tag:"mo", output:"\u2229", ttype:CONST},
+{input:"\\cup",		tag:"mo", output:"\u222A", ttype:CONST},
+{input:"\\sqcap",	tag:"mo", output:"\u2293", ttype:CONST},
+{input:"\\sqcup",	tag:"mo", output:"\u2294", ttype:CONST},
+{input:"\\uplus",	tag:"mo", output:"\u228E", ttype:CONST},
+{input:"\\amalg",	tag:"mo", output:"\u2210", ttype:CONST},
+{input:"\\bigtriangleup",tag:"mo",output:"\u25B3", ttype:CONST},
+{input:"\\bigtriangledown",tag:"mo",output:"\u25BD", ttype:CONST},
+{input:"\\dag",		tag:"mo", output:"\u2020", ttype:CONST},
+{input:"\\dagger",	tag:"mo", output:"\u2020", ttype:CONST},
+{input:"\\ddag",	tag:"mo", output:"\u2021", ttype:CONST},
+{input:"\\ddagger",	tag:"mo", output:"\u2021", ttype:CONST},
+{input:"\\lhd",		tag:"mo", output:"\u22B2", ttype:CONST},
+{input:"\\rhd",		tag:"mo", output:"\u22B3", ttype:CONST},
+{input:"\\unlhd",	tag:"mo", output:"\u22B4", ttype:CONST},
+{input:"\\unrhd",	tag:"mo", output:"\u22B5", ttype:CONST},
+
+
+//BIG Operators
+{input:"\\sum",		tag:"mo", output:"\u2211", ttype:UNDEROVER},
+{input:"\\prod",	tag:"mo", output:"\u220F", ttype:UNDEROVER},
+{input:"\\bigcap",	tag:"mo", output:"\u22C2", ttype:UNDEROVER},
+{input:"\\bigcup",	tag:"mo", output:"\u22C3", ttype:UNDEROVER},
+{input:"\\bigwedge",	tag:"mo", output:"\u22C0", ttype:UNDEROVER},
+{input:"\\bigvee",	tag:"mo", output:"\u22C1", ttype:UNDEROVER},
+{input:"\\bigsqcap",	tag:"mo", output:"\u2A05", ttype:UNDEROVER},
+{input:"\\bigsqcup",	tag:"mo", output:"\u2A06", ttype:UNDEROVER},
+{input:"\\coprod",	tag:"mo", output:"\u2210", ttype:UNDEROVER},
+{input:"\\bigoplus",	tag:"mo", output:"\u2A01", ttype:UNDEROVER},
+{input:"\\bigotimes",	tag:"mo", output:"\u2A02", ttype:UNDEROVER},
+{input:"\\bigodot",	tag:"mo", output:"\u2A00", ttype:UNDEROVER},
+{input:"\\biguplus",	tag:"mo", output:"\u2A04", ttype:UNDEROVER},
+{input:"\\int",		tag:"mo", output:"\u222B", ttype:CONST},
+{input:"\\oint",	tag:"mo", output:"\u222E", ttype:CONST},
+
+//binary relation symbols
+{input:":=",		tag:"mo", output:":=",	   ttype:CONST},
+{input:"\\lt",		tag:"mo", output:"<",	   ttype:CONST},
+{input:"\\gt",		tag:"mo", output:">",	   ttype:CONST},
+{input:"\\ne",		tag:"mo", output:"\u2260", ttype:CONST},
+{input:"\\neq",		tag:"mo", output:"\u2260", ttype:CONST},
+{input:"\\le",		tag:"mo", output:"\u2264", ttype:CONST},
+{input:"\\leq",		tag:"mo", output:"\u2264", ttype:CONST},
+{input:"\\leqslant",	tag:"mo", output:"\u2264", ttype:CONST},
+{input:"\\ge",		tag:"mo", output:"\u2265", ttype:CONST},
+{input:"\\geq",		tag:"mo", output:"\u2265", ttype:CONST},
+{input:"\\geqslant",	tag:"mo", output:"\u2265", ttype:CONST},
+{input:"\\equiv",	tag:"mo", output:"\u2261", ttype:CONST},
+{input:"\\ll",		tag:"mo", output:"\u226A", ttype:CONST},
+{input:"\\gg",		tag:"mo", output:"\u226B", ttype:CONST},
+{input:"\\doteq",	tag:"mo", output:"\u2250", ttype:CONST},
+{input:"\\prec",	tag:"mo", output:"\u227A", ttype:CONST},
+{input:"\\succ",	tag:"mo", output:"\u227B", ttype:CONST},
+{input:"\\preceq",	tag:"mo", output:"\u227C", ttype:CONST},
+{input:"\\succeq",	tag:"mo", output:"\u227D", ttype:CONST},
+{input:"\\subset",	tag:"mo", output:"\u2282", ttype:CONST},
+{input:"\\supset",	tag:"mo", output:"\u2283", ttype:CONST},
+{input:"\\subseteq",	tag:"mo", output:"\u2286", ttype:CONST},
+{input:"\\supseteq",	tag:"mo", output:"\u2287", ttype:CONST},
+{input:"\\sqsubset",	tag:"mo", output:"\u228F", ttype:CONST},
+{input:"\\sqsupset",	tag:"mo", output:"\u2290", ttype:CONST},
+{input:"\\sqsubseteq",  tag:"mo", output:"\u2291", ttype:CONST},
+{input:"\\sqsupseteq",  tag:"mo", output:"\u2292", ttype:CONST},
+{input:"\\sim",		tag:"mo", output:"\u223C", ttype:CONST},
+{input:"\\simeq",	tag:"mo", output:"\u2243", ttype:CONST},
+{input:"\\approx",	tag:"mo", output:"\u2248", ttype:CONST},
+{input:"\\cong",	tag:"mo", output:"\u2245", ttype:CONST},
+{input:"\\Join",	tag:"mo", output:"\u22C8", ttype:CONST},
+{input:"\\bowtie",	tag:"mo", output:"\u22C8", ttype:CONST},
+{input:"\\in",		tag:"mo", output:"\u2208", ttype:CONST},
+{input:"\\ni",		tag:"mo", output:"\u220B", ttype:CONST},
+{input:"\\owns",	tag:"mo", output:"\u220B", ttype:CONST},
+{input:"\\propto",	tag:"mo", output:"\u221D", ttype:CONST},
+{input:"\\vdash",	tag:"mo", output:"\u22A2", ttype:CONST},
+{input:"\\dashv",	tag:"mo", output:"\u22A3", ttype:CONST},
+{input:"\\models",	tag:"mo", output:"\u22A8", ttype:CONST},
+{input:"\\perp",	tag:"mo", output:"\u22A5", ttype:CONST},
+{input:"\\smile",	tag:"mo", output:"\u2323", ttype:CONST},
+{input:"\\frown",	tag:"mo", output:"\u2322", ttype:CONST},
+{input:"\\asymp",	tag:"mo", output:"\u224D", ttype:CONST},
+{input:"\\notin",	tag:"mo", output:"\u2209", ttype:CONST},
+
+//matrices
+{input:"\\begin{eqnarray}",	output:"X",	ttype:MATRIX, invisible:true},
+{input:"\\begin{array}",	output:"X",	ttype:MATRIX, invisible:true},
+{input:"\\\\",			output:"}&{",	ttype:DEFINITION},
+{input:"\\end{eqnarray}",	output:"}}",	ttype:DEFINITION},
+{input:"\\end{array}",		output:"}}",	ttype:DEFINITION},
+
+//grouping and literal brackets -- ieval is for IE
+{input:"\\big",	   tag:"mo", output:"X", atval:"1.2", ieval:"2.2", ttype:BIG},
+{input:"\\Big",	   tag:"mo", output:"X", atval:"1.6", ieval:"2.6", ttype:BIG},
+{input:"\\bigg",   tag:"mo", output:"X", atval:"2.2", ieval:"3.2", ttype:BIG},
+{input:"\\Bigg",   tag:"mo", output:"X", atval:"2.9", ieval:"3.9", ttype:BIG},
+{input:"\\left",   tag:"mo", output:"X", ttype:LEFTBRACKET},
+{input:"\\right",  tag:"mo", output:"X", ttype:RIGHTBRACKET},
+{input:"{",	   output:"{", ttype:LEFTBRACKET,  invisible:true},
+{input:"}",	   output:"}", ttype:RIGHTBRACKET, invisible:true},
+
+{input:"(",	   tag:"mo", output:"(",      atval:"1", ttype:STRETCHY},
+{input:"[",	   tag:"mo", output:"[",      atval:"1", ttype:STRETCHY},
+{input:"\\lbrack", tag:"mo", output:"[",      atval:"1", ttype:STRETCHY},
+{input:"\\{",	   tag:"mo", output:"{",      atval:"1", ttype:STRETCHY},
+{input:"\\lbrace", tag:"mo", output:"{",      atval:"1", ttype:STRETCHY},
+{input:"\\langle", tag:"mo", output:"\u2329", atval:"1", ttype:STRETCHY},
+{input:"\\lfloor", tag:"mo", output:"\u230A", atval:"1", ttype:STRETCHY},
+{input:"\\lceil",  tag:"mo", output:"\u2308", atval:"1", ttype:STRETCHY},
+
+// rtag:"mi" causes space to be inserted before a following sin, cos, etc.
+// (see function AMparseExpr() )
+{input:")",	  tag:"mo",output:")",	    rtag:"mi",atval:"1",ttype:STRETCHY},
+{input:"]",	  tag:"mo",output:"]",	    rtag:"mi",atval:"1",ttype:STRETCHY},
+{input:"\\rbrack",tag:"mo",output:"]",	    rtag:"mi",atval:"1",ttype:STRETCHY},
+{input:"\\}",	  tag:"mo",output:"}",	    rtag:"mi",atval:"1",ttype:STRETCHY},
+{input:"\\rbrace",tag:"mo",output:"}",	    rtag:"mi",atval:"1",ttype:STRETCHY},
+{input:"\\rangle",tag:"mo",output:"\u232A", rtag:"mi",atval:"1",ttype:STRETCHY},
+{input:"\\rfloor",tag:"mo",output:"\u230B", rtag:"mi",atval:"1",ttype:STRETCHY},
+{input:"\\rceil", tag:"mo",output:"\u2309", rtag:"mi",atval:"1",ttype:STRETCHY},
+
+// "|", "\\|", "\\vert" and "\\Vert" modified later: lspace = rspace = 0em
+{input:"|",		tag:"mo", output:"\u2223", atval:"1", ttype:STRETCHY},
+{input:"\\|",		tag:"mo", output:"\u2225", atval:"1", ttype:STRETCHY},
+{input:"\\vert",	tag:"mo", output:"\u2223", atval:"1", ttype:STRETCHY},
+{input:"\\Vert",	tag:"mo", output:"\u2225", atval:"1", ttype:STRETCHY},
+{input:"\\mid",		tag:"mo", output:"\u2223", atval:"1", ttype:STRETCHY},
+{input:"\\parallel",	tag:"mo", output:"\u2225", atval:"1", ttype:STRETCHY},
+{input:"/",		tag:"mo", output:"/",	atval:"1.01", ttype:STRETCHY},
+{input:"\\backslash",	tag:"mo", output:"\u2216", atval:"1", ttype:STRETCHY},
+{input:"\\setminus",	tag:"mo", output:"\\",	   ttype:CONST},
+
+//miscellaneous symbols
+{input:"\\!",	  tag:"mspace", atname:"width", atval:"-0.167em", ttype:SPACE},
+{input:"\\,",	  tag:"mspace", atname:"width", atval:"0.167em", ttype:SPACE},
+{input:"\\>",	  tag:"mspace", atname:"width", atval:"0.222em", ttype:SPACE},
+{input:"\\:",	  tag:"mspace", atname:"width", atval:"0.222em", ttype:SPACE},
+{input:"\\;",	  tag:"mspace", atname:"width", atval:"0.278em", ttype:SPACE},
+{input:"~",	  tag:"mspace", atname:"width", atval:"0.333em", ttype:SPACE},
+{input:"\\quad",  tag:"mspace", atname:"width", atval:"1em", ttype:SPACE},
+{input:"\\qquad", tag:"mspace", atname:"width", atval:"2em", ttype:SPACE},
+//{input:"{}",		  tag:"mo", output:"\u200B", ttype:CONST}, // zero-width
+{input:"\\prime",	tag:"mo", output:"\u2032", ttype:CONST},
+{input:"'",		tag:"mo", output:"\u02B9", ttype:CONST},
+{input:"''",		tag:"mo", output:"\u02BA", ttype:CONST},
+{input:"'''",		tag:"mo", output:"\u2034", ttype:CONST},
+{input:"''''",		tag:"mo", output:"\u2057", ttype:CONST},
+{input:"\\ldots",	tag:"mo", output:"\u2026", ttype:CONST},
+{input:"\\cdots",	tag:"mo", output:"\u22EF", ttype:CONST},
+{input:"\\vdots",	tag:"mo", output:"\u22EE", ttype:CONST},
+{input:"\\ddots",	tag:"mo", output:"\u22F1", ttype:CONST},
+{input:"\\forall",	tag:"mo", output:"\u2200", ttype:CONST},
+{input:"\\exists",	tag:"mo", output:"\u2203", ttype:CONST},
+{input:"\\Re",		tag:"mo", output:"\u211C", ttype:CONST},
+{input:"\\Im",		tag:"mo", output:"\u2111", ttype:CONST},
+{input:"\\aleph",	tag:"mo", output:"\u2135", ttype:CONST},
+{input:"\\hbar",	tag:"mo", output:"\u210F", ttype:CONST},
+{input:"\\ell",		tag:"mo", output:"\u2113", ttype:CONST},
+{input:"\\wp",		tag:"mo", output:"\u2118", ttype:CONST},
+{input:"\\emptyset",	tag:"mo", output:"\u2205", ttype:CONST},
+{input:"\\infty",	tag:"mo", output:"\u221E", ttype:CONST},
+{input:"\\surd",	tag:"mo", output:"\\sqrt{}", ttype:DEFINITION},
+{input:"\\partial",	tag:"mo", output:"\u2202", ttype:CONST},
+{input:"\\nabla",	tag:"mo", output:"\u2207", ttype:CONST},
+{input:"\\triangle",	tag:"mo", output:"\u25B3", ttype:CONST},
+{input:"\\therefore",	tag:"mo", output:"\u2234", ttype:CONST},
+{input:"\\angle",	tag:"mo", output:"\u2220", ttype:CONST},
+//{input:"\\\\ ",	  tag:"mo", output:"\u00A0", ttype:CONST},
+{input:"\\diamond",	tag:"mo", output:"\u22C4", ttype:CONST},
+//{input:"\\Diamond",	  tag:"mo", output:"\u25CA", ttype:CONST},
+{input:"\\Diamond",	tag:"mo", output:"\u25C7", ttype:CONST},
+{input:"\\neg",		tag:"mo", output:"\u00AC", ttype:CONST},
+{input:"\\lnot",	tag:"mo", output:"\u00AC", ttype:CONST},
+{input:"\\bot",		tag:"mo", output:"\u22A5", ttype:CONST},
+{input:"\\top",		tag:"mo", output:"\u22A4", ttype:CONST},
+{input:"\\square",	tag:"mo", output:"\u25AB", ttype:CONST},
+{input:"\\Box",		tag:"mo", output:"\u25A1", ttype:CONST},
+{input:"\\wr",		tag:"mo", output:"\u2240", ttype:CONST},
+
+//standard functions
+//Note UNDEROVER *must* have tag:"mo" to work properly
+{input:"\\arccos", tag:"mi", output:"arccos", ttype:UNARY, func:true},
+{input:"\\arcsin", tag:"mi", output:"arcsin", ttype:UNARY, func:true},
+{input:"\\arctan", tag:"mi", output:"arctan", ttype:UNARY, func:true},
+{input:"\\arg",	   tag:"mi", output:"arg",    ttype:UNARY, func:true},
+{input:"\\cos",	   tag:"mi", output:"cos",    ttype:UNARY, func:true},
+{input:"\\cosh",   tag:"mi", output:"cosh",   ttype:UNARY, func:true},
+{input:"\\cot",	   tag:"mi", output:"cot",    ttype:UNARY, func:true},
+{input:"\\coth",   tag:"mi", output:"coth",   ttype:UNARY, func:true},
+{input:"\\csc",	   tag:"mi", output:"csc",    ttype:UNARY, func:true},
+{input:"\\deg",	   tag:"mi", output:"deg",    ttype:UNARY, func:true},
+{input:"\\det",	   tag:"mi", output:"det",    ttype:UNARY, func:true},
+{input:"\\dim",	   tag:"mi", output:"dim",    ttype:UNARY, func:true}, //CONST?
+{input:"\\exp",	   tag:"mi", output:"exp",    ttype:UNARY, func:true},
+{input:"\\gcd",	   tag:"mi", output:"gcd",    ttype:UNARY, func:true}, //CONST?
+{input:"\\hom",	   tag:"mi", output:"hom",    ttype:UNARY, func:true},
+{input:"\\inf",	      tag:"mo", output:"inf",	 ttype:UNDEROVER},
+{input:"\\ker",	   tag:"mi", output:"ker",    ttype:UNARY, func:true},
+{input:"\\lg",	   tag:"mi", output:"lg",     ttype:UNARY, func:true},
+{input:"\\lim",	      tag:"mo", output:"lim",	 ttype:UNDEROVER},
+{input:"\\liminf",    tag:"mo", output:"liminf", ttype:UNDEROVER},
+{input:"\\limsup",    tag:"mo", output:"limsup", ttype:UNDEROVER},
+{input:"\\ln",	   tag:"mi", output:"ln",     ttype:UNARY, func:true},
+{input:"\\log",	   tag:"mi", output:"log",    ttype:UNARY, func:true},
+{input:"\\max",	      tag:"mo", output:"max",	 ttype:UNDEROVER},
+{input:"\\min",	      tag:"mo", output:"min",	 ttype:UNDEROVER},
+{input:"\\Pr",	   tag:"mi", output:"Pr",     ttype:UNARY, func:true},
+{input:"\\sec",	   tag:"mi", output:"sec",    ttype:UNARY, func:true},
+{input:"\\sin",	   tag:"mi", output:"sin",    ttype:UNARY, func:true},
+{input:"\\sinh",   tag:"mi", output:"sinh",   ttype:UNARY, func:true},
+{input:"\\sup",	      tag:"mo", output:"sup",	 ttype:UNDEROVER},
+{input:"\\tan",	   tag:"mi", output:"tan",    ttype:UNARY, func:true},
+{input:"\\tanh",   tag:"mi", output:"tanh",   ttype:UNARY, func:true},
+
+//arrows
+{input:"\\gets",		tag:"mo", output:"\u2190", ttype:CONST},
+{input:"\\leftarrow",		tag:"mo", output:"\u2190", ttype:CONST},
+{input:"\\to",			tag:"mo", output:"\u2192", ttype:CONST},
+{input:"\\rightarrow",		tag:"mo", output:"\u2192", ttype:CONST},
+{input:"\\leftrightarrow",	tag:"mo", output:"\u2194", ttype:CONST},
+{input:"\\uparrow",		tag:"mo", output:"\u2191", ttype:CONST},
+{input:"\\downarrow",		tag:"mo", output:"\u2193", ttype:CONST},
+{input:"\\updownarrow",		tag:"mo", output:"\u2195", ttype:CONST},
+{input:"\\Leftarrow",		tag:"mo", output:"\u21D0", ttype:CONST},
+{input:"\\Rightarrow",		tag:"mo", output:"\u21D2", ttype:CONST},
+{input:"\\Leftrightarrow",	tag:"mo", output:"\u21D4", ttype:CONST},
+{input:"\\iff", tag:"mo", output:"~\\Longleftrightarrow~", ttype:DEFINITION},
+{input:"\\Uparrow",		tag:"mo", output:"\u21D1", ttype:CONST},
+{input:"\\Downarrow",		tag:"mo", output:"\u21D3", ttype:CONST},
+{input:"\\Updownarrow",		tag:"mo", output:"\u21D5", ttype:CONST},
+{input:"\\mapsto",		tag:"mo", output:"\u21A6", ttype:CONST},
+{input:"\\longleftarrow",	tag:"mo", output:"\u2190", ttype:LONG},
+{input:"\\longrightarrow",	tag:"mo", output:"\u2192", ttype:LONG},
+{input:"\\longleftrightarrow",	tag:"mo", output:"\u2194", ttype:LONG},
+{input:"\\Longleftarrow",	tag:"mo", output:"\u21D0", ttype:LONG},
+{input:"\\Longrightarrow",	tag:"mo", output:"\u21D2", ttype:LONG},
+{input:"\\Longleftrightarrow",  tag:"mo", output:"\u21D4", ttype:LONG},
+{input:"\\longmapsto",		tag:"mo", output:"\u21A6", ttype:CONST},
+							// disaster if LONG
+
+//commands with argument
+AMsqrt, AMroot, AMfrac, AMover, AMsub, AMsup, AMtext, AMmbox, AMatop, AMchoose,
+//AMdiv, AMquote,
+
+//diacritical marks
+{input:"\\acute",	tag:"mover",  output:"\u00B4", ttype:UNARY, acc:true},
+//{input:"\\acute",	  tag:"mover",  output:"\u0317", ttype:UNARY, acc:true},
+//{input:"\\acute",	  tag:"mover",  output:"\u0301", ttype:UNARY, acc:true},
+//{input:"\\grave",	  tag:"mover",  output:"\u0300", ttype:UNARY, acc:true},
+//{input:"\\grave",	  tag:"mover",  output:"\u0316", ttype:UNARY, acc:true},
+{input:"\\grave",	tag:"mover",  output:"\u0060", ttype:UNARY, acc:true},
+{input:"\\breve",	tag:"mover",  output:"\u02D8", ttype:UNARY, acc:true},
+{input:"\\check",	tag:"mover",  output:"\u02C7", ttype:UNARY, acc:true},
+{input:"\\dot",		tag:"mover",  output:".",      ttype:UNARY, acc:true},
+{input:"\\ddot",	tag:"mover",  output:"..",     ttype:UNARY, acc:true},
+//{input:"\\ddot",	  tag:"mover",  output:"\u00A8", ttype:UNARY, acc:true},
+{input:"\\mathring",	tag:"mover",  output:"\u00B0", ttype:UNARY, acc:true},
+{input:"\\vec",		tag:"mover",  output:"\u20D7", ttype:UNARY, acc:true},
+{input:"\\overrightarrow",tag:"mover",output:"\u20D7", ttype:UNARY, acc:true},
+{input:"\\overleftarrow",tag:"mover", output:"\u20D6", ttype:UNARY, acc:true},
+{input:"\\hat",		tag:"mover",  output:"\u005E", ttype:UNARY, acc:true},
+{input:"\\widehat",	tag:"mover",  output:"\u0302", ttype:UNARY, acc:true},
+{input:"\\tilde",	tag:"mover",  output:"~",      ttype:UNARY, acc:true},
+//{input:"\\tilde",	  tag:"mover",  output:"\u0303", ttype:UNARY, acc:true},
+{input:"\\widetilde",	tag:"mover",  output:"\u02DC", ttype:UNARY, acc:true},
+{input:"\\bar",		tag:"mover",  output:"\u203E", ttype:UNARY, acc:true},
+{input:"\\overbrace",	tag:"mover",  output:"\u23B4", ttype:UNARY, acc:true},
+{input:"\\overline",	tag:"mover",  output:"\u00AF", ttype:UNARY, acc:true},
+{input:"\\underbrace",  tag:"munder", output:"\u23B5", ttype:UNARY, acc:true},
+{input:"\\underline",	tag:"munder", output:"\u00AF", ttype:UNARY, acc:true},
+//{input:"underline",	tag:"munder", output:"\u0332", ttype:UNARY, acc:true},
+
+//typestyles and fonts
+{input:"\\displaystyle",tag:"mstyle",atname:"displaystyle",atval:"true", ttype:UNARY},
+{input:"\\textstyle",tag:"mstyle",atname:"displaystyle",atval:"false", ttype:UNARY},
+{input:"\\scriptstyle",tag:"mstyle",atname:"scriptlevel",atval:"1", ttype:UNARY},
+{input:"\\scriptscriptstyle",tag:"mstyle",atname:"scriptlevel",atval:"2", ttype:UNARY},
+{input:"\\textrm", tag:"mstyle", output:"\\mathrm", ttype: DEFINITION},
+{input:"\\mathbf", tag:"mstyle", atname:"mathvariant", atval:"bold", ttype:UNARY},
+{input:"\\textbf", tag:"mstyle", atname:"mathvariant", atval:"bold", ttype:UNARY},
+{input:"\\mathit", tag:"mstyle", atname:"mathvariant", atval:"italic", ttype:UNARY},
+{input:"\\textit", tag:"mstyle", atname:"mathvariant", atval:"italic", ttype:UNARY},
+{input:"\\mathtt", tag:"mstyle", atname:"mathvariant", atval:"monospace", ttype:UNARY},
+{input:"\\texttt", tag:"mstyle", atname:"mathvariant", atval:"monospace", ttype:UNARY},
+{input:"\\mathsf", tag:"mstyle", atname:"mathvariant", atval:"sans-serif", ttype:UNARY},
+{input:"\\mathbb", tag:"mstyle", atname:"mathvariant", atval:"double-struck", ttype:UNARY, codes:AMbbb},
+{input:"\\mathcal",tag:"mstyle", atname:"mathvariant", atval:"script", ttype:UNARY, codes:AMcal},
+{input:"\\mathfrak",tag:"mstyle",atname:"mathvariant", atval:"fraktur",ttype:UNARY, codes:AMfrk}
+];
+
+function compareNames(s1,s2) {
+  if (s1.input > s2.input) return 1
+  else return -1;
+}
+
+var AMnames = []; //list of input symbols
+
+function AMinitSymbols() {
+  AMsymbols.sort(compareNames);
+  for (i=0; i<AMsymbols.length; i++) AMnames[i] = AMsymbols[i].input;
+}
+
+var AMmathml = "http://www.w3.org/1998/Math/MathML";
+
+function AMcreateElementMathML(t) {
+  if (isIE) return document.createElement("m:"+t);
+  else return document.createElementNS(AMmathml,t);
+}
+
+function AMcreateMmlNode(t,frag) {
+//  var node = AMcreateElementMathML(name);
+  if (isIE) var node = document.createElement("m:"+t);
+  else var node = document.createElementNS(AMmathml,t);
+  node.appendChild(frag);
+  return node;
+}
+
+function newcommand(oldstr,newstr) {
+  AMsymbols = AMsymbols.concat([{input:oldstr, tag:"mo", output:newstr,
+                                 ttype:DEFINITION}]);
+}
+
+function AMremoveCharsAndBlanks(str,n) {
+//remove n characters and any following blanks
+  var st;
+  st = str.slice(n);
+  for (var i=0; i<st.length && st.charCodeAt(i)<=32; i=i+1);
+  return st.slice(i);
+}
+
+function AMposition(arr, str, n) {
+// return position >=n where str appears or would be inserted
+// assumes arr is sorted
+  if (n==0) {
+    var h,m;
+    n = -1;
+    h = arr.length;
+    while (n+1<h) {
+      m = (n+h) >> 1;
+      if (arr[m]<str) n = m; else h = m;
+    }
+    return h;
+  } else
+    for (var i=n; i<arr.length && arr[i]<str; i++);
+  return i; // i=arr.length || arr[i]>=str
+}
+
+function AMgetSymbol(str) {
+//return maximal initial substring of str that appears in names
+//return null if there is none
+  var k = 0; //new pos
+  var j = 0; //old pos
+  var mk; //match pos
+  var st;
+  var tagst;
+  var match = "";
+  var more = true;
+  for (var i=1; i<=str.length && more; i++) {
+    st = str.slice(0,i); //initial substring of length i
+    j = k;
+    k = AMposition(AMnames, st, j);
+    if (k<AMnames.length && str.slice(0,AMnames[k].length)==AMnames[k]){
+      match = AMnames[k];
+      mk = k;
+      i = match.length;
+    }
+    more = k<AMnames.length && str.slice(0,AMnames[k].length)>=AMnames[k];
+  }
+  AMpreviousSymbol=AMcurrentSymbol;
+  if (match!=""){
+    AMcurrentSymbol=AMsymbols[mk].ttype;
+    return AMsymbols[mk];
+  }
+  AMcurrentSymbol=CONST;
+  k = 1;
+  st = str.slice(0,1); //take 1 character
+  if ("0"<=st && st<="9") tagst = "mn";
+  else tagst = (("A">st || st>"Z") && ("a">st || st>"z")?"mo":"mi");
+/*
+// Commented out by DRW (not fully understood, but probably to do with
+// use of "/" as an INFIX version of "\\frac", which we don't want):
+//}
+//if (st=="-" && AMpreviousSymbol==INFIX) {
+//  AMcurrentSymbol = INFIX;  //trick "/" into recognizing "-" on second parse
+//  return {input:st, tag:tagst, output:st, ttype:UNARY, func:true};
+//}
+*/
+  return {input:st, tag:tagst, output:st, ttype:CONST};
+}
+
+
+/*Parsing ASCII math expressions with the following grammar
+v ::= [A-Za-z] | greek letters | numbers | other constant symbols
+u ::= sqrt | text | bb | other unary symbols for font commands
+b ::= frac | root | stackrel	binary symbols
+l ::= { | \left			left brackets
+r ::= } | \right		right brackets
+S ::= v | lEr | uS | bSS	Simple expression
+I ::= S_S | S^S | S_S^S | S	Intermediate expression
+E ::= IE | I/I			Expression
+Each terminal symbol is translated into a corresponding mathml node.*/
+
+var AMpreviousSymbol,AMcurrentSymbol;
+
+function AMparseSexpr(str) { //parses str and returns [node,tailstr,(node)tag]
+  var symbol, node, result, result2, i, st,// rightvert = false,
+    newFrag = document.createDocumentFragment();
+  str = AMremoveCharsAndBlanks(str,0);
+  symbol = AMgetSymbol(str);             //either a token or a bracket or empty
+  if (symbol == null || symbol.ttype == RIGHTBRACKET)
+    return [null,str,null];
+  if (symbol.ttype == DEFINITION) {
+    str = symbol.output+AMremoveCharsAndBlanks(str,symbol.input.length);
+    symbol = AMgetSymbol(str);
+    if (symbol == null || symbol.ttype == RIGHTBRACKET)
+      return [null,str,null];
+  }
+  str = AMremoveCharsAndBlanks(str,symbol.input.length);
+  switch (symbol.ttype) {
+  case SPACE:
+    node = AMcreateElementMathML(symbol.tag);
+    node.setAttribute(symbol.atname,symbol.atval);
+    return [node,str,symbol.tag];
+  case UNDEROVER:
+    if (isIE) {
+      if (symbol.input.substr(0,4) == "\\big") {   // botch for missing symbols
+	str = "\\"+symbol.input.substr(4)+str;	   // make \bigcup = \cup etc.
+	symbol = AMgetSymbol(str);
+	symbol.ttype = UNDEROVER;
+	str = AMremoveCharsAndBlanks(str,symbol.input.length);
+      }
+    }
+    return [AMcreateMmlNode(symbol.tag,
+			document.createTextNode(symbol.output)),str,symbol.tag];
+  case CONST:
+    var output = symbol.output;
+    if (isIE) {
+      if (symbol.input == "'")
+	output = "\u2032";
+      else if (symbol.input == "''")
+	output = "\u2033";
+      else if (symbol.input == "'''")
+	output = "\u2033\u2032";
+      else if (symbol.input == "''''")
+	output = "\u2033\u2033";
+      else if (symbol.input == "\\square")
+	output = "\u25A1";	// same as \Box
+      else if (symbol.input.substr(0,5) == "\\frac") {
+						// botch for missing fractions
+	var denom = symbol.input.substr(6,1);
+	if (denom == "5" || denom == "6") {
+	  str = symbol.input.replace(/\\frac/,"\\frac ")+str;
+	  return [node,str,symbol.tag];
+	}
+      }
+    }
+    node = AMcreateMmlNode(symbol.tag,document.createTextNode(output));
+    return [node,str,symbol.tag];
+  case LONG:  // added by DRW
+    node = AMcreateMmlNode(symbol.tag,document.createTextNode(symbol.output));
+    node.setAttribute("minsize","1.5");
+    node.setAttribute("maxsize","1.5");
+    node = AMcreateMmlNode("mover",node);
+    node.appendChild(AMcreateElementMathML("mspace"));
+    return [node,str,symbol.tag];
+  case STRETCHY:  // added by DRW
+    if (isIE && symbol.input == "\\backslash")
+	symbol.output = "\\";	// doesn't expand, but then nor does "\u2216"
+    node = AMcreateMmlNode(symbol.tag,document.createTextNode(symbol.output));
+    if (symbol.input == "|" || symbol.input == "\\vert" ||
+	symbol.input == "\\|" || symbol.input == "\\Vert") {
+	  node.setAttribute("lspace","0em");
+	  node.setAttribute("rspace","0em");
+    }
+    node.setAttribute("maxsize",symbol.atval);  // don't allow to stretch here
+    if (symbol.rtag != null)
+      return [node,str,symbol.rtag];
+    else
+      return [node,str,symbol.tag];
+  case BIG:  // added by DRW
+    var atval = symbol.atval;
+    if (isIE)
+      atval = symbol.ieval;
+    symbol = AMgetSymbol(str);
+    if (symbol == null)
+	return [null,str,null];
+    str = AMremoveCharsAndBlanks(str,symbol.input.length);
+    node = AMcreateMmlNode(symbol.tag,document.createTextNode(symbol.output));
+    if (isIE) {		// to get brackets to expand
+      var space = AMcreateElementMathML("mspace");
+      space.setAttribute("height",atval+"ex");
+      node = AMcreateMmlNode("mrow",node);
+      node.appendChild(space);
+    } else {		// ignored in IE
+      node.setAttribute("minsize",atval);
+      node.setAttribute("maxsize",atval);
+    }
+    return [node,str,symbol.tag];
+  case LEFTBRACKET:   //read (expr+)
+    if (symbol.input == "\\left") { // left what?
+      symbol = AMgetSymbol(str);
+      if (symbol != null) {
+	if (symbol.input == ".")
+	  symbol.invisible = true;
+	str = AMremoveCharsAndBlanks(str,symbol.input.length);
+      }
+    }
+    result = AMparseExpr(str,true,false);
+    if (symbol==null ||
+	(typeof symbol.invisible == "boolean" && symbol.invisible))
+      node = AMcreateMmlNode("mrow",result[0]);
+    else {
+      node = AMcreateMmlNode("mo",document.createTextNode(symbol.output));
+      node = AMcreateMmlNode("mrow",node);
+      node.appendChild(result[0]);
+    }
+    return [node,result[1],result[2]];
+  case MATRIX:	 //read (expr+)
+    if (symbol.input == "\\begin{array}") {
+      var mask = "";
+      symbol = AMgetSymbol(str);
+      str = AMremoveCharsAndBlanks(str,0);
+      if (symbol == null)
+	mask = "l";
+      else {
+	str = AMremoveCharsAndBlanks(str,symbol.input.length);
+	if (symbol.input != "{")
+	  mask = "l";
+	else do {
+	  symbol = AMgetSymbol(str);
+	  if (symbol != null) {
+	    str = AMremoveCharsAndBlanks(str,symbol.input.length);
+	    if (symbol.input != "}")
+	      mask = mask+symbol.input;
+	  }
+	} while (symbol != null && symbol.input != "" && symbol.input != "}");
+      }
+      result = AMparseExpr("{"+str,true,true);
+//    if (result[0]==null) return [AMcreateMmlNode("mo",
+//			   document.createTextNode(symbol.input)),str];
+      node = AMcreateMmlNode("mtable",result[0]);
+      mask = mask.replace(/l/g,"left ");
+      mask = mask.replace(/r/g,"right ");
+      mask = mask.replace(/c/g,"center ");
+      node.setAttribute("columnalign",mask);
+      node.setAttribute("displaystyle","false");
+      if (isIE)
+	return [node,result[1],null];
+// trying to get a *little* bit of space around the array
+// (IE already includes it)
+      var lspace = AMcreateElementMathML("mspace");
+      lspace.setAttribute("width","0.167em");
+      var rspace = AMcreateElementMathML("mspace");
+      rspace.setAttribute("width","0.167em");
+      var node1 = AMcreateMmlNode("mrow",lspace);
+      node1.appendChild(node);
+      node1.appendChild(rspace);
+      return [node1,result[1],null];
+    } else {	// eqnarray
+      result = AMparseExpr("{"+str,true,true);
+      node = AMcreateMmlNode("mtable",result[0]);
+      if (isIE)
+	node.setAttribute("columnspacing","0.25em"); // best in practice?
+      else
+	node.setAttribute("columnspacing","0.167em"); // correct (but ignored?)
+      node.setAttribute("columnalign","right center left");
+      node.setAttribute("displaystyle","true");
+      node = AMcreateMmlNode("mrow",node);
+      return [node,result[1],null];
+    }
+  case TEXT:
+      if (str.charAt(0)=="{") i=str.indexOf("}");
+      else i = 0;
+      if (i==-1)
+		 i = str.length;
+      st = str.slice(1,i);
+      if (st.charAt(0) == " ") {
+	node = AMcreateElementMathML("mspace");
+	node.setAttribute("width","0.33em");	// was 1ex
+	newFrag.appendChild(node);
+      }
+      newFrag.appendChild(
+        AMcreateMmlNode(symbol.tag,document.createTextNode(st)));
+      if (st.charAt(st.length-1) == " ") {
+	node = AMcreateElementMathML("mspace");
+	node.setAttribute("width","0.33em");	// was 1ex
+	newFrag.appendChild(node);
+      }
+      str = AMremoveCharsAndBlanks(str,i+1);
+      return [AMcreateMmlNode("mrow",newFrag),str,null];
+  case UNARY:
+      result = AMparseSexpr(str);
+      if (result[0]==null) return [AMcreateMmlNode(symbol.tag,
+                             document.createTextNode(symbol.output)),str];
+      if (typeof symbol.func == "boolean" && symbol.func) { // functions hack
+	st = str.charAt(0);
+//	if (st=="^" || st=="_" || st=="/" || st=="|" || st==",") {
+	if (st=="^" || st=="_" || st==",") {
+	  return [AMcreateMmlNode(symbol.tag,
+		    document.createTextNode(symbol.output)),str,symbol.tag];
+        } else {
+	  node = AMcreateMmlNode("mrow",
+	   AMcreateMmlNode(symbol.tag,document.createTextNode(symbol.output)));
+	  if (isIE) {
+	    var space = AMcreateElementMathML("mspace");
+	    space.setAttribute("width","0.167em");
+	    node.appendChild(space);
+	  }
+	  node.appendChild(result[0]);
+	  return [node,result[1],symbol.tag];
+        }
+      }
+      if (symbol.input == "\\sqrt") {		// sqrt
+	if (isIE) {	// set minsize, for \surd
+	  var space = AMcreateElementMathML("mspace");
+	  space.setAttribute("height","1.2ex");
+	  space.setAttribute("width","0em");	// probably no effect
+	  node = AMcreateMmlNode(symbol.tag,result[0])
+//	  node.setAttribute("minsize","1");	// ignored
+//	  node = AMcreateMmlNode("mrow",node);  // hopefully unnecessary
+	  node.appendChild(space);
+	  return [node,result[1],symbol.tag];
+	} else
+	  return [AMcreateMmlNode(symbol.tag,result[0]),result[1],symbol.tag];
+      } else if (typeof symbol.acc == "boolean" && symbol.acc) {   // accent
+        node = AMcreateMmlNode(symbol.tag,result[0]);
+	var output = symbol.output;
+	if (isIE) {
+		if (symbol.input == "\\hat")
+			output = "\u0302";
+		else if (symbol.input == "\\widehat")
+			output = "\u005E";
+		else if (symbol.input == "\\bar")
+			output = "\u00AF";
+		else if (symbol.input == "\\grave")
+			output = "\u0300";
+		else if (symbol.input == "\\tilde")
+			output = "\u0303";
+	}
+	var node1 = AMcreateMmlNode("mo",document.createTextNode(output));
+	if (symbol.input == "\\vec" || symbol.input == "\\check")
+						// don't allow to stretch
+	    node1.setAttribute("maxsize","1.2");
+		 // why doesn't "1" work?  \vec nearly disappears in firefox
+	if (isIE && symbol.input == "\\bar")
+	    node1.setAttribute("maxsize","0.5");
+	if (symbol.input == "\\underbrace" || symbol.input == "\\underline")
+	  node1.setAttribute("accentunder","true");
+	else
+	  node1.setAttribute("accent","true");
+	node.appendChild(node1);
+	if (symbol.input == "\\overbrace" || symbol.input == "\\underbrace")
+	  node.ttype = UNDEROVER;
+	return [node,result[1],symbol.tag];
+      } else {			      // font change or displaystyle command
+        if (!isIE && typeof symbol.codes != "undefined") {
+          for (i=0; i<result[0].childNodes.length; i++)
+            if (result[0].childNodes[i].nodeName=="mi" || result[0].nodeName=="mi") {
+              st = (result[0].nodeName=="mi"?result[0].firstChild.nodeValue:
+                              result[0].childNodes[i].firstChild.nodeValue);
+              var newst = [];
+              for (var j=0; j<st.length; j++)
+                if (st.charCodeAt(j)>64 && st.charCodeAt(j)<91) newst = newst +
+                  String.fromCharCode(symbol.codes[st.charCodeAt(j)-65]);
+                else newst = newst + st.charAt(j);
+              if (result[0].nodeName=="mi")
+                result[0]=AMcreateElementMathML("mo").
+                          appendChild(document.createTextNode(newst));
+              else result[0].replaceChild(AMcreateElementMathML("mo").
+          appendChild(document.createTextNode(newst)),result[0].childNodes[i]);
+            }
+        }
+        node = AMcreateMmlNode(symbol.tag,result[0]);
+        node.setAttribute(symbol.atname,symbol.atval);
+	if (symbol.input == "\\scriptstyle" ||
+	    symbol.input == "\\scriptscriptstyle")
+		node.setAttribute("displaystyle","false");
+	return [node,result[1],symbol.tag];
+      }
+  case BINARY:
+    result = AMparseSexpr(str);
+    if (result[0]==null) return [AMcreateMmlNode("mo",
+			   document.createTextNode(symbol.input)),str,null];
+    result2 = AMparseSexpr(result[1]);
+    if (result2[0]==null) return [AMcreateMmlNode("mo",
+			   document.createTextNode(symbol.input)),str,null];
+    if (symbol.input=="\\root" || symbol.input=="\\stackrel")
+      newFrag.appendChild(result2[0]);
+    newFrag.appendChild(result[0]);
+    if (symbol.input=="\\frac") newFrag.appendChild(result2[0]);
+    return [AMcreateMmlNode(symbol.tag,newFrag),result2[1],symbol.tag];
+  case INFIX:
+    str = AMremoveCharsAndBlanks(str,symbol.input.length);
+    return [AMcreateMmlNode("mo",document.createTextNode(symbol.output)),
+	str,symbol.tag];
+  default:
+    return [AMcreateMmlNode(symbol.tag,        //its a constant
+	document.createTextNode(symbol.output)),str,symbol.tag];
+  }
+}
+
+function AMparseIexpr(str) {
+  var symbol, sym1, sym2, node, result, tag, underover;
+  str = AMremoveCharsAndBlanks(str,0);
+  sym1 = AMgetSymbol(str);
+  result = AMparseSexpr(str);
+  node = result[0];
+  str = result[1];
+  tag = result[2];
+  symbol = AMgetSymbol(str);
+  if (symbol.ttype == INFIX) {
+    str = AMremoveCharsAndBlanks(str,symbol.input.length);
+    result = AMparseSexpr(str);
+    if (result[0] == null) // show box in place of missing argument
+      result[0] = AMcreateMmlNode("mo",document.createTextNode("\u25A1"));
+    str = result[1];
+    tag = result[2];
+    if (symbol.input == "_" || symbol.input == "^") {
+      sym2 = AMgetSymbol(str);
+      tag = null;	// no space between x^2 and a following sin, cos, etc.
+// This is for \underbrace and \overbrace
+      underover = ((sym1.ttype == UNDEROVER) || (node.ttype == UNDEROVER));
+//    underover = (sym1.ttype == UNDEROVER);
+      if (symbol.input == "_" && sym2.input == "^") {
+        str = AMremoveCharsAndBlanks(str,sym2.input.length);
+        var res2 = AMparseSexpr(str);
+	str = res2[1];
+	tag = res2[2];  // leave space between x_1^2 and a following sin etc.
+        node = AMcreateMmlNode((underover?"munderover":"msubsup"),node);
+        node.appendChild(result[0]);
+        node.appendChild(res2[0]);
+      } else if (symbol.input == "_") {
+	node = AMcreateMmlNode((underover?"munder":"msub"),node);
+        node.appendChild(result[0]);
+      } else {
+	node = AMcreateMmlNode((underover?"mover":"msup"),node);
+        node.appendChild(result[0]);
+      }
+      node = AMcreateMmlNode("mrow",node); // so sum does not stretch
+    } else {
+      node = AMcreateMmlNode(symbol.tag,node);
+      if (symbol.input == "\\atop" || symbol.input == "\\choose")
+	node.setAttribute("linethickness","0ex");
+      node.appendChild(result[0]);
+      if (symbol.input == "\\choose")
+	node = AMcreateMmlNode("mfenced",node);
+    }
+  }
+  return [node,str,tag];
+}
+
+function AMparseExpr(str,rightbracket,matrix) {
+  var symbol, node, result, i, tag,
+  newFrag = document.createDocumentFragment();
+  do {
+    str = AMremoveCharsAndBlanks(str,0);
+    result = AMparseIexpr(str);
+    node = result[0];
+    str = result[1];
+    tag = result[2];
+    symbol = AMgetSymbol(str);
+    if (node!=undefined) {
+      if ((tag == "mn" || tag == "mi") && symbol!=null &&
+	typeof symbol.func == "boolean" && symbol.func) {
+			// Add space before \sin in 2\sin x or x\sin x
+	  var space = AMcreateElementMathML("mspace");
+	  space.setAttribute("width","0.167em");
+	  node = AMcreateMmlNode("mrow",node);
+	  node.appendChild(space);
+      }
+      newFrag.appendChild(node);
+    }
+  } while ((symbol.ttype != RIGHTBRACKET)
+        && symbol!=null && symbol.output!="");
+  tag = null;
+  if (symbol.ttype == RIGHTBRACKET) {
+    if (symbol.input == "\\right") { // right what?
+      str = AMremoveCharsAndBlanks(str,symbol.input.length);
+      symbol = AMgetSymbol(str);
+      if (symbol != null && symbol.input == ".")
+	symbol.invisible = true;
+      if (symbol != null)
+	tag = symbol.rtag;
+    }
+    if (symbol!=null)
+      str = AMremoveCharsAndBlanks(str,symbol.input.length); // ready to return
+    var len = newFrag.childNodes.length;
+    if (matrix &&
+      len>0 && newFrag.childNodes[len-1].nodeName == "mrow" && len>1 &&
+      newFrag.childNodes[len-2].nodeName == "mo" &&
+      newFrag.childNodes[len-2].firstChild.nodeValue == "&") { //matrix
+	var pos = []; // positions of ampersands
+        var m = newFrag.childNodes.length;
+        for (i=0; matrix && i<m; i=i+2) {
+          pos[i] = [];
+          node = newFrag.childNodes[i];
+	  for (var j=0; j<node.childNodes.length; j++)
+	    if (node.childNodes[j].firstChild.nodeValue=="&")
+	      pos[i][pos[i].length]=j;
+        }
+	var row, frag, n, k, table = document.createDocumentFragment();
+	for (i=0; i<m; i=i+2) {
+	  row = document.createDocumentFragment();
+	  frag = document.createDocumentFragment();
+	  node = newFrag.firstChild; // <mrow> -&-&...&-&- </mrow>
+	  n = node.childNodes.length;
+	  k = 0;
+	  for (j=0; j<n; j++) {
+	    if (typeof pos[i][k] != "undefined" && j==pos[i][k]){
+	      node.removeChild(node.firstChild); //remove &
+	      row.appendChild(AMcreateMmlNode("mtd",frag));
+	      k++;
+	    } else frag.appendChild(node.firstChild);
+	  }
+	  row.appendChild(AMcreateMmlNode("mtd",frag));
+	  if (newFrag.childNodes.length>2) {
+	    newFrag.removeChild(newFrag.firstChild); //remove <mrow> </mrow>
+	    newFrag.removeChild(newFrag.firstChild); //remove <mo>&</mo>
+	  }
+	  table.appendChild(AMcreateMmlNode("mtr",row));
+	}
+	return [table,str];
+    }
+    if (typeof symbol.invisible != "boolean" || !symbol.invisible) {
+      node = AMcreateMmlNode("mo",document.createTextNode(symbol.output));
+      newFrag.appendChild(node);
+    }
+  }
+  return [newFrag,str,tag];
+}
+
+function AMparseMath(str) {
+  var result, node = AMcreateElementMathML("mstyle");
+  if (mathcolor != "") node.setAttribute("mathcolor",mathcolor);
+  if (mathfontfamily != "") node.setAttribute("fontfamily",mathfontfamily);
+  node.appendChild(AMparseExpr(str.replace(/^\s+/g,""),false,false)[0]);
+  node = AMcreateMmlNode("math",node);
+  if (showasciiformulaonhover)                      //fixed by djhsu so newline
+    node.setAttribute("title",str.replace(/\s+/g," "));//does not show in Gecko
+  if (mathfontfamily != "" && (isIE || mathfontfamily != "serif")) {
+    var fnode = AMcreateElementXHTML("font");
+    fnode.setAttribute("face",mathfontfamily);
+    fnode.appendChild(node);
+    return fnode;
+  }
+  return node;
+}
+
+function AMstrarr2docFrag(arr, linebreaks) {
+  var newFrag=document.createDocumentFragment();
+  var expr = false;
+  for (var i=0; i<arr.length; i++) {
+    if (expr) newFrag.appendChild(AMparseMath(arr[i]));
+    else {
+      var arri = (linebreaks ? arr[i].split("\n\n") : [arr[i]]);
+      newFrag.appendChild(AMcreateElementXHTML("span").
+      appendChild(document.createTextNode(arri[0])));
+      for (var j=1; j<arri.length; j++) {
+        newFrag.appendChild(AMcreateElementXHTML("p"));
+        newFrag.appendChild(AMcreateElementXHTML("span").
+        appendChild(document.createTextNode(arri[j])));
+      }
+    }
+    expr = !expr;
+  }
+  return newFrag;
+}
+
+function AMprocessNodeR(n, linebreaks) {
+  var mtch, str, arr, frg, i;
+  if (n.childNodes.length == 0) {
+   if ((n.nodeType!=8 || linebreaks) &&
+    n.parentNode.nodeName!="form" && n.parentNode.nodeName!="FORM" &&
+    n.parentNode.nodeName!="textarea" && n.parentNode.nodeName!="TEXTAREA" &&
+    n.parentNode.nodeName!="pre" && n.parentNode.nodeName!="PRE") {
+    str = n.nodeValue;
+    if (!(str == null)) {
+      str = str.replace(/\r\n\r\n/g,"\n\n");
+      str = str.replace(/\x20+/g," ");
+      str = str.replace(/\s*\r\n/g," ");
+// DELIMITERS:
+      mtch = (str.indexOf("\$")==-1 ? false : true);
+      str = str.replace(/([^\\])\$/g,"$1 \$");
+      str = str.replace(/^\$/," \$");	// in case \$ at start of string
+      arr = str.split(" \$");
+      for (i=0; i<arr.length; i++)
+	arr[i]=arr[i].replace(/\\\$/g,"\$");
+      if (arr.length>1 || mtch) {
+        if (checkForMathML) {
+          checkForMathML = false;
+          var nd = AMisMathMLavailable();
+          AMnoMathML = nd != null;
+          if (AMnoMathML && notifyIfNoMathML)
+            if (alertIfNoMathML)
+              alert("To view the ASCIIMathML notation use Internet Explorer 6 +\nMathPlayer (free from www.dessci.com)\n\
+                or Firefox/Mozilla/Netscape");
+            else AMbody.insertBefore(nd,AMbody.childNodes[0]);
+        }
+        if (!AMnoMathML) {
+          frg = AMstrarr2docFrag(arr,n.nodeType==8);
+          var len = frg.childNodes.length;
+          n.parentNode.replaceChild(frg,n);
+          return len-1;
+        } else return 0;
+      }
+    }
+   } else return 0;
+  } else if (n.nodeName!="math") {
+    for (i=0; i<n.childNodes.length; i++)
+      i += AMprocessNodeR(n.childNodes[i], linebreaks);
+  }
+  return 0;
+}
+
+function AMprocessNode(n, linebreaks, spanclassAM) {
+  var frag,st;
+  if (spanclassAM!=null) {
+    frag = document.getElementsByTagName("span")
+    for (var i=0;i<frag.length;i++)
+      if (frag[i].className == "AM")
+        AMprocessNodeR(frag[i],linebreaks);
+  } else {
+    try {
+      st = n.innerHTML;
+    } catch(err) {}
+// DELIMITERS:
+    if (st==null || st.indexOf("\$")!=-1)
+      AMprocessNodeR(n,linebreaks);
+  }
+  if (isIE) { //needed to match size and font of formula to surrounding text
+    frag = document.getElementsByTagName('math');
+    for (var i=0;i<frag.length;i++) frag[i].update()
+  }
+}
+
+var AMbody;
+var AMnoMathML = false, AMtranslated = false;
+
+function translate(spanclassAM) {
+  if (!AMtranslated) { // run this only once
+    AMtranslated = true;
+    AMinitSymbols();
+    AMbody = document.getElementsByTagName("body")[0];
+    AMprocessNode(AMbody, false, spanclassAM);
+  }
+}
+
+if (isIE) { // avoid adding MathPlayer info explicitly to each webpage
+  document.write("<object id=\"mathplayer\"\
+  classid=\"clsid:32F66A20-7614-11D4-BD11-00104BD3F987\"></object>");
+  document.write("<?import namespace=\"m\" implementation=\"#mathplayer\"?>");
+}
+
+// GO1.1 Generic onload by Brothercake
+// http://www.brothercake.com/
+//onload function (replaces the onload="translate()" in the <body> tag)
+function generic()
+{
+  translate();
+};
+//setup onload function
+if(typeof window.addEventListener != 'undefined')
+{
+  //.. gecko, safari, konqueror and standard
+  window.addEventListener('load', generic, false);
+}
+else if(typeof document.addEventListener != 'undefined')
+{
+  //.. opera 7
+  document.addEventListener('load', generic, false);
+}
+else if(typeof window.attachEvent != 'undefined')
+{
+  //.. win/ie
+  window.attachEvent('onload', generic);
+}
+//** remove this condition to degrade older browsers
+else
+{
+  //.. mac/ie5 and anything else that gets this far
+  //if there's an existing onload function
+  if(typeof window.onload == 'function')
+  {
+    //store it
+    var existing = onload;
+    //add new onload handler
+    window.onload = function()
+    {
+      //call existing onload function
+      existing();
+      //call generic onload function
+      generic();
+    };
+  }
+  else
+  {
+    //setup onload function
+    window.onload = generic;
+  }
+}
+/*]]>*/
+</script>
+</head>
+<body class="article">
+<div id="header">
+<h1>Combined Document Title</h1>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_python_for_earth_scientists">Python for Earth Scientists</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>These pages contain the notes and excercises for
+a medium-length (two afternoon) course designed
+to introduce Earth Science PhD students to the
+Python programming language and some of the
+more useful libraries. I&#8217;ve assumed everybody
+is happy with basic procedural programming
+(i.e. can write a loop, if statment and
+function in something like Fortran or Matlab).
+The course is made up of four lectures and
+four practical sessions. Material can be
+downloaded from the links below.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Lecture 1: An introduction to the Python
+language and landscape. The language syntax. (<a href="PfES_1.key">keynote</a>|<a href="PfES_1.pdf">pdf</a>)
+</p>
+</li>
+<li>
+<p>
+Lecture 2: Using Python. Built in types,
+Writing scripts and modules, the standard library. (<a href="PfES_2.key">keynote</a>|<a href="PfES_2.pdf">pdf</a>)
+</p>
+</li>
+<li>
+<p>
+Lecture 3: Object oriented programming with Python. (<a href="PfES_3.key">keynote</a>|<a href="PfES_3.pdf">pdf</a>)
+</p>
+</li>
+<li>
+<p>
+Lecture 4: Science with Python. NumPy, SciPy and Matplotlib. (<a href="PfES_4.key">keynote</a>|<a href="PfES_4.pdf">pdf</a>)
+</p>
+</li>
+<li>
+<p>
+Practical 1: <a href="ex1.html">Syntax and types</a>.
+(<a href="Practical1.tgz">files</a>|<a href="Practical1_solutions.tgz">solutions</a>)
+</p>
+</li>
+<li>
+<p>
+Practical 2: <a href="ex2.html">Scripts and modules</a>.
+(<a href="Practical2.tgz">files</a>|<a href="Practical2_solutions.tgz">solutions</a>)
+</p>
+</li>
+<li>
+<p>
+Practical 3: <a href="ex3.html">Object oriented programming</a>.
+(<a href="Practical3.tgz">files</a>|<a href="Practical3_solutions.tgz">solutions</a>)
+</p>
+</li>
+<li>
+<p>
+Practical 4: <a href="ex4.html">NumPy, SciPy and Matplotlib</a>.
+(<a href="Practical4.tgz">files</a>|<a href="Practical4_solutions.tgz">solutions</a>)
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>I have also provided some information on
+<a href="resources.html">how to go further and find more help</a>
+and <a href="install.html">how to install Python on your computer</a>.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_practical_1_first_steps">Practical 1: First steps</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>In exercise you will learn how to use a
+Python interpreter interactively and to run simple pieces
+of code. Using this knowledge you will investigate the
+basic syntax of a Python program, learn what many of the
+operators and keywords do, and explore the Python type system
+and its semantics.  The exercises were written to target
+the CPython interpreter and, in particular, the Enthought
+Python Distribution (EPD) installed on a Mac, but everything
+here should be portable between different operating systems,
+interpreters and Python distributions.</p></div>
+<div class="paragraph"><p>Work through the following exercises in order, they should be
+self-explanatory but do ask if you have a problem. It doesn&#8217;t
+matter too much if you don&#8217;t manage to finish this afternoon,
+but you should try and
+find time to look at everything before Thursday afternoon.
+Python code and output is typeset in <tt>monotype</tt> font, and
+this can be typed directly into the interpreter.</p></div>
+<div class="sect2">
+<h3 id="_exercise_1_assignment_equality_and_logic">Exercise 1: Assignment, equality and logic</h3>
+<div class="paragraph"><p>Start up as terminal and then the python interpreter by typing <tt>./python</tt>. You
+should see the version information and a command prompt:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>Enthought Python Distribution -- www.enthought.com
+Version: 7.1-2 (32-bit)
+
+Python 2.7.2 |EPD 7.1-2 (32-bit)| (default, Jul 27 2011, 13:29:32)
+[GCC 4.0.1 (Apple Inc. build 5493)] on darwin
+Type "packages", "demo" <strong>or</strong> "enthought" <strong>for</strong> more information.
+&gt;&gt;&gt;</tt></pre>
+</div></div>
+<div class="paragraph"><p>You can run simple python code from the "<tt>&gt;&gt;&gt;</tt>" command prompt.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Let <tt>a = 1</tt> (type "a=1" at the command prompt). What is <tt>a</tt> (type "a")?
+</p>
+</li>
+<li>
+<p>
+Let <tt>b = 2</tt>. What is <tt>b</tt>?
+</p>
+</li>
+<li>
+<p>
+Let <tt>c = 2.75</tt>. What is <tt>c</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>b</tt> after you type <tt>b=a</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>a</tt>?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p><tt>a</tt>, <tt>b</tt>, and <tt>c</tt> are variables, <tt>1</tt>, <tt>2</tt> and <tt>2.75</tt> are values, <tt>=</tt> is
+the assignment operator.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+What is <tt>f</tt>?
+</p>
+</li>
+</ul></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">You should see an error as <tt>f</tt> has not been defined. This is useful as it
+    helps avoid turning simple typo&#8217;s into hard to fix bugs.</td>
+</tr></table>
+</div>
+<div class="ulist"><ul>
+<li>
+<p>
+Let <tt>e = 2</tt> and <tt>f = 3</tt>.
+</p>
+</li>
+<li>
+<p>
+Is <tt>e == b</tt>?
+</p>
+</li>
+<li>
+<p>
+Is <tt>f &gt; e</tt>?
+</p>
+</li>
+<li>
+<p>
+Is <tt>c &lt; f</tt>?
+</p>
+</li>
+<li>
+<p>
+Is <tt>c &lt; a</tt>?
+</p>
+</li>
+<li>
+<p>
+Is <tt>a &lt;= e</tt>?
+</p>
+</li>
+<li>
+<p>
+Is <tt>e &gt;= a</tt>?
+</p>
+</li>
+<li>
+<p>
+Let <tt>t = True</tt>. What is <tt>t</tt>?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p><tt>==</tt>, <tt>&gt;</tt>, <tt>&lt;</tt>, <tt>&lt;=</tt> and <tt>&gt;=</tt> are the basic logical operators used to test for equality,
+greater than, less than, less than or equals and greater than or equals. <tt>True</tt>
+and <tt>False</tt> are logical values representing truth and falsehood.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/warning.png" alt="Warning" />
+</td>
+<td class="content"><tt>==</tt> and <tt>=</tt> do different things; <tt>True</tt> and <tt>False</tt> must be capitalised.</td>
+</tr></table>
+</div>
+<div class="ulist"><ul>
+<li>
+<p>
+What is <tt>not True</tt>
+</p>
+</li>
+<li>
+<p>
+What is <tt>not False</tt>
+</p>
+</li>
+<li>
+<p>
+What is <tt>(e == b) and (c &lt; f)</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>(e &lt; 3) and t</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>True and False</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>False and False</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>True and True</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>True or False</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>not (True or False)</tt>?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>The Boolean operators <tt>and</tt>, <tt>or</tt>, and <tt>not</tt>, can be used to
+combine logical tests. Brackets (parentheses) can be used to group and
+order them.</p></div>
+<div class="paragraph"><p>Quit the interpretor (type <tt>quit()</tt> or Ctrl-D).</p></div>
+</div>
+<div class="sect2">
+<h3 id="_exercise_2_block_statments">Exercise 2: Block statments</h3>
+<div class="paragraph"><p>The python interpreter can also be used to execute a
+series of statements in a file. These statements are
+executed in sequence from the first line to the last.
+Use your favorite text editor to create a file called
+<tt>count.py</tt> containing the following python code:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>i = 1
+<strong>while</strong> (i &lt; 10):
+    <strong>print</strong> i
+    i = i + 1
+<strong>print</strong> "The end"</tt></pre>
+</div></div>
+<div class="paragraph"><p>Run this code by typing <tt>python ./count.py</tt> at the shell
+command prompt. What is printed to the screen?  Is
+this what you expect?</p></div>
+<div class="paragraph"><p>You should see the numbers 1 to 9 and the string "The end"
+printed before the interpreter exits and you are returned
+to the command prompt. The while statement begins a block
+of code that is executed in a loop until some logical
+condition is false. What is the logical test in your count
+program? Is this tested before or after the block of code
+guarded by the while statement is run?</p></div>
+<div class="paragraph"><p>Modify the logic in your program to make it count to 10.
+Is there another way to change the logic to achieve the
+same thing? Now change the program to count backwards
+from 10 to 1. Change it again to only print the even numbers.</p></div>
+<div class="paragraph"><p>Often, one of the most disconcerting features of Python is that
+blocks of code are delimited by indentation. Most programmers
+will indent loops and other blocks of code they write but
+Python is unusual in demanding indentation and using it as
+part of the syntax of the language. If you&#8217;ve not already
+inadvertently found out, see what happens if you change your
+counting program so that the indentation is not consistent.
+For example, indent the <tt>print</tt> line more than the <tt>i = i + 1</tt> line.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">Although Python allows flexibility when indenting blocks
+of code, the use of four space characters is strongly
+recommended by the semi-official style guide
+(<a href="http://www.python.org/dev/peps/pep-0008/">PEP 8</a>).
+Most code you read will have blocks indented with four spaces.
+Most code you write should also use four spaces for indentation.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>What does the following code snippet do?</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt><strong>def</strong> count():
+    i = 1
+    <strong>while</strong> (i &lt; 10):
+        <strong>print</strong> i
+        i = i + 1
+<strong>print</strong> "The end"</tt></pre>
+</div></div>
+<div class="paragraph"><p>Are you sure? It&#8217;s in the file <tt>count_func.py</tt>, run it to find out.</p></div>
+<div class="paragraph"><p>Although Python programs are executed sequentially, from the start
+to the end of the file, like many languages, you can specify a
+piece of code should form a subroutine or function that can be
+run later. When the interpreter reaches a block of code guarded
+by the <tt>def</tt> statement a function is defined. The function is not
+run until it is called by name. Modify <tt>count_func.py</tt> to call
+the count function:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt><strong>def</strong> count():
+    i = 1
+    <strong>while</strong> (i &lt; 10):
+        <strong>print</strong> i
+        i = i + 1
+count()
+<strong>print</strong> "The end"</tt></pre>
+</div></div>
+<div class="paragraph"><p>What does this code do?</p></div>
+<div class="paragraph"><p>What happens if you try and call the function before
+the function has been defined? Does this work:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>count()
+<strong>def</strong> count():
+    i = 1
+    <strong>while</strong> (i &lt; 10):
+        <strong>print</strong> i
+        i = i + 1
+count()
+<strong>print</strong> "The end"</tt></pre>
+</div></div>
+<div class="paragraph"><p>Functions can (optionally) have one or more arguments
+(in the parentheses). These allow the function to be
+more general. Modify your code to accept an argument,
+<tt>n</tt>, the upper limit of the printed numbers, and <tt>m</tt>
+the lower limit.  Print three lists of numbers,
+1 – 10, 14 – 27,  and 88 – 96.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">Argument lists to Python functions allow
+considerable flexibility. It&#8217;s easy to give
+functions optional arguments, arguments with default
+values, and even accept lists of arguments without
+knowing what they will be when you write the function.
+Functions don&#8217;t need to be given names. Functions can
+take functions as arguments, can call them (and can call
+themselves recursively) and functions can return
+other functions. For example, you can write a general
+integration routine without knowing the function you
+will be integrating. We will look at some of these
+features later in the course. A good introduction
+can also be found in Chapter
+<a href="http://docs.python.org/tutorial/controlflow.html#defining-functions">4.6</a>
+and <a href="http://docs.python.org/tutorial/controlflow.html#more-on-defining-functions">4.7</a>
+of the Python tutorial.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>The third block statement allows pieces of code to be
+executed conditionally. What does the following code print?</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>i = 1
+<strong>while</strong> i &lt;= 10:
+    <strong>if</strong> (i &gt;= 5):
+        <strong>print</strong> i
+    i = i + 1
+
+<strong>print</strong> "The end"</tt></pre>
+</div></div>
+<div class="paragraph"><p>Are you sure? It&#8217;s in the file <tt>count_if.py</tt>, run
+it to find out.</p></div>
+<div class="paragraph"><p>The block of indented code guarded by an if
+statement is only executed when the condition is
+true. Note that we can embed one indented block within
+another. What does the following print?</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>i = 1
+<strong>while</strong> i &lt;= 100:
+    <strong>if</strong> (i &gt;= 5):
+        <strong>if</strong> (i &lt; 15):
+            <strong>print</strong> i
+    i = i + 1
+
+<strong>print</strong> "The end"</tt></pre>
+</div></div>
+<div class="paragraph"><p>Can you condese the two nested <tt>if</tt> statments into one with
+more complex logic?</p></div>
+</div>
+<div class="sect2">
+<h3 id="_exercise_3_basic_mathematical_operators_and_scalar_types">Exercise 3: Basic mathematical operators and scalar types</h3>
+<div class="paragraph"><p>Now look at how python handles mathematics. Beware, there may by one or two surprises.
+Use the interpreter interactively to decide:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+What is <tt>2+3</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>2*6</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>2-5</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>6/3</tt>?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>The arithmetic operators work as you may expect.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+What is <tt>7/3</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>-7/3</tt>?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Is this what you expected?</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">Remember that numbers in python can be
+    integers or floats and that integer division rounds down.</td>
+</tr></table>
+</div>
+<div class="ulist"><ul>
+<li>
+<p>
+What is <tt>type(3)</tt>?
+</p>
+</li>
+<li>
+<p>
+What about <tt>type(7)</tt>?
+</p>
+</li>
+<li>
+<p>
+So what is <tt>type(7/3)</tt>?
+</p>
+</li>
+<li>
+<p>
+Does <tt>7.0/3</tt> give you the right answer?
+</p>
+</li>
+<li>
+<p>
+Why?
+</p>
+</li>
+<li>
+<p>
+What is <tt>type(7.0)</tt>
+</p>
+</li>
+<li>
+<p>
+So what is <tt>type(7.0/3)</tt>?
+</p>
+</li>
+<li>
+<p>
+What about <tt>type(7/3.0)</tt>?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>You can also do calculations with floating point numbers.
+* What is <tt>1.0 - 0.5</tt>?
+* What about <tt>1.2 - 1.0</tt>?
+* Is that correct? what&#8217;s going on?</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/warning.png" alt="Warning" />
+</td>
+<td class="content">Floating point mathematics isn&#8217;t quite like the
+mathematics you learnt at school. On computers numbers are
+represented internally in binary, as strings of 1s and 0s.
+The set of real numbers that can be represented exactly in
+a finite number of binary digits is different to the set of
+real numbers that can be represented exactly in decimal. This
+leads to some interesting issues discussed at the end of the
+standard <a href="http://docs.python.org/tutorial/floatingpoint.html">Python Tutorial</a>
+and described in much more detail in the paper
+<a href="http://download.oracle.com/docs/cd/E19957-01/806-3568/ncg_goldberg.html">What Every Computer Scientist Should Know About Floating-Point Arithmetic</a>
+It&#8217;s worth knowing that Python has support in the standard
+library for fixed point numbers (i.e. decimal calculations
+which are exact to a given number of decimal places) and
+for rational numbers (fractions). These may be useful, but
+will be slower (computer hardware is built for
+floating point binary mathematics, it&#8217;s
+too expensive to fit hardware decimal units).</td>
+</tr></table>
+</div>
+<div class="ulist"><ul>
+<li>
+<p>
+What is <tt>1+2j</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>type(1+2j)</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>(1+2j)-(1-2j)</tt>?
+</p>
+</li>
+<li>
+<p>
+If <tt>c = 2+4j</tt> what is <tt>c**2</tt>?
+</p>
+</li>
+<li>
+<p>
+What about <tt>c + 1</tt>?
+</p>
+</li>
+<li>
+<p>
+What are <tt>c.real</tt> and <tt>c.imag</tt>?
+</p>
+</li>
+<li>
+<p>
+And what is <tt>c.conjugate()</tt>?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Complex numbers are built in. The operators work as you may expect.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_exercise_4_strings">Exercise 4: Strings</h3>
+<div class="paragraph"><p>Another data type in Python is the string. Literal
+strings are embedded in single or double quotes
+and strings can be assigned to variables just
+like the other types:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+If <tt>a = "Some text"</tt>, what is <tt>type(a)</tt>?
+</p>
+</li>
+<li>
+<p>
+What is  <tt>a[0]</tt>?
+</p>
+</li>
+<li>
+<p>
+And <tt>a[0:4]</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>a[8]</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>a[5:9]</tt>?
+</p>
+</li>
+<li>
+<p>
+What about <tt>a[5:]</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>a[:]</tt>? Is this any different from <tt>a</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>a[:4]</tt>?
+</p>
+</li>
+<li>
+<p>
+Is <tt>"Some text"</tt> the same as <tt>'Some text'</tt>? Are the two strings
+equal?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>In Python strings are a sequence of characters
+numbered from 0.  Sub-strings can be accessed
+using an index notation using brackets (not
+parentheses) containing integers separated by
+colons. When only one index is provided a single
+character is returned. When two indices are provided
+a series of characters are returned from the first,
+to one less than the second index. If left out (but
+with the colon in place) the indices default to
+the start and end of the string.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+What is <tt>a + " some more text"</tt>?
+</p>
+</li>
+<li>
+<p>
+What about <tt>a * 3</tt>?
+</p>
+</li>
+<li>
+<p>
+Do the <tt>-</tt> or <tt>/</tt> operators work on strings?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>When placed between strings, <tt>+</tt> acts as a
+concatenation operator and <tt>*</tt> works as a
+repetition operator.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+What is <tt>a[0:9:2]</tt>?
+</p>
+</li>
+<li>
+<p>
+What about <tt>a[-4:]</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>a[-2:-1]</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>a[::-1]</tt>?
+</p>
+</li>
+<li>
+<p>
+What happens if you try and change the "S"
+into an "s" in <tt>a</tt>? Does <tt>a[0] = "s"</tt> work?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>The third list index specifies how the sub-string is
+constructed by stepping through the string. Negative
+indices count backwards from the end, or reverse
+along the string. Note that strings are immutable.
+You cannot use the index notation to change bits of
+a string. We’ll cover this concept in more detail later.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+If <tt>b = "1.0"</tt> what is <tt>type(b)</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>float(b)</tt>? What is its type?
+</p>
+</li>
+<li>
+<p>
+If <tt>c = "1"</tt> what is its type?
+</p>
+</li>
+<li>
+<p>
+What is <tt>int(c)</tt> and what is its type?
+</p>
+</li>
+<li>
+<p>
+Can you turn <tt>b</tt> into an integer? What about <tt>c</tt> into a float?
+</p>
+</li>
+<li>
+<p>
+If <tt>d = 4+7j</tt> what is type(d)?
+</p>
+</li>
+<li>
+<p>
+Can you <tt>print d</tt>?
+</p>
+</li>
+<li>
+<p>
+Does <tt>print d + " is a complex number"</tt> work?
+</p>
+</li>
+<li>
+<p>
+Why not? How does Python know what <tt>+</tt> does?
+</p>
+</li>
+<li>
+<p>
+What is <tt>str(d)</tt> and what is it&#8217;s type?
+</p>
+</li>
+<li>
+<p>
+Can you fix <tt>print d + " is a complex number"</tt> so that it does work?
+</p>
+</li>
+<li>
+<p>
+Does this work with the other numerical types?
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect2">
+<h3 id="_exercise_5_lists">Exercise 5: Lists</h3>
+<div class="paragraph"><p>Strings are the first of Python&#8217;s built in sequence types; lists
+are the second. To a large extent, if you know how to use one
+sequence type you know them all. In a list instead of each
+numbered "container" holding a single character, each container
+can hold any variable. Start up a python intepreter.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+If <tt>a = [1, 2.3, 4.5, 'one', "1"]</tt> what is <tt>type(a)</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>a[1]</tt>?
+</p>
+</li>
+<li>
+<p>
+What about <tt>a[4]</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>type(a[0])</tt>?
+</p>
+</li>
+<li>
+<p>
+What is the type of each element of a?
+</p>
+</li>
+<li>
+<p>
+What is <tt>a[3][1]</tt>?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Note that lists can contain variables of different types mixed
+together. We can access characters within a string within a list
+by using multiple indices next to each other.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+What is <tt>a*2</tt>?
+</p>
+</li>
+<li>
+<p>
+What about <tt>a+['the end of the list']</tt>.
+</p>
+</li>
+<li>
+<p>
+Do the <tt>-</tt> or <tt>/</tt> operators work on lists?
+</p>
+</li>
+<li>
+<p>
+If <tt>a[3] = 'two'</tt> what is <tt>a</tt>?
+</p>
+</li>
+<li>
+<p>
+We described strings as an immutable type. How could we describe lists?
+</p>
+</li>
+<li>
+<p>
+Let <tt>b = [0, 1, 2, 3, 4]</tt> and <tt>c = range(5)</tt>.
+</p>
+</li>
+<li>
+<p>
+Are <tt>b</tt> and <tt>c</tt> the same?
+</p>
+</li>
+<li>
+<p>
+Does <tt>b == c</tt>?
+</p>
+</li>
+<li>
+<p>
+Does <tt>a == c</tt>?
+</p>
+</li>
+<li>
+<p>
+Make <tt>a[1] = b</tt>. What is a?
+</p>
+</li>
+<li>
+<p>
+Notice that lists can contain other lists.
+</p>
+</li>
+<li>
+<p>
+What is <tt>a[1][0]</tt>?
+</p>
+</li>
+<li>
+<p>
+Does <tt>a == c</tt> now?
+</p>
+</li>
+<li>
+<p>
+What about <tt>a[1] == c</tt>?
+</p>
+</li>
+<li>
+<p>
+If <tt>d = []</tt> what could you call <tt>d</tt>? Is <tt>d</tt> a list?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Python contains several other built in sequence types (there are seven in
+total). We&#8217;ll briefly look at them later. Some work like strings
+(and can only contain a particular type of data) and some work like
+lists (and can contain any type of data). Some sequence types are
+mutable and others are immutable. All sequence types support index
+notation with brackets and colons, along with several other
+operations including <tt>+</tt> and <tt>*</tt>.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_exercise_6_sequences_and_iteration">Exercise 6: Sequences and iteration</h3>
+<div class="paragraph"><p>We&#8217;ve seen that Python supports more than one sequence type.
+When writing a program, sequences (usually lists) are commonly
+used to store the working data. We often want to do "something"
+to each item of data in turn: perhaps we want to calculate the
+average of all the numbers in the list, maybe we want to find
+the maximum or add a number to each element of the list. What
+we need is a way to iterate through the list. A block of code
+using the <tt>for x in l:</tt> statement allows us to do this. What
+does the following program print?</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>groups = ['BEEST', 'Geophysics', 'Geochemistry',
+         'Palaeobiology <strong>and</strong> Biodiversity', 'Volcanology',
+         'Climate <strong>and</strong> Environmental Change']
+
+<strong>print</strong> "The School of Earth Sciences has six research groups:"
+
+<strong>for</strong> group <strong>in</strong> groups:
+    <strong>print</strong> "\t* " + group</tt></pre>
+</div></div>
+<div class="paragraph"><p>The program can be found in the file <tt>for_in.py</tt>. Run it to confirm
+your suspicion.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/warning.png" alt="Warning" />
+</td>
+<td class="content">In Python <tt>for x in l:</tt> is quite different to <tt>for</tt> in C
+or <tt>do</tt> in Fortran. It iterates through a list and it does not
+denote a loop. However, Python&#8217;s <tt>for x in l:</tt> can be used to build
+a loop with little effort. (This is the same as the difference
+between Perl&#8217;s <tt>for</tt> and <tt>foreach</tt> constructs.)</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>Modify the program to print the numbers from 0 to 10. Use
+the range function to generate the list.</p></div>
+<div class="paragraph"><p>With one argument, <em>n</em>, the range function generates a list of
+<em>n</em> integers starting a zero. <tt>range()</tt> can also take two integer
+arguments. What is the meaning of the first and second arguments
+in this case? Modify the program to print the numbers from 1 to 10.</p></div>
+<div class="paragraph"><p>Range can also take a third argument. Modify the code to print the
+even numbers between 1 and 10 using the three-argument form.</p></div>
+<div class="paragraph"><p>Does range accept four or more arguments? Does it accept negative
+arguments? What do they do?</p></div>
+<div class="paragraph"><p>It is sometimes necessary to iterate through two sequences together
+in lock step. The <tt>zip()</tt> function can be used for this. What does
+the following program (<tt>zip.py</tt>) print? Do you see how it works?</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>names = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+         'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+rain = [10.2, 12.4, 9.4, 8.2, 8.9, 7.2, 3.9, 7.6, 8.0, 11.2, 10.5, 9.9]
+
+<strong>for</strong> month, inch <strong>in</strong> zip(names, rain):
+    <strong>print</strong> "In " + month + " there was " + str(inch) + " inches of rain"</tt></pre>
+</div></div>
+<div class="paragraph"><p>Modify the program to calculate the average monthly rainfall in the
+year using two other variables and the <tt>for</tt> loop above. Print
+this after the monthly report. Imperial measurements
+are outdated. Convert the output into mm.</p></div>
+<div class="paragraph"><p>If <tt>rain = [10.2, 12.4, 9.4, 8.2, 8.9, 7.2, 3.9, 7.6, 8.0, 11.2, 10.5, 9.9]</tt>,
+what is <tt>len(rain)</tt>? What is <tt>sum</tt> rain? Calculate the average monthly rainfall
+without using <tt>for</tt>.</p></div>
+<div class="paragraph"><p>What does the following program (<tt>caesar.py</tt>) do? The variable names may help.</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>shift = 3
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+cipherbet = alphabet[shift:27]+alphabet[0:shift]
+
+plaintext = 'the quick brown fox jumps over the lazy dog'
+ciphertext = ''
+
+<strong>for</strong> p <strong>in</strong> plaintext:
+    <strong>if</strong> p == ' ':
+        ciphertext = ciphertext + ' ' <i># Keep the spaces</i>
+    <strong>else</strong>:
+        <strong>for</strong> a, c <strong>in</strong> zip(alphabet, cipherbet):
+            <strong>if</strong> p == a:
+                ciphertext = ciphertext + c
+                <strong>break</strong> <i># No need to finish the inner loop</i>
+
+<strong>print</strong> plaintext
+<strong>print</strong> ciphertext</tt></pre>
+</div></div>
+<div class="paragraph"><p>Can you write a program to perform the inverse function?</p></div>
+</div>
+<div class="sect2">
+<h3 id="_exercise_7_dictionaries">Exercise 7: Dictionaries</h3>
+<div class="paragraph"><p>Dictionaries are another data type found in
+Python. A dictionary is equivalent to a hash
+in Perl, <tt>std::map</tt> in C++ and "maps" in Java,
+all are implementations of associative arrays.
+Like a list a dictionary links a key to a value.
+A list&#8217;s key is the index and this must be an
+integer. This means that lists have a natural
+order (for the list <tt>l</tt>, <tt>l[3]</tt> comes after
+<tt>l[2]</tt> and before <tt>l[4]</tt>). Many data types can
+play the role of a key in a dictionary. This
+means dictionaries have no natural order and
+you should never assume that keys and values
+will be returned if you iterate through a
+dictionary twice. This is OK, there are many
+things in the world you may want to refer to
+in a program that don&#8217;t have a natural order
+(but may have an unnatural order). Words and
+word definitions in one of those books of
+the language, for example.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+If <tt>d = {"Around the world in 80 days": "Jules Verne",
+"The Hobbit": "J R R Tolkien",
+"A Journey to the center of the Earth": "Jules Verne",
+"A study in scarlet": "Doyle", "The valley of Fear":
+"Doyle", "The Lord of the Rings": "Tolkien"}</tt> what is <tt>d</tt>?
+Is the order you put in the same as the order you got out?
+</p>
+</li>
+<li>
+<p>
+What is <tt>type(d)</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>d["The Lord of the Rings"]</tt>? What is its type?
+</p>
+</li>
+<li>
+<p>
+Can you change the value of <tt>d["The Lord of the Rings"]</tt>
+to <tt>"J R R Tolkien"</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>d.keys()</tt>? What about <tt>d.values()</tt>? What type
+are returned by these functions? What do you notice about
+the order of the elements in these lists?
+</p>
+</li>
+<li>
+<p>
+Can a dictionary contain two elements with the same key?
+</p>
+</li>
+<li>
+<p>
+Is it OK for two elements to share the same value?
+</p>
+</li>
+<li>
+<p>
+Is <tt>"A Journey to the center of the Earth" in d</tt>?
+</p>
+</li>
+<li>
+<p>
+Is <tt>"Tolkien" in d</tt>?
+</p>
+</li>
+<li>
+<p>
+What does <tt>in</tt> do?
+</p>
+</li>
+<li>
+<p>
+Does it check the keys or the values?
+</p>
+</li>
+<li>
+<p>
+How do you think you could iterate through a dictionary?
+</p>
+</li>
+<li>
+<p>
+What is <tt>i</tt> in each iteration of <tt>for i in d:</tt>?
+</p>
+</li>
+<li>
+<p>
+What if you need the key too? Could you use <tt>d.keys()</tt>,
+<tt>d.values()</tt> and <tt>zip()</tt>? How?
+</p>
+</li>
+<li>
+<p>
+Can a dictionary have an integer as a value? What about as a key?
+</p>
+</li>
+<li>
+<p>
+What about a floating point number or a complex number?
+</p>
+</li>
+<li>
+<p>
+Can make a dictionary have a list as a value?
+</p>
+</li>
+<li>
+<p>
+What about using a list as a key?
+</p>
+</li>
+<li>
+<p>
+Are strings immutable?
+</p>
+</li>
+<li>
+<p>
+Are lists mutable?
+</p>
+</li>
+<li>
+<p>
+Do you think dictionary keys have to be immutable?
+</p>
+</li>
+<li>
+<p>
+What is <tt>d.items()</tt>? What is the type of the elements
+of the list that is returned?
+</p>
+</li>
+<li>
+<p>
+Have you seen this type before?
+</p>
+</li>
+<li>
+<p>
+Can this type be used as the key to a dictionary?
+</p>
+</li>
+<li>
+<p>
+Is it mutable?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Dictionaries and tuples turn out to be quite important
+if you want to really understand Python, but you can
+get by without them.</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercise_2_scripts_and_modules">Exercise 2: Scripts and modules</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>You have now seen a large portion of the Python
+language; enough to be able to write useful programs
+for data analysis. Some of the features we have not
+looked at are just syntactic sugar, they allow you to
+express concepts we have already considered more
+elegantly using less characters. I&#8217;ll leave you to
+discover these features yourselves. Some of the
+missing features become important when you start to
+think of Python as an object oriented language and we
+will consider these on Thursday. In this session we
+will look at how to write a relatively simple but useful
+program. The program will follow many of the patterns
+you will find if you write real data analysis code: you
+will learn how to read data from a collection of data
+files, perform some simple analysis of the data, and
+then produce a report of the analysis. Along the way
+you will learn how to write code in small pieces such
+that are easily reusable. You will learn to design a
+script that can act as a module (and a module that can
+act as a script).</p></div>
+<div class="paragraph"><p>The task you will focus on is the analysis of historical
+monthly rainfall data for the south of England and Wales.
+This data is made available by the Met Office and is stored
+in fairly simple text files. These files do have some
+quirks and you will need to work out how to deal with
+these. You will use the same dataset on Thursday when you
+learn how to use Python to plot time-series and geographical
+data, and perform more advanced analysis.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/caution.png" alt="Caution" />
+</td>
+<td class="content">Some aspects of this practical need extra Python
+modules installed beyond those which make up the standard
+library. In particular, the exercises make use of Matplotlib
+and Basemap to plot the results of your programs. If you are
+using your own computer basic installation instructions can
+be found <a href="./installation.html">here</a>.</td>
+</tr></table>
+</div>
+<div class="sect2">
+<h3 id="_exercise_1_a_first_script">Exercise 1: A first script</h3>
+<div class="paragraph"><p>Before making a start on the rainfall data we will look at how
+to write a Python program that can be used from the command line.
+In the final exercise of practical 1 you looked at how to make
+Python perform encryption and decryption using the Caesar
+cipher – a simple one-to-one substitution cipher with a key that
+shifts the alphabet. This code has existed for at least two
+millennia. In the earlier version of this code the plaintext
+message (or the encoded ciphertext) is embedded with the Python
+source code. This isn&#8217;t very useful, as you would need to change
+the source every time you wrote a new message or changed the key
+(the shift). It would be helpful to be able to run this as a
+script from the command line so, for example, you could enter
+<tt>python ./caesar.py encode 12 &lt; plaintext.txt &gt; ciphertext.txt</tt>
+to encode a message with a shift of 12. The file <tt>caesar.py</tt>,
+reproduced below, shows how this can be done. Key lines are
+described. Make sure you understand how this is supposed to work.
+Fill in the blanks and test the resulting code.</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt><strong>def</strong> encode(plaintext, shift):<img src="./images/icons/callouts/1.png" alt="1" />
+
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    cipherbet = alphabet[shift:27]+alphabet[0:shift]
+
+    <i># Put code in here.</i>
+    <img src="./images/icons/callouts/2.png" alt="2" />
+
+    ciphertext = ''.join(ciphertext) <i># Turn list into a string</i>
+
+    <strong>return</strong> ciphertext
+
+<strong>def</strong> decode(ciphertext, shift):<img src="./images/icons/callouts/1.png" alt="1" />
+
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    cipherbet = alphabet[shift:27]+alphabet[0:shift]
+
+    <i># Put code in here.</i>
+    <img src="./images/icons/callouts/2.png" alt="2" />
+
+    plaintext = ''.join(plaintext) <i># Turn list into a string</i>
+
+    <strong>return</strong> plaintext
+
+<strong>if</strong> __name__ == "__main__":<img src="./images/icons/callouts/3.png" alt="3" />
+    <strong>import</strong> sys <img src="./images/icons/callouts/4.png" alt="4" />
+    <strong>if</strong> (len(sys.argv)!=3): <img src="./images/icons/callouts/5.png" alt="5" />
+        <strong>print</strong> "ERROR: Two arguments needed, mode <strong>and</strong> shift"
+    <strong>else</strong>:
+        mode = sys.argv[1] <img src="./images/icons/callouts/6.png" alt="6" />
+        shift = int(sys.argv[2]) <img src="./images/icons/callouts/7.png" alt="7" />
+        <strong>for</strong> line <strong>in</strong> sys.stdin: <img src="./images/icons/callouts/8.png" alt="8" />
+            <strong>if</strong> mode == 'encode': <img src="./images/icons/callouts/9.png" alt="9" />
+                <strong>print</strong> encode(line, shift) <img src="./images/icons/callouts/10.png" alt="10" />
+            <strong>elif</strong> mode == 'decode':
+                <strong>print</strong> decode(line, shift)
+            <strong>else</strong>:
+                <strong>print</strong> "ERROR: mode must be encode <strong>or</strong> decode"</tt></pre>
+</div></div>
+<div class="colist arabic"><table>
+<tr><td><img src="./images/icons/callouts/1.png" alt="1" /></td><td>
+<tt>plaintext</tt> and <tt>ciphertext</tt> are strings
+and <tt>shift</tt> is an integer. The encode and decode
+functions return strings.
+</td></tr>
+<tr><td><img src="./images/icons/callouts/2.png" alt="2" /></td><td>
+You need to provide the body of this function
+</td></tr>
+<tr><td><img src="./images/icons/callouts/3.png" alt="3" /></td><td>
+Things below this line only get executed if the file
+is run as a python program, not if it is loaded as a module
+</td></tr>
+<tr><td><img src="./images/icons/callouts/4.png" alt="4" /></td><td>
+We need to <tt>import</tt> the <tt>sys</tt> module from the standard
+library to access command line arguments
+</td></tr>
+<tr><td><img src="./images/icons/callouts/5.png" alt="5" /></td><td>
+A check to see if we have the correct number of command line arguments
+</td></tr>
+<tr><td><img src="./images/icons/callouts/6.png" alt="6" /></td><td>
+Read the mode from the command line (encode or decode)
+</td></tr>
+<tr><td><img src="./images/icons/callouts/7.png" alt="7" /></td><td>
+Read the key (shift) from the command line. Note that we
+need to change this from a string into a integer
+</td></tr>
+<tr><td><img src="./images/icons/callouts/8.png" alt="8" /></td><td>
+Loop over the lines from standard input (<tt>sys.stdin</tt>
+is a file type pre-connected to whatever file name comes after the <tt>&lt;</tt> character
+</td></tr>
+<tr><td><img src="./images/icons/callouts/9.png" alt="9" /></td><td>
+Call the appropriate function or raise an error
+</td></tr>
+<tr><td><img src="./images/icons/callouts/10.png" alt="10" /></td><td>
+By default, <tt>print</tt> writes to standard output, this is
+pre-connected to whatever file name follows the <tt>&gt;</tt> character,
+or prints to the teminal.
+</td></tr>
+</table></div>
+<div class="paragraph"><p>On unix like system, it is common to have the shell select the
+interpreter rather than have the user specify it. That is, the
+shell reads a "hashbang" line at the top of an executable text
+file and uses this to select the python interpreter so the user
+can enter <tt>./caesar.py encode 12 &lt; plaintext.txt &gt; ciphertext.txt</tt>
+to encode a message. Make this possible by adding a suitable
+hashbang and making the Python program executable.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/tip.png" alt="Tip" />
+</td>
+<td class="content">On unix like systems the <tt>chmod</tt> command is used to change
+the permission bits of a file. You will need to set (<tt>+</tt>) the
+execute (<tt>x</tt>) bit for yourself (the user, <tt>u</tt>) for the file
+<tt>caesar.py</tt> by entering <tt>chmod u+x caesar.py</tt>. The shell will
+need to find the Python interpreter. A particularly portable way
+to set this up so that it does not matter where Python is installed
+is to add <tt>#!/usr/bin/env python</tt> to the top of your program. Further
+information can be found by entering`man chmod` and <tt>man env</tt>.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>A useful form of documentation is to add a literal string (a "docstring")
+to the top of each function describing what it does. The most
+convenient form is to use three quotation marks (<tt>""" some text """</tt>)
+before or after the string (so that you can break the documentation
+over several lines). Add documentation to the two functions. Does
+the script still work?</p></div>
+</div>
+<div class="sect2">
+<h3 id="_exercise_2_graphing_rainfall">Exercise 2: Graphing rainfall</h3>
+<div class="paragraph"><p>The file <tt>plot_rain.py</tt> (reproduced below) contains a snippet of
+rainfall data covering data from 1992 - 2010 for one weather
+station in Camborne, Cornwall. As you can see,
+the data is stored within the
+Python source file in a data structure that consists of
+a dictionary for each year with the monthly rainfall
+stored in a list. There is a function that graphs the data and this
+is used if you run the program. Run the program, do you
+see a graph?</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt><i>#!/usr/bin/env python</i>
+
+<i># Import plotting modules - we will cover these on Thursday</i>
+<strong>import</strong> matplotlib
+<strong>import</strong> matplotlib.pyplot as plt
+
+<i># 18 years of data</i>
+monthly_data = {1992: [29.6, 65.0, 58.2, 103.9, 14.7, 9.9,
+                       57.7, 154.4, 93.1, 95.7, 175.1, 124.3],
+                2009: [146.0, 71.3, 48.8, 144.2, 45.2, 18.8,
+                       222.2, 68.8, 37.8, 93.4, 193.6, 101.8],
+                2010: [108.8, 63.0, 76.6, 35.6, 56.6, 34.0,
+                       78.2, 71.8, 83.6, 85.6, 164.8, 48.1]}
+
+<strong>def</strong> plot_rainfall(rainfall, annual=None):
+    <i># Plot the graph - don't worry about how this function works,</i>
+    <i># we will look at it on Thursday.</i>
+
+    <i># etc.</i>
+
+    <strong>return</strong> fig
+
+<strong>if</strong> __name__ == "__main__":
+
+    <i># Calculate the annual rainfall here.</i>
+
+    plot_rainfall(monthly_data)
+    plt.show()</tt></pre>
+</div></div>
+<div class="paragraph"><p>As well as an argument for
+the data, the <tt>plot_rainfall()</tt> function also accepts an optional second
+argument for the annual rainfall. This should be expressed
+as a dictionary with integer years as the keys and
+floating point numbers as the values for the total
+annual rainfall:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Write the Python code needed to calculate the
+annual rainfall and create the "dictionary of
+years data" structure described above.
+</p>
+</li>
+<li>
+<p>
+Pass the data structre into the plotting
+function as a second argument and run the code.
+</p>
+</li>
+<li>
+<p>
+Do the wettest years contain the wettest months?
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect2">
+<h3 id="_exercise_3_reading_a_simplified_data_file">Exercise 3: Reading a simplified data file</h3>
+<div class="paragraph"><p>The file <tt>cambornedata_simple.txt</tt> is a simplified version of the data file distributed
+by the Met Office. It consists of 7 columns of data with one row
+per month that the Camborne weather station has been operating. The
+columns are year, month (1-12), maximum temperature (degrees C),
+minimum temperature (degrees C), number of days of air frost,
+total rain for the month (mm) and total number of hours of
+sun for the month. Modify the <tt>plot_rain.py</tt> program to read data from
+this file and build the monthly data structure. Can you graph the
+monthly and annual rainfall without further modifications to the
+code? How did you deal with missing months at the start and end of
+the file? I hope you put the file reading machinery in a function. What
+is the function&#8217;s argument?</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/tip.png" alt="Tip" />
+</td>
+<td class="content">Remember that you can read lines from a file by opening it
+and using the resulting file type in a <tt>for line in file:</tt> block.
+In each iteration <tt>line</tt> will then correspond to a different month
+of data. You can extract each item of data by turning the string into
+a list by doing <tt>list = line.split()</tt>. <tt>.split()</tt> chops up input on
+spaces by default. Don&#8217;t forget to close the file when you have finished
+with it. Remember that you&#8217;ll need to change the string extracted
+from the file into data of the float type.</td>
+</tr></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exercise_4_mean_monthly_rainfall">Exercise 4: Mean monthly rainfall</h3>
+<div class="paragraph"><p>How wet is an average October in Camborne? What about an average
+July? Write a function to calculate the mean monthly rainfall
+for each calendar month from the dictionary of lists data structure
+you can generate from a file. You can assume that any month that is
+reported as having no rainfall has missing data. Ignore these months
+when calculating the mean. Your function should return two 12-element
+lists, one with the mean rainfall for each month and one with the
+number of months included in the average. Print out a formatted list
+of average rainfall. You should end up printing out something like
+this:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>Jan 121.896969697 33
+Feb 91.7818181818 33
+Mar 80.7848484848 33
+Apr 69.9878787879 33
+May 63.8878787879 33
+Jun 59.1 33
+Jul 65.05 32
+Aug 67.934375 32
+Sep 74.7818181818 33
+Oct 113.748484848 33
+Nov 120.751515152 33
+Dec 130.312121212 33</tt></pre>
+</div></div>
+<div class="paragraph"><p>Does the dictionary of lists data structure make this exercise easy?
+Can you think of a data structure that would lend itself to this problem?
+Finding that a task that should be easy seems to be difficult is often a
+sign that the data structure is not a good match to the problem. Thinking
+about the problem in terms of the way you represent the data can be helpful,
+even if you need to change the way that data is stored in your application.
+We will return to this theme on Thursday.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_exercise_5_parsing_the_full_file_format">Exercise 5: Parsing the full file format</h3>
+<div class="paragraph"><p>The file format provided by the Met Office is a little more complex
+than the file provided in task 2. Some of the data is estimated,
+this is noted with an asterisk next to the measured rainfall in
+the file (there is no space between the numbers and the asterisk).
+What happens if you try to convert <tt>12.4*</tt> into a float (e.g.
+<tt>float("12.4*")</tt>)? A second complication is that the data files
+contain a large block of header text. Some of this is useful
+(the station name on the first line, the location data on the
+second) but some only helps people reading the file and mainly
+gets in the way of your attempt to read the file. Finally, some
+data is missing (marked <tt>---</tt>). Modify your
+data file reading function to handle these two cases and put
+the weather station name in a field called "name" in the
+returned dictionary.  Read data from the file
+called <tt>cambornedata.txt</tt> and <tt>cambridgedata.txt</tt>.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/tip.png" alt="Tip" />
+</td>
+<td class="content">Your <tt>for line in file:</tt> iteration will visit each line in
+the file in turn. The Met Office header is always the same number
+of lines, so you can simply keep track of how many lines you have
+seen so far and only start reading monthly data after you have
+seen 8 lines. Think back to how do you run a piece of code within
+the iteration conditionally?</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>The location data in the data file is in an extremely unhelpful
+format and, as far as I can see, isn&#8217;t documented anywhere. It
+turns out that the numbers before the N and E line are the
+number of hundreds of meters east and north of a point south west
+of the Scilly Isles. The numbers are a six figure
+Ordinance Survey grid reference in disguise. I&#8217;ve provided a
+module (in the file <tt>metloc.py</tt>) with functions to convert the location
+to an (approximate) latitude and longitude. You have two options:
+(1) Extract the numbers from the second line of the data file and
+use my <tt>met2latlon</tt> function. If you do this you may want to explore Python&#8217;s
+regular expression library. (2) Skip the data extraction part and
+pass the whole second line (as a string) into my <tt>parselocationlinelatlon</tt>
+ function which
+extracts the numbers for you. In either case, make your file reading function
+<tt>return (data, stationName, lat, lon)</tt> so that you can use this data.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/tip.png" alt="Tip" />
+</td>
+<td class="content">Remember that you will need to <tt>import metloc</tt> to
+access my functions.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>There is another function in the <tt>metloc</tt> module, <tt>plot_location</tt>. This takes
+three arguments, the latitude, longitude (in degrees) and station name
+(a string). Use this function to plot the station location at the very
+end of your program.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_exercise_6_great_circle_distances">Exercise 6: Great-circle distances</h3>
+<div class="paragraph"><p>What is the distance between the Camborne and Cambridge weather stations? Write
+a script to find out. This should take two arguments (the two files) and can
+use your file reading function (imported, so your existing script behaves as
+a Python module) to read the files. You can approximate the Earth as a sphere
+with a radius, $r$, of 6367 km. With this
+approximation the distance between two points
+with latitude $\phi_1$ and $\phi_2$ and longitude separation
+$\Delta \lambda$ is given by:</p></div>
+<div class="paragraph"><p>$d = 2 r \arcsin(haversin(\phi_1-\phi_2) + \cos(\phi_1)\cos(\phi_2)haversin(\Delta \lambda))$</p></div>
+<div class="paragraph"><p>Where the Haversine function is defined by:</p></div>
+<div class="paragraph"><p>$haversin(\theta) = \sin^2(\frac{\theta}{2}) = \frac{(1-\cos(\theta))}{2}$</p></div>
+<div class="paragraph"><p>Remember that you can access basic mathematical functions such as <tt>sqrt</tt>, <tt>asin</tt> and
+<tt>cos</tt> from the <tt>math</tt> module in the standard library. Can you write a function to
+perform a similar calculation for a non-spherical Earth?</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_practical_3_object_oriented_programming">Practical 3: Object oriented programming</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>We&#8217;ve seen that it&#8217;s not necessary to know about
+object-oriented (OO) programming to write useful
+tools using Python. However, Python is an OO
+language and knowing something about how
+object-orientation works and is implemented in
+Python will help you understand many features of
+the language. It is sometimes useful to write your
+programs in an OO style. More commonly, you will make
+use of a library that provides an OO interface. Knowing
+how to write your own OO interface will help you make
+use of other peoples designs.</p></div>
+<div class="paragraph"><p>In this session you will explore how to make use of
+modules from the standard library that expose OO interfaces.
+You will then modify the rainfall analysis code you wrote on
+Tuesday so that each weather station&#8217;s data is represented by
+an object. This will allow you to produce more complex
+analysis easily without producing excessively complex code. First
+we will look at some objects from the standard library</p></div>
+<div class="sect2">
+<h3 id="_exercise_1_random_numbers_and_dates_objects_from_the_outside">Exercise 1: Random numbers and dates – objects from the outside</h3>
+<div class="paragraph"><p>It is often useful to be able to generate (pseudo-) random numbers
+for use in numerical programs. These can be used for Monte-Carlo
+simulation or error analysis. Random number generators can be
+modelled as objects. The way that numbers are generated is hidden
+in a "black box". Methods are provided to set up (seed) the
+generator and return a random number drawn from some distribution.</p></div>
+<div class="paragraph"><p>Write a simple Python program to calculate the average of 100 random
+numbers drawn from the range [0.0, 1.0). You will need to import the
+<tt>random</tt> module, create an instance of the <tt>random.Random</tt> class, use
+the instance&#8217;s <tt>seed()</tt> method to set up the generator, and then use
+the <tt>random()</tt> method to generate each random number. In this case, neither
+the class constructor, <tt>random()</tt> or <tt>seed()</tt> need arguments.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">
+<div class="paragraph"><p>Remember that
+instances of any class look like variables and methods can be called
+by appending a dot and the method name (with arguments in brackets) to
+the instance. That is, a new instance of the class <tt>Thing</tt> is created
+by the code <tt>this_thing = Thing(constructer_argument)</tt>. Methods and
+attributes of the instance <tt>this_thing</tt> can then be accessed as
+<tt>this_thing.method(method_argument)</tt> and <tt>this_thing.attribute</tt>.</p></div>
+</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>Another class provided by the standard library creates
+<tt>date</tt> objects. This is available from the <tt>datetime</tt> module.
+Unlike the random number class, the <tt>date</tt> class constructor
+accepts arguments, specifically three integers giving the year,
+ month and day of the date to be represented. Start up a Python
+interpreter and <tt>import</tt> the datetime module. Create two <tt>date</tt>
+objects, one representing February 3, 1700 and one representing
+October 4, 1701. What is the day of the week of these two dates?
+You can use the <tt>weekday()</tt> method to find out (this returns 0
+for Monday, 1 for Tuesday and 6 for Sunday).  How many days are
+there between the two dates? (Note that arithmetic with date
+objects return a <tt>timedelta</tt> object, these have the attribute
+<tt>days</tt>.) Repeat the exercise for February and October 2000 and
+2001. Is the number of days between the two dates the
+same? If not, why not?</p></div>
+</div>
+<div class="sect2">
+<h3 id="_exercise_2_compressed_data_input_using_objects_for_flexibility">Exercise 2: Compressed data input – using objects for flexibility</h3>
+<div class="paragraph"><p>Data files are often compressed and it can be helpful
+if your analysis code can read (and write) to compressed
+files. As well as being convenient (you can avoid explicitly
+compressing or decompressing files before and after you run
+the analysis script) this can also improve execution time
+(which is sometimes limited just by the process of getting
+data to and from the disk). In common with all data types,
+we have seen that Python’s built in file type is a class.
+An instance of this type is returned by the built-in
+<tt>open()</tt> function and each instance supports a range of
+methods including iteration. The standard library includes
+the <a href="http://docs.python.org/library/gzip.html">module <tt>gzip</tt></a>
+ which implements the <tt>GzipFile</tt> class with
+methods that simulate most of those provided by the built-in
+file type. There is also a
+<a href="http://docs.python.org/library/bz2.html"><tt>bz2</tt> module</a>,
+which does a similar
+thing for bzip2 compression. The directory <tt>metoffice_data</tt> contains
+more Met Office data like that you worked with on Tuesday.
+However, some files
+have been compressed using either bzip2 or gzip. Modify your
+final data file reading function to automatically accept
+compressed files. You can assume that compressed files will
+always have the .gz or .bz2 file extension.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">
+<div class="paragraph"><p>The most obvious OO way to instantiate an object to
+represent a compressed file is to make direct use of the
+GzipFile class as follows:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt><strong>import</strong> gzip
+f = gzip.GzipFile('filename', 'rb')
+<i># Do something with f</i>
+f.close()</tt></pre>
+</div></div>
+<div class="paragraph"><p>However, this is different to the way that Python generates
+built-in file objects using the <tt>open()</tt> function. A more
+natural approach is probably to use the gzip module&#8217;s <tt>open()</tt>
+function thus:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt><strong>import</strong> gzip
+f = gzip.open('filename', 'rb')
+<i># Do something with f</i>
+f.close()</tt></pre>
+</div></div>
+<div class="paragraph"><p>In this approach, <tt>gzip.open()</tt> is nothing more
+than a convenience wrapper around the <tt>GzipFile</tt>
+class constructor. The <tt>bz2</tt> module lacks an
+equivalent function so you will have to make
+use of the <tt>BZ2File</tt> class directly.</p></div>
+</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>Does your modified code work with uncompressed files as well
+as files compressed with both gzip and bzip2?</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/tip.png" alt="Tip" />
+</td>
+<td class="content">You will need to be able to decide if the filename argument
+represents a compressed file. One way to do this is to use string
+methods to examine the file name argument. A better (easer and
+more portable) approach is to use the <tt>splitext()</tt> function from
+the <tt>os.path</tt> module. This takes a string as an argument returns
+a tuple who&#8217;s second item is the final file extension
+(<tt>.txt</tt>, <tt>.gz</tt> or <tt>.bzip2</tt>).</td>
+</tr></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exercise_3_rainfall_an_object_from_the_inside">Exercise 3: Rainfall – an object from the inside</h3>
+<div class="paragraph"><p>The "dictionary of lists" data structure you used to
+hold rainfall data in Practical 2 works, but is
+unsatisfactory in a number of ways. The functions you
+wrote were tied to the data structure so knowledge of
+the data structure ended up being spread around your
+code making refactoring difficult. It would sometimes
+be useful to generate a different "view" of the data,
+say by providing a list of rainfall for each January
+in the data set to make it easy to calculate the
+average rainfall in that month. In this exercise
+you should create a <tt>Rainfall</tt> class to represent
+a weather station and the rainfall it has measured.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">
+<div class="paragraph"><p>Remember that the way to define a class in Python
+is to make use of the <tt>Class</tt> statement and define
+functions for methods and variables for attributes.
+Functions take an extra <tt>self</tt> argument and you need
+an <tt>__init__</tt> method which gets called when you create
+an instance.  The basic code looks like this:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt><strong>class</strong> Thing:
+    <strong>def</strong> __init__(self, constructer_argument):
+        <i># These values are created</i>
+        <i># when the class is instantiated.</i>
+        self.attribute = constructer_argument/7.65
+        self.counter = 0
+
+    <strong>def</strong> method(self, method_argument):
+        self.counter = self.counter + method_argument
+        <strong>print</strong> self.counter</tt></pre>
+</div></div>
+</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>The first step is to create the bare bones of your
+<tt>Rainfall</tt> class reusing some of the code you wrote
+on Tuesday. Start off with the class definition and
+<tt>__init__</tt> method. <tt>__init__</tt> should take an argument
+specifying the filename  where data will be read from.
+What other argument is needed? Give your class
+attributes for the weather station name, its latitude
+and longitude. Store the data away inside the class as
+a dictionary of lists.</p></div>
+<div class="paragraph"><p>Now add methods. An <tt>annual_rainfall</tt> method could
+return a dictionary with years as the keys and the
+total measured rainfall in that year as the values.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Can you use your new class to calculate the distance
+between pairs of weather stations?
+</p>
+</li>
+<li>
+<p>
+Can you calculate the difference in average annual
+rainfall for two weather stations?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>You are going to need a more flexible method of extracting
+subsets of the rainfall information from your xi`Rainfall`
+objects. Create a new method called <tt>list_data()</tt> that returns
+two lists: a list of floating point numbers giving the rainfall
+in each month and a list of <tt>date</tt> objects corresponding to
+the first day of the month referred to in the first list. Add
+three optional arguments to the <tt>list_data()</tt> method. New <tt>start</tt>
+and <tt>end</tt> arguments should take date objects and (if the arguments
+are present) no data before <tt>start</tt> or after <tt>end</tt>
+should be returned. The third new argument <tt>months</tt> should
+be a list to allow only a subset of the months to be
+returned. Once this has been done, you should be able to
+extract the rainfall data for the winter in Camborne
+during the 1990s by doing:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt><i># Read data from file and set up object</i>
+r = Rainfall("cambornedate.txt.gz")
+<i># extract winter (Dec, Jan, Feb) data for the 1990s</i>
+rain, months = r.list_data(start=date(1990,1,1),end=(1999,12,31),months=[12,1,2])</tt></pre>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Is spring wetter than autumn in Camborne?
+</p>
+</li>
+<li>
+<p>
+Are winters in Cambridge drier than summers in Yeovilton?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Finally, you may want to reexamine how the <tt>Rainfall</tt> class
+you have constructed handles missing data. So far the
+simple approach of representing missing months of rainfall
+as having zero rainfall seems to have worked. Is there a
+better built in type (with a single value) that could be
+used? Can you modify your <tt>Rainfall</tt> class to handle
+missing data more correctly?</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_practical_4_numpy_scipy_and_matplotlib">Practical 4: NumPy, SciPy and Matplotlib</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>In the previous three practicals you have been
+introduced to the fundamentals of the Python
+language and begun to learn how to use it to
+create tools for data analysis and simulation.
+In this practical you will look at three closely
+related extension modules – modules that are not
+part of the Python standard library but are commonly
+used when writing software for science, engineering
+and mathematics. <a href="http://www.scipy.org/">SciPy</a>
+provides a many tools for scientific programming.
+These include a wide range of ready to use functions
+for statistics, optimisation and minimisation, numerical
+integration, curve fitting, linear algebra, Fourier analysis,
+image and signal processing, and more. SciPy makes use
+facilities provided by <a href="http://numpy.scipy.org/">NumPy</a>.
+Chief amongst these is a high performance data object called
+an <tt>array</tt>. This is multi-dimensional and has elements of a
+fixed type, corresponding to a fixed storage size in memory.
+This property makes operations on the whole array much more efficient
+than operations on the built in Python data types. Many of the
+internals of NumPy and SciPy are implemented in C
+(with some Fortran) and this also yields high performance.
+NumPy and SciPy are often used with
+<a href="http://matplotlib.sourceforge.net/">Matplotlib</a>,
+a graphing library for Python. Data drawn on graphs
+in Matplotlib is provided in the form of NumPy <tt>array</tt>
+objects (but these can sometimes be generated internally
+by Matplotlib from other data types).</p></div>
+<div class="paragraph"><p>In this practical you will first familiarise yourself
+with the <tt>array</tt> object and some of the fundamental
+NumPy methods and functions. You will then learn how
+to generate simple graphs and maps based on the arrays.
+In the second part of the practical you will make use of
+your <tt>Rainfall</tt> class from practical 3 along with functions
+from SciPy to calculate and graph some properties of the
+historical rainfall record in the south of Britain.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/caution.png" alt="Caution" />
+</td>
+<td class="content">Some aspects of this practical need extra
+Python modules installed beyond those which make up
+the standard library. In particular, the exercises
+make use of NumPy, SciPy, Matplotlib and Basemap. If
+you are using your own computer basic installation
+instructions can be found <a href="./installation.html">here</a>.</td>
+</tr></table>
+</div>
+<div class="sect2">
+<h3 id="_exercise_1_the_tt_array_tt_object">Exercise 1: The <tt>array</tt> object</h3>
+<div class="paragraph"><p>Start a Python interpreter and import the numpy module. I
+generally find it easer to rename the module <tt>np</tt> by
+opting to <tt>import numpy as np</tt>.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+If <tt>l = [1.0, 2.3, 4.74, 7]</tt> what is <tt>type(l)</tt>? What
+about <tt>type(l[0])</tt> and <tt>type(l[3])</tt>?
+</p>
+</li>
+<li>
+<p>
+NumPy arrays can be constructed using the <tt>array</tt>
+class. If <tt>a=np.array(l)</tt>, what is <tt>a</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>type(a)</tt>? What about <tt>type(a[0])</tt> and
+<tt>type(a[3])</tt>? How do arrays differ from lists?
+</p>
+</li>
+<li>
+<p>
+Arrays can also be returned from other functions.
+If <tt>b = np.zeros((4))</tt>, and <tt>c=np.ones((5))</tt> what are
+<tt>b</tt> and <tt>c</tt>? What are <tt>type(b)</tt> and <tt>type(c)</tt>?
+</p>
+</li>
+<li>
+<p>
+Are NumPy arrays mutable? Can the types of the elements
+be changed? Can you change <tt>c[2]</tt> to be equal to <tt>3</tt> and <tt>c[4]</tt>
+to be equal to the string <tt>"one"</tt>?
+</p>
+</li>
+<li>
+<p>
+What are <tt>np.ones((3,3))</tt> and <tt>np.ones((3,3,3,3))</tt>? What are
+the <tt>.size</tt> and <tt>.shape</tt> of these objects?
+</p>
+</li>
+<li>
+<p>
+Can you iterate through a NumPy array? What is
+<tt>i</tt> in each iteration of <tt>for i in np.ones((3,3)):</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>a + np.ones((4))</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>np.ones((4))*3</tt>? What about
+<tt>(np.ones((3,3))*3)*(np.ones((3,3))*2)</tt>?
+Is this matrix multiplication or not?
+</p>
+</li>
+<li>
+<p>
+What is <tt>a[0:2]</tt>? What about <tt>a[0::2]</tt>? Does array indexing
+work in the same way as list and string indexing?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>If you have used Matlab, you should find that NumPy arrays
+remind you of Matlab arrays. There are some important
+differences (square brackets rather than parenthesises,
+element wise operations rather than operators from linear
+algebra). There is even a short
+<a href="http://www.scipy.org/NumPy_for_Matlab_Users">guide to NumPy for Matlab users</a>.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+If <tt>theta = np.arange(0, 2*np.pi, 0.1)</tt>, what is <tt>theta</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>np.sin(theta)</tt>? Assign <tt>np.sin(theta)</tt> and
+<tt>np.cos(theta)</tt> to the variables <tt>sintheta</tt> and <tt>costheta</tt>.
+</p>
+</li>
+<li>
+<p>
+We want to plot some graphs, so <tt>import pylab</tt>.
+</p>
+</li>
+<li>
+<p>
+Create a plot by using the <tt>pylab.plot()</tt>
+function thus: <tt>pylab.plot(theta, sintheta)</tt>.
+</p>
+</li>
+<li>
+<p>
+Display the graph with <tt>pylab.show()</tt>.
+</p>
+</li>
+<li>
+<p>
+Close the window. Draw the graph of $\cos(\theta)$.
+</p>
+</li>
+<li>
+<p>
+Can you put both lines on the same graph?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Matplotlib has two main interfaces. One, which we will examine
+later, takes an object-oriented approach with everything
+in a graph being modelled as various types of object. This
+makes it easy for your application to reuse bits of code
+when drawing graphs – you can produce a graphical
+representation of something that can sometimes be placed
+together with other graphs in a figure. The second interface
+is provided by the pylab module (part of Matplotlib). This
+takes a state-machine approach to plotting graphs
+that is similar to the approach used by Matlab.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_exercise_2_maps">Exercise 2: Maps</h3>
+<div class="paragraph"><p>You will find a simple Python script called <tt>draw_marble.py</tt>
+in the <tt>practical4</tt> directory. Run it. What is displayed? What
+city is marked? The code is reproduced with some notes below.</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt><strong>from</strong> mpl_toolkits.basemap <strong>import</strong> Basemap <img src="./images/icons/callouts/1.png" alt="1" />
+<strong>import</strong> matplotlib.pyplot as plt
+<strong>import</strong> numpy as np
+
+<i># Set up the basemap</i>
+m = Basemap(projection='nsper',lon_0=-10,lat_0=40,resolution='l',
+           satellite_height=15000000) <img src="./images/icons/callouts/2.png" alt="2" />
+
+<i># draw parallels and meridians.</i>
+m.drawparallels(np.arange(-90.,120.,30.),'white') <img src="./images/icons/callouts/3.png" alt="3" />
+m.drawmeridians(np.arange(0.,420.,60.),'white')
+<i># Draw the image</i>
+m.bluemarble()
+
+<i># Plot a city</i>
+x, y = m(-2.58, 51.54) <img src="./images/icons/callouts/4.png" alt="4" />
+m.plot(x,y,'wo')
+
+<i># Show the image.</i>
+plt.show() <img src="./images/icons/callouts/5.png" alt="5" /></tt></pre>
+</div></div>
+<div class="colist arabic"><table>
+<tr><td><img src="./images/icons/callouts/1.png" alt="1" /></td><td>
+We need to import pyplot, numpy and basemap.
+</td></tr>
+<tr><td><img src="./images/icons/callouts/2.png" alt="2" /></td><td>
+This creates a new instance of the Basemap
+object. The arguments define the type of map to
+produce. <tt>"nsper"</tt> stands for "near sided
+perspective" (the view a satellite would see
+located over <tt>lon_0</tt>, <tt>lat_0</tt> and at a height
+of <tt>satellite_height</tt>). The instance <tt>m</tt> knows
+how to convert from geographical position to
+a location on the image that will be produced.
+</td></tr>
+<tr><td><img src="./images/icons/callouts/3.png" alt="3" /></td><td>
+This section adds lines of latitude and
+longitude and the background image. Notice that
+the image is distorted to correctly fit over the
+map. It is possible to distort any image to
+correctly fit over any map projection – you
+just need to know the geographical positions
+of the corners of the image.
+</td></tr>
+<tr><td><img src="./images/icons/callouts/4.png" alt="4" /></td><td>
+This section plots a point on the map. We
+first need to convert from geographical
+coordinates to a location on the plotting plane.
+When used as a function, the <tt>Basemap</tt> instance
+<tt>m</tt> can do this. The two arguments are the
+longitude and latitude of a location and it returns
+the x and y coordinates of the point to be drawn.
+These can be used as arguments to locate the point
+</td></tr>
+<tr><td><img src="./images/icons/callouts/5.png" alt="5" /></td><td>
+Displaying the resulting map works the same as
+displaying any graph. Note that you can also put
+the figure in an image file using the <tt>plt.savefig()</tt>
+function giving the file name as an argument.
+</td></tr>
+</table></div>
+<div class="paragraph"><p>Modify the program in order to:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Plot an additional city on the map. For example,
+Paris is located at 48.86 degrees N and 2.35 degrees E.
+</p>
+</li>
+<li>
+<p>
+Change the map projection. The Robinson projection
+(<tt>projection="robin"</tt>) was once used for global maps.
+The arguments of the constructor change with the projection
+type. The Robinson projection only needs <tt>lon_0</tt>, the
+longitude at the centre of the map, to be specified
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>The file <tt>uki_map.py</tt> produces a basemap of the
+British Isles. Using this file as a template, write
+a Python script that reads weather station data
+files (provided as arguments), reads them, and plots
+the location of the weather stations on the map. You
+can make use of the modules you wrote in Practical 2
+or the <tt>Rainfall</tt> class you wrote in Practical 3 to
+help. The map plotting should be moved into a
+subroutine (what should the arguments be?) and the
+resulting file should be importable as a module.</p></div>
+<div class="paragraph"><p>Modify your program to accept any number of arguments
+corresponding to a list of files of weather station
+data files. Plot all weather stations on the map.
+Change the limits of the map to only show the region
+where you have data.</p></div>
+<div class="paragraph"><p>It seems to rain more in Bristol than in London. If
+you cannot see the Pennines from Old Trafford you
+know it&#8217;s raining, if you can see the hills you
+know it&#8217;s going to rain. Is the west really wetter
+than the east? You can generate a contour plot to
+try and find out.</p></div>
+<div class="paragraph"><p>NOTE:</p></div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph"><p>Basemap objects have <tt>contour()</tt> and <tt>contourf()</tt>
+methods for adding line contours and filled contours
+of geographical data on a regular grid or a general
+irregular triangulation.  Both methods have three
+compulsory arguments (which must be numpy <tt>array</tt>
+objects and take an optional argument <tt>tri=True</tt>
+which must be provided if you want Matplotlib to
+generate the contours from unstructured data. The
+first three arguments are arrays of x and y positions
+of each point (converted from the geographical
+coordinates of the weather stations using the
+Basemap object as a function) and a list of
+values (the rainfall at each weather station).</p></div>
+</div></div>
+<div class="paragraph"><p>Using <tt>uki_map.py</tt> as a template, create a script
+that accepts a month and a list of weather station
+data files as arguments and plots a contour map of
+the average rainfall across Britain in the chosen
+month. You should avoid colouring the continents
+and oceans (remove the <tt>fillcontinents</tt> and
+<tt>drawmapboundary</tt> lines).</p></div>
+</div>
+<div class="sect2">
+<h3 id="_exercise_3_time_series_data_and_statistics">Exercise 3: Time series data and statistics</h3>
+<div class="paragraph"><p>As well as simple x-y plots (see Exercise 2)
+Matplotlib is also able to plot time series
+data. The key to doing this is to provide a
+list of <tt>date</tt> objects for one of the axes
+of the graph. These are then appropriately
+spaced. In this exercise you will plot a
+graph of two time series representing the
+rainfall in, say, June at Yeovilton and
+Cambridge between 1980 and 2010. You will
+then look to see if the data is correlated
+(are wet summers in Yeovilton also wet summers
+in Cambridge) using the <tt>scipy.stats</tt> module.
+In doing this, you will take a look at the
+object oriented interface to Matplotlib.</p></div>
+<div class="paragraph"><p>Write a script that accepts five arguments, one
+to specify the month of interest, one to specify
+year to start the time series analysis (start
+the analysis on the 1 January of that year), one
+to specify the end year of the analysis (end on
+the 31 December of that year) and two arguments
+providing the location of the weather station
+data files. The script should produce a plot
+of the rainfall on the chosen month for each
+year of interest. Try to use the Matplotlib
+object oriented interface.</p></div>
+<div class="paragraph"><p>NOTE:</p></div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph"><p>Matplotlib’s OO interface breaks graphs down into
+a number of components. The two most important
+are the <tt>Figure</tt> and the <tt>Axes</tt>. A <tt>Figure</tt> represents
+the graph paper while the <tt>Axes</tt> represent the area
+where a graph will be plotted. A <tt>Figure</tt> can have
+more than one set of <tt>Axes</tt>. Assuming you have
+imported <tt>matplotlib.pyplot as plt</tt>, a new figure
+can be generated using the function <tt>plt.figure()</tt> that
+accepts an (optional) figure name and returns a figure
+object. This object has several methods that can be
+used to add axes. The most useful is probably
+<tt>.add_subplot(111)</tt> (the numbers specify how to
+arrange multiple axes in the figure). An axes
+instance has methods equivalent to  most of
+the graphing functions provided by Matplotlib. One
+useful way of using the OO interface is to write a
+method for your data class that accepts an empty
+axis as an argument and adda the data to the graph
+and returns the axis so that it can be plotted, but
+the basic way to plot a graph is shown below.</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>fig = plt.figure()
+ax = fig.add_subplot(111)
+<i># Maybe accept ax as an argument of a function</i>
+ax.plot(x_data, y_data)
+ax.set_ylabel('Y axis name (units)')
+ax.set_xlabel('X axis name (units)')
+<i># Maybe return ax</i>
+fig.autofmt_xdate() <i># If you have dates.</i>
+plt.show()</tt></pre>
+</div></div>
+</div></div>
+<div class="paragraph"><p>As far as I can see it seems that monthly rainfall is
+correlated across the country. Wet months tend to be wet
+everywhere.  One way to test this is to calculate the
+correlation coefficient between two time series. The
+<tt>scipy.stats</tt> module has functions to do this. Use the
+<tt>scipy.stats.pearsonr</tt> function (which takes two numpy
+arrays as arguments) to calculate the Pearson correlation
+coefficent and confidence interval for the correlation.
+Is the correlation positive? Is it significant?</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_resources">Resources</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>There is a wide array of documentation and help avalable
+online which covers everything from learning Python as a
+first programming language to details of how to make
+changes to the Python interpreter.</p></div>
+<div class="paragraph"><p>The first port of call for help is often the
+<a href="http://docs.python.org/index.html">official documentation</a>,
+which includes:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://docs.python.org/tutorial/index.html">The Python Tutorial</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://docs.python.org/library/index.html">The Standard Library Reference</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://docs.python.org/reference/index.html">The Python Language Reference</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://docs.python.org/faq/index.html">FAQs</a>
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>This course is designed to cover much of the same material described
+by the Python Tutorial, but I have chosen not to cover the section
+on <a href="http://docs.python.org/tutorial/errors.html">errors and exceptions</a>
+or some of the fancier tools available for functional programming, packages
+and modules, and in the Standard Library.</p></div>
+<div class="paragraph"><p>The starting point for documentation on SciPy and NumPy is at
+<a href="http://www.scipy.org/">www.scipy.org</a>. Key documents include:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://docs.scipy.org/doc/numpy/reference/">The NumPy Reference Guide</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://docs.scipy.org/doc/scipy/reference/">The SciPy Reference Guide</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.scipy.org/Tentative_NumPy_Tutorial">A NumPy tutorial</a>
+</p>
+</li>
+<li>
+<p>
+link: <a href="http://www.scipy.org/NumPy_for_Matlab_Users">A guide to NumPy for Matlab users</a>
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>A good way to learn how to construct graphs with Matplotlib is to look at
+the <a href="http://matplotlib.sourceforge.net/gallery.html">gallery</a>, which
+includes the source code used to generate each plot.</p></div>
+<div class="paragraph"><p>There is a wide range of other documentation available. This includes the
+<a href="http://www.doughellmann.com/PyMOTW/">Python Module of the week</a>, an
+attempt to provide better documentation for the Standard Library and
+a number of books. I&#8217;ve used two when writing this course:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Matplotlib for Python Developers. S. Tosi (2009) <a href="http://www.packtpub.com/matplotlib-python-development/book">Packt Publishing</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.rmi.net/~lutz/about-lp4e.html">Learning Python</a>. M. Lutz and D. Ascher. O&#8217;Reilly
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>I&#8217;ve also made use of material from
+<a href="http://metson.web.cern.ch/metson/PythonBeginners/">Simon Metson&#8217;s Python course</a>,
+which is run for the University&#8217;s
+<a href="https://www.acrc.bris.ac.uk/">Advanced Computing Research Centre</a>.</p></div>
+<div class="paragraph"><p>I&#8217;ve mentioned other useful resources. These are, in no particular order:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<a href="http://www.python.org/">www.python.org</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://pypi.python.org/">The Python Package Index</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://wiki.python.org/moin/PythonDistributions">A list of Python distributions</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.enthought.com/products/epd.php">The Enthought Python Distribution</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://www.python.org/dev/peps/">The Python Enhancement Proposals index</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://docs.python.org/devguide/">The Python Developer&#8217;s Guide</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://matplotlib.sourceforge.net/basemap/doc/html/">Matplotlib&#8217;s Basemap toolkit</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://docs.python.org/library/profile.html">Python profilers</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://wiki.python.org/moin/PythonDebuggers">Python debuggers</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://pychecker.sourceforge.net/">PyChecker</a> (lint for Python)
+</p>
+</li>
+<li>
+<p>
+<a href="http://docs.python.org/library/unittest.html">The Python unittest and related tools</a>
+</p>
+</li>
+<li>
+<p>
+<a href="http://docs.python.org/library/pydoc.html">The pydoc documentation system</a>
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installing_python">Installing Python</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>The material covered in this course requires the use of a Python interpreter, standard library and a number of additional modules. Exactly what is needed, and information regarding installation on a range of operating systems is given below. It is important to point out that I’ve only been able to test the installation on Mac OSX (version 10.6). News of problems and successes with other systems is welcome.</p></div>
+<div class="paragraph"><p>Beyond an interpreter and the standard libraries, practicals 2-4 make use of NumPy, SciPy, Matplotlib and the Matplotlib mapping extension Basemap. These are extension packages that include code written in C and Fortran. They are not all available for any interpreter other than CPython. Furthermore, NumPy (a prerequisite for the other modules) has not yet been ported to Python 3. I currently recommend the use of Python 2.7 for any scientific or technical computing.</p></div>
+<div class="sect2">
+<h3 id="_enthought_python_distribution">Enthought Python Distribution</h3>
+<div class="paragraph"><p>By far the easiest way to get everything installed is to use the <a href="http://www.enthought.com/products/epd.php">Enthought Python Distribution</a> (EPD).  By putting together a Python interpreter, a large number of scientific libraries, an easy to use installer and a user support channel Enthought has been able to build a business model based on open source software. If you are lucky enough to be an academic, you can take advantage of an offer for a <a href="http://www.enthought.com/products/edudownload.php">cost free licence</a>. Installation follows the usual approach on your operating system. If you are on a Mac, it’s probably best to use the Intel/PPC-compatible version (see <a href="http://www.enthought.com/products/epdfaq.php#mac">this note</a>).</p></div>
+</div>
+<div class="sect2">
+<h3 id="_linux">Linux</h3>
+<div class="paragraph"><p>Python is almost certainly already installed on your Linux system. If not the best way to add it is to use your distributions package management system (aptitude, yum etc.). Equally, you should be able to install the other libraries in the same way. Two alternative approaches are to build from source (this isn’t the place to give instructions, but this is what I do) or to use the EPD.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_osx">OSX</h3>
+<div class="paragraph"><p>OSX 10.6 includes Python 2.6.1 and NumPy 1.2.1. These are quite old versions but are probably good enough to play with.  It is possible to install everything else, some <a href="https://modelingguru.nasa.gov/docs/DOC-1847">instructions are here</a>, but I’ve never managed to get everything working at the same time. Hence I recommend the use of the EPD.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_windows">Windows</h3>
+<div class="paragraph"><p>I have no experience of <a href="http://www.python.org/getit/">installing Python on Windows</a>. It is supposed to be possible to <a href="http://www.scipy.org/Installing_SciPy/Windows">install SciPy</a> etc. but I don’t have access to a suitable computer so that I can test these instructions. I note that C and Fortran 77 compilers are required.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2011-09-14 13:27:42 BST
+</div>
+</div>
+</body>
+</html>

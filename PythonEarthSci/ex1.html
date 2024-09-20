@@ -1,0 +1,1890 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.6" />
+<title>Practical 1: First steps</title>
+<style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #777777;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+tt {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+.monospaced {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+
+
+/*
+ * Theme specific overrides of the preceding (asciidoc.css) CSS.
+ *
+ */
+body {
+  font-family: Garamond, Georgia, serif;
+  font-size: 17px;
+  color: #3E4349;
+  line-height: 1.3em;
+}
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Garmond, Georgia, serif;
+  font-weight: normal;
+  border-bottom-width: 0;
+  color: #3E4349;
+}
+div.title, caption.title { color: #596673; font-weight: bold; }
+h1 { font-size: 240%; }
+h2 { font-size: 180%; }
+h3 { font-size: 150%; }
+h4 { font-size: 130%; }
+h5 { font-size: 115%; }
+h6 { font-size: 100%; }
+#header h1 { margin-top: 0; }
+#toc {
+  color: #444444;
+  line-height: 1.5;
+  padding-top: 1.5em;
+}
+#toctitle {
+  font-size: 20px;
+}
+#toc a {
+    border-bottom: 1px dotted #999999;
+    color: #444444 !important;
+    text-decoration: none !important;
+}
+#toc a:hover {
+    border-bottom: 1px solid #6D4100;
+    color: #6D4100 !important;
+    text-decoration: none !important;
+}
+div.toclevel1 { margin-top: 0.2em; font-size: 16px; }
+div.toclevel2 { margin-top: 0.15em; font-size: 14px; }
+em, dt, td.hdlist1 { color: black; }
+strong { color: #3E4349; }
+a { color: #004B6B; text-decoration: none; border-bottom: 1px dotted #004B6B; }
+a:visited { color: #615FA0; border-bottom: 1px dotted #615FA0; }
+a:hover { color: #6D4100; border-bottom: 1px solid #6D4100; }
+div.tableblock > table, table.tableblock { border: 3px solid #E8E8E8; }
+th.tableblock, td.tableblock { border: 1px solid #E8E8E8; }
+ul > li > * { color: #3E4349; }
+pre, tt, .monospaced { font-family: Consolas,Menlo,'Deja Vu Sans Mono','Bitstream Vera Sans Mono',monospace; }
+tt, .monospaced { font-size: 0.9em; color: black;
+}
+div.exampleblock > div.content, div.sidebarblock > div.content, div.listingblock > div.content { border-width: 0 0 0 3px; border-color: #E8E8E8; }
+div.verseblock { border-left-width: 0; margin-left: 3em; }
+div.quoteblock { border-left-width: 3px; margin-left: 0; margin-right: 0;}
+div.admonitionblock td.content { border-left: 3px solid #E8E8E8; }
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([2-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  if (!toc) {
+    return;
+  }
+
+  // Delete existing TOC entries in case we're reloading the TOC.
+  var tocEntriesToRemove = [];
+  var i;
+  for (i = 0; i < toc.childNodes.length; i++) {
+    var entry = toc.childNodes[i];
+    if (entry.nodeName == 'div'
+     && entry.getAttribute("class")
+     && entry.getAttribute("class").match(/^toclevel/))
+      tocEntriesToRemove.push(entry);
+  }
+  for (i = 0; i < tocEntriesToRemove.length; i++) {
+    toc.removeChild(tocEntriesToRemove[i]);
+  }
+
+  // Rebuild TOC entries.
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  // Delete existing footnote entries in case we're reloading the footnodes.
+  var i;
+  var noteholder = document.getElementById("footnotes");
+  if (!noteholder) {
+    return;
+  }
+  var entriesToRemove = [];
+  for (i = 0; i < noteholder.childNodes.length; i++) {
+    var entry = noteholder.childNodes[i];
+    if (entry.nodeName == 'div' && entry.getAttribute("class") == "footnote")
+      entriesToRemove.push(entry);
+  }
+  for (i = 0; i < entriesToRemove.length; i++) {
+    noteholder.removeChild(entriesToRemove[i]);
+  }
+
+  // Rebuild footnote entries.
+  var cont = document.getElementById("content");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      var note = spans[i].getAttribute("data-note");
+      if (!note) {
+        // Use [\s\S] in place of . so multi-line matches work.
+        // Because JavaScript has no s (dotall) regex flag.
+        note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+        spans[i].innerHTML =
+          "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+        spans[i].setAttribute("data-note", note);
+      }
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+},
+
+install: function(toclevels) {
+  var timerId;
+
+  function reinstall() {
+    asciidoc.footnotes();
+    if (toclevels) {
+      asciidoc.toc(toclevels);
+    }
+  }
+
+  function reinstallAndRemoveTimer() {
+    clearInterval(timerId);
+    reinstall();
+  }
+
+  timerId = setInterval(reinstall, 500);
+  if (document.addEventListener)
+    document.addEventListener("DOMContentLoaded", reinstallAndRemoveTimer, false);
+  else
+    window.onload = reinstallAndRemoveTimer;
+}
+
+}
+asciidoc.install();
+/*]]>*/
+</script>
+</head>
+<body class="article">
+<div id="header">
+<h1>Practical 1: First steps</h1>
+<span id="author">Andrew Walker</span><br />
+<span id="email"><tt>&lt;<a href="mailto:andrew.walker@bristol.ac.uk">andrew.walker@bristol.ac.uk</a>&gt;</tt></span><br />
+<span id="revnumber">version 1.0</span>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph"><p>In exercise you will learn how to use a
+Python interpreter interactively and to run simple pieces
+of code. Using this knowledge you will investigate the
+basic syntax of a Python program, learn what many of the
+operators and keywords do, and explore the Python type system
+and its semantics.  The exercises were written to target
+the CPython interpreter and, in particular, the Enthought
+Python Distribution (EPD) installed on a Mac, but everything
+here should be portable between different operating systems,
+interpreters and Python distributions.</p></div>
+<div class="paragraph"><p>Work through the following exercises in order, they should be
+self-explanatory but do ask if you have a problem. It doesn&#8217;t
+matter too much if you don&#8217;t manage to finish this afternoon,
+but you should try and
+find time to look at everything before Thursday afternoon.
+Python code and output is typeset in <tt>monotype</tt> font, and
+this can be typed directly into the interpreter.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercise_1_assignment_equality_and_logic">Exercise 1: Assignment, equality and logic</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Start up as terminal and then the python interpreter by typing <tt>./python</tt>. You
+should see the version information and a command prompt:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>Enthought Python Distribution -- www.enthought.com
+Version: 7.1-2 (32-bit)
+
+Python 2.7.2 |EPD 7.1-2 (32-bit)| (default, Jul 27 2011, 13:29:32)
+[GCC 4.0.1 (Apple Inc. build 5493)] on darwin
+Type "packages", "demo" <strong>or</strong> "enthought" <strong>for</strong> more information.
+&gt;&gt;&gt;</tt></pre>
+</div></div>
+<div class="paragraph"><p>You can run simple python code from the "<tt>&gt;&gt;&gt;</tt>" command prompt.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Let <tt>a = 1</tt> (type "a=1" at the command prompt). What is <tt>a</tt> (type "a")?
+</p>
+</li>
+<li>
+<p>
+Let <tt>b = 2</tt>. What is <tt>b</tt>?
+</p>
+</li>
+<li>
+<p>
+Let <tt>c = 2.75</tt>. What is <tt>c</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>b</tt> after you type <tt>b=a</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>a</tt>?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p><tt>a</tt>, <tt>b</tt>, and <tt>c</tt> are variables, <tt>1</tt>, <tt>2</tt> and <tt>2.75</tt> are values, <tt>=</tt> is
+the assignment operator.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+What is <tt>f</tt>?
+</p>
+</li>
+</ul></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">You should see an error as <tt>f</tt> has not been defined. This is useful as it
+    helps avoid turning simple typo&#8217;s into hard to fix bugs.</td>
+</tr></table>
+</div>
+<div class="ulist"><ul>
+<li>
+<p>
+Let <tt>e = 2</tt> and <tt>f = 3</tt>.
+</p>
+</li>
+<li>
+<p>
+Is <tt>e == b</tt>?
+</p>
+</li>
+<li>
+<p>
+Is <tt>f &gt; e</tt>?
+</p>
+</li>
+<li>
+<p>
+Is <tt>c &lt; f</tt>?
+</p>
+</li>
+<li>
+<p>
+Is <tt>c &lt; a</tt>?
+</p>
+</li>
+<li>
+<p>
+Is <tt>a &lt;= e</tt>?
+</p>
+</li>
+<li>
+<p>
+Is <tt>e &gt;= a</tt>?
+</p>
+</li>
+<li>
+<p>
+Let <tt>t = True</tt>. What is <tt>t</tt>?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p><tt>==</tt>, <tt>&gt;</tt>, <tt>&lt;</tt>, <tt>&lt;=</tt> and <tt>&gt;=</tt> are the basic logical operators used to test for equality,
+greater than, less than, less than or equals and greater than or equals. <tt>True</tt>
+and <tt>False</tt> are logical values representing truth and falsehood.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/warning.png" alt="Warning" />
+</td>
+<td class="content"><tt>==</tt> and <tt>=</tt> do different things; <tt>True</tt> and <tt>False</tt> must be capitalised.</td>
+</tr></table>
+</div>
+<div class="ulist"><ul>
+<li>
+<p>
+What is <tt>not True</tt>
+</p>
+</li>
+<li>
+<p>
+What is <tt>not False</tt>
+</p>
+</li>
+<li>
+<p>
+What is <tt>(e == b) and (c &lt; f)</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>(e &lt; 3) and t</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>True and False</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>False and False</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>True and True</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>True or False</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>not (True or False)</tt>?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>The Boolean operators <tt>and</tt>, <tt>or</tt>, and <tt>not</tt>, can be used to
+combine logical tests. Brackets (parentheses) can be used to group and
+order them.</p></div>
+<div class="paragraph"><p>Quit the interpretor (type <tt>quit()</tt> or Ctrl-D).</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercise_2_block_statments">Exercise 2: Block statments</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>The python interpreter can also be used to execute a
+series of statements in a file. These statements are
+executed in sequence from the first line to the last.
+Use your favorite text editor to create a file called
+<tt>count.py</tt> containing the following python code:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>i = 1
+<strong>while</strong> (i &lt; 10):
+    <strong>print</strong> i
+    i = i + 1
+<strong>print</strong> "The end"</tt></pre>
+</div></div>
+<div class="paragraph"><p>Run this code by typing <tt>python ./count.py</tt> at the shell
+command prompt. What is printed to the screen?  Is
+this what you expect?</p></div>
+<div class="paragraph"><p>You should see the numbers 1 to 9 and the string "The end"
+printed before the interpreter exits and you are returned
+to the command prompt. The while statement begins a block
+of code that is executed in a loop until some logical
+condition is false. What is the logical test in your count
+program? Is this tested before or after the block of code
+guarded by the while statement is run?</p></div>
+<div class="paragraph"><p>Modify the logic in your program to make it count to 10.
+Is there another way to change the logic to achieve the
+same thing? Now change the program to count backwards
+from 10 to 1. Change it again to only print the even numbers.</p></div>
+<div class="paragraph"><p>Often, one of the most disconcerting features of Python is that
+blocks of code are delimited by indentation. Most programmers
+will indent loops and other blocks of code they write but
+Python is unusual in demanding indentation and using it as
+part of the syntax of the language. If you&#8217;ve not already
+inadvertently found out, see what happens if you change your
+counting program so that the indentation is not consistent.
+For example, indent the <tt>print</tt> line more than the <tt>i = i + 1</tt> line.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">Although Python allows flexibility when indenting blocks
+of code, the use of four space characters is strongly
+recommended by the semi-official style guide
+(<a href="http://www.python.org/dev/peps/pep-0008/">PEP 8</a>).
+Most code you read will have blocks indented with four spaces.
+Most code you write should also use four spaces for indentation.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>What does the following code snippet do?</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt><strong>def</strong> count():
+    i = 1
+    <strong>while</strong> (i &lt; 10):
+        <strong>print</strong> i
+        i = i + 1
+<strong>print</strong> "The end"</tt></pre>
+</div></div>
+<div class="paragraph"><p>Are you sure? It&#8217;s in the file <tt>count_func.py</tt>, run it to find out.</p></div>
+<div class="paragraph"><p>Although Python programs are executed sequentially, from the start
+to the end of the file, like many languages, you can specify a
+piece of code should form a subroutine or function that can be
+run later. When the interpreter reaches a block of code guarded
+by the <tt>def</tt> statement a function is defined. The function is not
+run until it is called by name. Modify <tt>count_func.py</tt> to call
+the count function:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt><strong>def</strong> count():
+    i = 1
+    <strong>while</strong> (i &lt; 10):
+        <strong>print</strong> i
+        i = i + 1
+count()
+<strong>print</strong> "The end"</tt></pre>
+</div></div>
+<div class="paragraph"><p>What does this code do?</p></div>
+<div class="paragraph"><p>What happens if you try and call the function before
+the function has been defined? Does this work:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>count()
+<strong>def</strong> count():
+    i = 1
+    <strong>while</strong> (i &lt; 10):
+        <strong>print</strong> i
+        i = i + 1
+count()
+<strong>print</strong> "The end"</tt></pre>
+</div></div>
+<div class="paragraph"><p>Functions can (optionally) have one or more arguments
+(in the parentheses). These allow the function to be
+more general. Modify your code to accept an argument,
+<tt>n</tt>, the upper limit of the printed numbers, and <tt>m</tt>
+the lower limit.  Print three lists of numbers,
+1 – 10, 14 – 27,  and 88 – 96.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">Argument lists to Python functions allow
+considerable flexibility. It&#8217;s easy to give
+functions optional arguments, arguments with default
+values, and even accept lists of arguments without
+knowing what they will be when you write the function.
+Functions don&#8217;t need to be given names. Functions can
+take functions as arguments, can call them (and can call
+themselves recursively) and functions can return
+other functions. For example, you can write a general
+integration routine without knowing the function you
+will be integrating. We will look at some of these
+features later in the course. A good introduction
+can also be found in Chapter
+<a href="http://docs.python.org/tutorial/controlflow.html#defining-functions">4.6</a>
+and <a href="http://docs.python.org/tutorial/controlflow.html#more-on-defining-functions">4.7</a>
+of the Python tutorial.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>The third block statement allows pieces of code to be
+executed conditionally. What does the following code print?</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>i = 1
+<strong>while</strong> i &lt;= 10:
+    <strong>if</strong> (i &gt;= 5):
+        <strong>print</strong> i
+    i = i + 1
+
+<strong>print</strong> "The end"</tt></pre>
+</div></div>
+<div class="paragraph"><p>Are you sure? It&#8217;s in the file <tt>count_if.py</tt>, run
+it to find out.</p></div>
+<div class="paragraph"><p>The block of indented code guarded by an if
+statement is only executed when the condition is
+true. Note that we can embed one indented block within
+another. What does the following print?</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>i = 1
+<strong>while</strong> i &lt;= 100:
+    <strong>if</strong> (i &gt;= 5):
+        <strong>if</strong> (i &lt; 15):
+            <strong>print</strong> i
+    i = i + 1
+
+<strong>print</strong> "The end"</tt></pre>
+</div></div>
+<div class="paragraph"><p>Can you condese the two nested <tt>if</tt> statments into one with
+more complex logic?</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercise_3_basic_mathematical_operators_and_scalar_types">Exercise 3: Basic mathematical operators and scalar types</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Now look at how python handles mathematics. Beware, there may by one or two surprises.
+Use the interpreter interactively to decide:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+What is <tt>2+3</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>2*6</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>2-5</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>6/3</tt>?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>The arithmetic operators work as you may expect.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+What is <tt>7/3</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>-7/3</tt>?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Is this what you expected?</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">Remember that numbers in python can be
+    integers or floats and that integer division rounds down.</td>
+</tr></table>
+</div>
+<div class="ulist"><ul>
+<li>
+<p>
+What is <tt>type(3)</tt>?
+</p>
+</li>
+<li>
+<p>
+What about <tt>type(7)</tt>?
+</p>
+</li>
+<li>
+<p>
+So what is <tt>type(7/3)</tt>?
+</p>
+</li>
+<li>
+<p>
+Does <tt>7.0/3</tt> give you the right answer?
+</p>
+</li>
+<li>
+<p>
+Why?
+</p>
+</li>
+<li>
+<p>
+What is <tt>type(7.0)</tt>
+</p>
+</li>
+<li>
+<p>
+So what is <tt>type(7.0/3)</tt>?
+</p>
+</li>
+<li>
+<p>
+What about <tt>type(7/3.0)</tt>?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>You can also do calculations with floating point numbers.
+* What is <tt>1.0 - 0.5</tt>?
+* What about <tt>1.2 - 1.0</tt>?
+* Is that correct? what&#8217;s going on?</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/warning.png" alt="Warning" />
+</td>
+<td class="content">Floating point mathematics isn&#8217;t quite like the
+mathematics you learnt at school. On computers numbers are
+represented internally in binary, as strings of 1s and 0s.
+The set of real numbers that can be represented exactly in
+a finite number of binary digits is different to the set of
+real numbers that can be represented exactly in decimal. This
+leads to some interesting issues discussed at the end of the
+standard <a href="http://docs.python.org/tutorial/floatingpoint.html">Python Tutorial</a>
+and described in much more detail in the paper
+<a href="http://download.oracle.com/docs/cd/E19957-01/806-3568/ncg_goldberg.html">What Every Computer Scientist Should Know About Floating-Point Arithmetic</a>
+It&#8217;s worth knowing that Python has support in the standard
+library for fixed point numbers (i.e. decimal calculations
+which are exact to a given number of decimal places) and
+for rational numbers (fractions). These may be useful, but
+will be slower (computer hardware is built for
+floating point binary mathematics, it&#8217;s
+too expensive to fit hardware decimal units).</td>
+</tr></table>
+</div>
+<div class="ulist"><ul>
+<li>
+<p>
+What is <tt>1+2j</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>type(1+2j)</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>(1+2j)-(1-2j)</tt>?
+</p>
+</li>
+<li>
+<p>
+If <tt>c = 2+4j</tt> what is <tt>c**2</tt>?
+</p>
+</li>
+<li>
+<p>
+What about <tt>c + 1</tt>?
+</p>
+</li>
+<li>
+<p>
+What are <tt>c.real</tt> and <tt>c.imag</tt>?
+</p>
+</li>
+<li>
+<p>
+And what is <tt>c.conjugate()</tt>?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Complex numbers are built in. The operators work as you may expect.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercise_4_strings">Exercise 4: Strings</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Another data type in Python is the string. Literal
+strings are embedded in single or double quotes
+and strings can be assigned to variables just
+like the other types:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+If <tt>a = "Some text"</tt>, what is <tt>type(a)</tt>?
+</p>
+</li>
+<li>
+<p>
+What is  <tt>a[0]</tt>?
+</p>
+</li>
+<li>
+<p>
+And <tt>a[0:4]</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>a[8]</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>a[5:9]</tt>?
+</p>
+</li>
+<li>
+<p>
+What about <tt>a[5:]</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>a[:]</tt>? Is this any different from <tt>a</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>a[:4]</tt>?
+</p>
+</li>
+<li>
+<p>
+Is <tt>"Some text"</tt> the same as <tt>'Some text'</tt>? Are the two strings
+equal?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>In Python strings are a sequence of characters
+numbered from 0.  Sub-strings can be accessed
+using an index notation using brackets (not
+parentheses) containing integers separated by
+colons. When only one index is provided a single
+character is returned. When two indices are provided
+a series of characters are returned from the first,
+to one less than the second index. If left out (but
+with the colon in place) the indices default to
+the start and end of the string.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+What is <tt>a + " some more text"</tt>?
+</p>
+</li>
+<li>
+<p>
+What about <tt>a * 3</tt>?
+</p>
+</li>
+<li>
+<p>
+Do the <tt>-</tt> or <tt>/</tt> operators work on strings?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>When placed between strings, <tt>+</tt> acts as a
+concatenation operator and <tt>*</tt> works as a
+repetition operator.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+What is <tt>a[0:9:2]</tt>?
+</p>
+</li>
+<li>
+<p>
+What about <tt>a[-4:]</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>a[-2:-1]</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>a[::-1]</tt>?
+</p>
+</li>
+<li>
+<p>
+What happens if you try and change the "S"
+into an "s" in <tt>a</tt>? Does <tt>a[0] = "s"</tt> work?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>The third list index specifies how the sub-string is
+constructed by stepping through the string. Negative
+indices count backwards from the end, or reverse
+along the string. Note that strings are immutable.
+You cannot use the index notation to change bits of
+a string. We’ll cover this concept in more detail later.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+If <tt>b = "1.0"</tt> what is <tt>type(b)</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>float(b)</tt>? What is its type?
+</p>
+</li>
+<li>
+<p>
+If <tt>c = "1"</tt> what is its type?
+</p>
+</li>
+<li>
+<p>
+What is <tt>int(c)</tt> and what is its type?
+</p>
+</li>
+<li>
+<p>
+Can you turn <tt>b</tt> into an integer? What about <tt>c</tt> into a float?
+</p>
+</li>
+<li>
+<p>
+If <tt>d = 4+7j</tt> what is type(d)?
+</p>
+</li>
+<li>
+<p>
+Can you <tt>print d</tt>?
+</p>
+</li>
+<li>
+<p>
+Does <tt>print d + " is a complex number"</tt> work?
+</p>
+</li>
+<li>
+<p>
+Why not? How does Python know what <tt>+</tt> does?
+</p>
+</li>
+<li>
+<p>
+What is <tt>str(d)</tt> and what is it&#8217;s type?
+</p>
+</li>
+<li>
+<p>
+Can you fix <tt>print d + " is a complex number"</tt> so that it does work?
+</p>
+</li>
+<li>
+<p>
+Does this work with the other numerical types?
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercise_5_lists">Exercise 5: Lists</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Strings are the first of Python&#8217;s built in sequence types; lists
+are the second. To a large extent, if you know how to use one
+sequence type you know them all. In a list instead of each
+numbered "container" holding a single character, each container
+can hold any variable. Start up a python intepreter.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+If <tt>a = [1, 2.3, 4.5, 'one', "1"]</tt> what is <tt>type(a)</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>a[1]</tt>?
+</p>
+</li>
+<li>
+<p>
+What about <tt>a[4]</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>type(a[0])</tt>?
+</p>
+</li>
+<li>
+<p>
+What is the type of each element of a?
+</p>
+</li>
+<li>
+<p>
+What is <tt>a[3][1]</tt>?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Note that lists can contain variables of different types mixed
+together. We can access characters within a string within a list
+by using multiple indices next to each other.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+What is <tt>a*2</tt>?
+</p>
+</li>
+<li>
+<p>
+What about <tt>a+['the end of the list']</tt>.
+</p>
+</li>
+<li>
+<p>
+Do the <tt>-</tt> or <tt>/</tt> operators work on lists?
+</p>
+</li>
+<li>
+<p>
+If <tt>a[3] = 'two'</tt> what is <tt>a</tt>?
+</p>
+</li>
+<li>
+<p>
+We described strings as an immutable type. How could we describe lists?
+</p>
+</li>
+<li>
+<p>
+Let <tt>b = [0, 1, 2, 3, 4]</tt> and <tt>c = range(5)</tt>.
+</p>
+</li>
+<li>
+<p>
+Are <tt>b</tt> and <tt>c</tt> the same?
+</p>
+</li>
+<li>
+<p>
+Does <tt>b == c</tt>?
+</p>
+</li>
+<li>
+<p>
+Does <tt>a == c</tt>?
+</p>
+</li>
+<li>
+<p>
+Make <tt>a[1] = b</tt>. What is a?
+</p>
+</li>
+<li>
+<p>
+Notice that lists can contain other lists.
+</p>
+</li>
+<li>
+<p>
+What is <tt>a[1][0]</tt>?
+</p>
+</li>
+<li>
+<p>
+Does <tt>a == c</tt> now?
+</p>
+</li>
+<li>
+<p>
+What about <tt>a[1] == c</tt>?
+</p>
+</li>
+<li>
+<p>
+If <tt>d = []</tt> what could you call <tt>d</tt>? Is <tt>d</tt> a list?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Python contains several other built in sequence types (there are seven in
+total). We&#8217;ll briefly look at them later. Some work like strings
+(and can only contain a particular type of data) and some work like
+lists (and can contain any type of data). Some sequence types are
+mutable and others are immutable. All sequence types support index
+notation with brackets and colons, along with several other
+operations including <tt>+</tt> and <tt>*</tt>.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercise_6_sequences_and_iteration">Exercise 6: Sequences and iteration</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>We&#8217;ve seen that Python supports more than one sequence type.
+When writing a program, sequences (usually lists) are commonly
+used to store the working data. We often want to do "something"
+to each item of data in turn: perhaps we want to calculate the
+average of all the numbers in the list, maybe we want to find
+the maximum or add a number to each element of the list. What
+we need is a way to iterate through the list. A block of code
+using the <tt>for x in l:</tt> statement allows us to do this. What
+does the following program print?</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>groups = ['BEEST', 'Geophysics', 'Geochemistry',
+         'Palaeobiology <strong>and</strong> Biodiversity', 'Volcanology',
+         'Climate <strong>and</strong> Environmental Change']
+
+<strong>print</strong> "The School of Earth Sciences has six research groups:"
+
+<strong>for</strong> group <strong>in</strong> groups:
+    <strong>print</strong> "\t* " + group</tt></pre>
+</div></div>
+<div class="paragraph"><p>The program can be found in the file <tt>for_in.py</tt>. Run it to confirm
+your suspicion.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/warning.png" alt="Warning" />
+</td>
+<td class="content">In Python <tt>for x in l:</tt> is quite different to <tt>for</tt> in C
+or <tt>do</tt> in Fortran. It iterates through a list and it does not
+denote a loop. However, Python&#8217;s <tt>for x in l:</tt> can be used to build
+a loop with little effort. (This is the same as the difference
+between Perl&#8217;s <tt>for</tt> and <tt>foreach</tt> constructs.)</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>Modify the program to print the numbers from 0 to 10. Use
+the range function to generate the list.</p></div>
+<div class="paragraph"><p>With one argument, <em>n</em>, the range function generates a list of
+<em>n</em> integers starting a zero. <tt>range()</tt> can also take two integer
+arguments. What is the meaning of the first and second arguments
+in this case? Modify the program to print the numbers from 1 to 10.</p></div>
+<div class="paragraph"><p>Range can also take a third argument. Modify the code to print the
+even numbers between 1 and 10 using the three-argument form.</p></div>
+<div class="paragraph"><p>Does range accept four or more arguments? Does it accept negative
+arguments? What do they do?</p></div>
+<div class="paragraph"><p>It is sometimes necessary to iterate through two sequences together
+in lock step. The <tt>zip()</tt> function can be used for this. What does
+the following program (<tt>zip.py</tt>) print? Do you see how it works?</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>names = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+         'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+rain = [10.2, 12.4, 9.4, 8.2, 8.9, 7.2, 3.9, 7.6, 8.0, 11.2, 10.5, 9.9]
+
+<strong>for</strong> month, inch <strong>in</strong> zip(names, rain):
+    <strong>print</strong> "In " + month + " there was " + str(inch) + " inches of rain"</tt></pre>
+</div></div>
+<div class="paragraph"><p>Modify the program to calculate the average monthly rainfall in the
+year using two other variables and the <tt>for</tt> loop above. Print
+this after the monthly report. Imperial measurements
+are outdated. Convert the output into mm.</p></div>
+<div class="paragraph"><p>If <tt>rain = [10.2, 12.4, 9.4, 8.2, 8.9, 7.2, 3.9, 7.6, 8.0, 11.2, 10.5, 9.9]</tt>,
+what is <tt>len(rain)</tt>? What is <tt>sum</tt> rain? Calculate the average monthly rainfall
+without using <tt>for</tt>.</p></div>
+<div class="paragraph"><p>What does the following program (<tt>caesar.py</tt>) do? The variable names may help.</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>shift = 3
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+cipherbet = alphabet[shift:27]+alphabet[0:shift]
+
+plaintext = 'the quick brown fox jumps over the lazy dog'
+ciphertext = ''
+
+<strong>for</strong> p <strong>in</strong> plaintext:
+    <strong>if</strong> p == ' ':
+        ciphertext = ciphertext + ' ' <i># Keep the spaces</i>
+    <strong>else</strong>:
+        <strong>for</strong> a, c <strong>in</strong> zip(alphabet, cipherbet):
+            <strong>if</strong> p == a:
+                ciphertext = ciphertext + c
+                <strong>break</strong> <i># No need to finish the inner loop</i>
+
+<strong>print</strong> plaintext
+<strong>print</strong> ciphertext</tt></pre>
+</div></div>
+<div class="paragraph"><p>Can you write a program to perform the inverse function?</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercise_7_dictionaries">Exercise 7: Dictionaries</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Dictionaries are another data type found in
+Python. A dictionary is equivalent to a hash
+in Perl, <tt>std::map</tt> in C++ and "maps" in Java,
+all are implementations of associative arrays.
+Like a list a dictionary links a key to a value.
+A list&#8217;s key is the index and this must be an
+integer. This means that lists have a natural
+order (for the list <tt>l</tt>, <tt>l[3]</tt> comes after
+<tt>l[2]</tt> and before <tt>l[4]</tt>). Many data types can
+play the role of a key in a dictionary. This
+means dictionaries have no natural order and
+you should never assume that keys and values
+will be returned if you iterate through a
+dictionary twice. This is OK, there are many
+things in the world you may want to refer to
+in a program that don&#8217;t have a natural order
+(but may have an unnatural order). Words and
+word definitions in one of those books of
+the language, for example.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+If <tt>d = {"Around the world in 80 days": "Jules Verne",
+"The Hobbit": "J R R Tolkien",
+"A Journey to the center of the Earth": "Jules Verne",
+"A study in scarlet": "Doyle", "The valley of Fear":
+"Doyle", "The Lord of the Rings": "Tolkien"}</tt> what is <tt>d</tt>?
+Is the order you put in the same as the order you got out?
+</p>
+</li>
+<li>
+<p>
+What is <tt>type(d)</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>d["The Lord of the Rings"]</tt>? What is its type?
+</p>
+</li>
+<li>
+<p>
+Can you change the value of <tt>d["The Lord of the Rings"]</tt>
+to <tt>"J R R Tolkien"</tt>?
+</p>
+</li>
+<li>
+<p>
+What is <tt>d.keys()</tt>? What about <tt>d.values()</tt>? What type
+are returned by these functions? What do you notice about
+the order of the elements in these lists?
+</p>
+</li>
+<li>
+<p>
+Can a dictionary contain two elements with the same key?
+</p>
+</li>
+<li>
+<p>
+Is it OK for two elements to share the same value?
+</p>
+</li>
+<li>
+<p>
+Is <tt>"A Journey to the center of the Earth" in d</tt>?
+</p>
+</li>
+<li>
+<p>
+Is <tt>"Tolkien" in d</tt>?
+</p>
+</li>
+<li>
+<p>
+What does <tt>in</tt> do?
+</p>
+</li>
+<li>
+<p>
+Does it check the keys or the values?
+</p>
+</li>
+<li>
+<p>
+How do you think you could iterate through a dictionary?
+</p>
+</li>
+<li>
+<p>
+What is <tt>i</tt> in each iteration of <tt>for i in d:</tt>?
+</p>
+</li>
+<li>
+<p>
+What if you need the key too? Could you use <tt>d.keys()</tt>,
+<tt>d.values()</tt> and <tt>zip()</tt>? How?
+</p>
+</li>
+<li>
+<p>
+Can a dictionary have an integer as a value? What about as a key?
+</p>
+</li>
+<li>
+<p>
+What about a floating point number or a complex number?
+</p>
+</li>
+<li>
+<p>
+Can make a dictionary have a list as a value?
+</p>
+</li>
+<li>
+<p>
+What about using a list as a key?
+</p>
+</li>
+<li>
+<p>
+Are strings immutable?
+</p>
+</li>
+<li>
+<p>
+Are lists mutable?
+</p>
+</li>
+<li>
+<p>
+Do you think dictionary keys have to be immutable?
+</p>
+</li>
+<li>
+<p>
+What is <tt>d.items()</tt>? What is the type of the elements
+of the list that is returned?
+</p>
+</li>
+<li>
+<p>
+Have you seen this type before?
+</p>
+</li>
+<li>
+<p>
+Can this type be used as the key to a dictionary?
+</p>
+</li>
+<li>
+<p>
+Is it mutable?
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Dictionaries and tuples turn out to be quite important
+if you want to really understand Python, but you can
+get by without them.</p></div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Version 1.0<br />
+Last updated 2011-09-26 11:16:19 BST
+</div>
+</div>
+</body>
+</html>

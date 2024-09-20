@@ -1,0 +1,12 @@
+As of FoX-3.1.2, the library is distributed in several versions.
+
+You probably want to get the standard version, which is named simply:
+
+FoX-$VERSION.tar.gz
+
+This has all unnecessary files stripped out, and is suitable for distributing with your own software.
+
+The -full version contains all the necessary files for developing FoX itself,
+and includes the testsuites. It is considerably larger.
+
+The current version (4.1.1) can be found in this directory, older versions are located in subdirectories.
